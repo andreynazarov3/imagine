@@ -128,9 +128,132 @@ module.exports = function (self) {
     quests.splice(index, 1);
   };
   scene_1
+    .to('.bubble-7', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-7', 1, {
+      opacity: 0
+    }, '+=3')
     .to('.scene-2', 1, {
       opacity: 1,
-    });
+    })
+    .to('.light', 1, {
+      opacity: 1,
+    })
+    .to('.hero-think-1', 0.5, {
+      opacity: 1,
+    }, '-=1')
+    .to('.hero-think-1', 0.5, {
+      opacity: 0,
+    })
+    .to('.hero-think-2', 0.5, {
+      opacity: 1,
+    }, '-=0.25')
+    .to('.hero-think-2', 0.5, {
+      opacity: 0,
+    })
+    .to('.hero-think-3', 0.5, {
+      opacity: 1,
+    })
+    .to('.bubble-8', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-8', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.img-bubble', 1, {
+      opacity: 1,
+    })
+    .to('.heroes', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-9', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-9', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.hill-1', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-10', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-10', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.img-bubble', 2, {
+      transform: 'scale(10)'
+    })
+    .to('.heroes', 2, {
+      width: '800px',
+      top: '600px'
+    }, '-=2')
+    .to('.hill-1', 2, {
+      width: '1281px',
+      top: '990px',
+      left: 'calc(50% - 403px)'
+    }, '-=2')
+    .to('.img-bubble', 0, {
+      opacity: 0
+    })
+    .to('.light', 0, {
+      opacity: 0
+    })
+    .to('.hero-think-3', 0, {
+      opacity: 0
+    })
+    .to('.scene-2', 0, {
+      backgroundColor: 'white'
+    })
+    .to('.mountain', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-11', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-11', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.chairs', 1, {
+      opacity: 1,
+    })
+    .to('.pillows', 1, {
+      opacity: 1,
+    }, '-=1')
+    .to('.bubble-12', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-12', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.tree', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-13', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-13', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.bubble-14', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-14', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.people', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-15', 1, {
+      opacity: 1,
+    })
+    .to('.bubble-15', 1, {
+      opacity: 0,
+    }, '+=3')
+    .to('.hill-2', 1, {
+      opacity: 1,
+    })
   // all_scenes.add(scene_0);
   all_scenes.add(scene_1);
 

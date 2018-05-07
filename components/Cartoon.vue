@@ -36,8 +36,52 @@
            <div class="bubble bubble-6">
            «Я не смогу, я не успею, я не справлюсь, я не креативный». Мир готовых решений отучил Человека фантазировать.  
           </div>
+          <div class="bubble bubble-7">
+            А вопрос засел в голове, как навязчивая попсовая песня, и не покидал его ни днем не ночью. 
+          </div>
       </div>
       <div class="scene scene-2" id="scene-2">
+        <img class="light light-1"  src="~/static/light/light1.png" alt="" srcset="">
+        <img class="light light-2" src="~/static/light/light2.png" alt="" srcset="">
+        <img class="light light-3" src="~/static/light/light3.png" alt="" srcset="">
+        <img class="light light-4" src="~/static/light/light4.png" alt="" srcset="">
+         <img class="hero-think-1" src="~/static/light/hero1.png" alt="" srcset="">
+        <img class="hero-think-2" src="~/static/light/hero2.png" alt="" srcset="">
+        <img class="hero-think-3" src="~/static/light/hero3.png" alt="" srcset="">
+        <img class="tree" src="~/static/fantasy/tree.png" alt="" srcset="">
+        <img class="img-bubble" src="~/static/bubble1b.png" alt="" srcset="">
+        <img class="hill-1" src="~/static/fantasy/hill1.png" alt="" srcset="">
+        
+        <img class="mountain" src="~/static/fantasy/mountain.png" alt="" srcset="">      
+        <img class="chairs" src="~/static/fantasy/chairs.png" alt="" srcset="">
+        <img class="pillows" src="~/static/fantasy/pillows.png" alt="" srcset="">
+        <img class="people" src="~/static/fantasy/people.png" alt="" srcset="">
+        <img class="hill-2" src="~/static/fantasy/hill2.png" alt="" srcset="">
+        <img class="heroes" src="~/static/fantasy/heroes.png" alt="" srcset="">
+        <div class="bubble bubble-8">
+           Совсем обессилев, забылся Человек тревожным сном.  
+          </div>
+          <div class="bubble bubble-9">
+           И во сне пришел к нему Некто. Человек не запомнил лица, но все показалось ему странно знакомым: фигура, голос и мягкая рука, которая потянула его за собой. 
+          </div>
+          <div class="bubble bubble-10">
+           “Я покажу тебе классное место” - сказал Некто и повел его коридорами сновидений. И человек доверился и пошел, потому что во сне люди вообще очень доверчивы.
+          </div>
+          <div class="bubble bubble-11">
+           А место и правда оказалось классное. Горы тут были такой высоты, что задевали вершинами хитрое солнце. 
+          </div>
+           <div class="bubble bubble-12">
+           По небу парили дельтапланы, ну или даже мебель. И никто не регулировал это безумное движение, но никто никому не мешал. 
+          </div>
+          <div class="bubble bubble-13">
+            На огромных ветвях баньяна спели шоколадные трюфеля и соленые огурцы.
+          </div>
+          <div class="bubble bubble-14">
+            Бурый медведь, живший на дереве, кричал Человеку «Bonjour».
+          </div>
+          <div class="bubble bubble-15">
+            Люди здесь ходили вверх ногами, но не по нужде, а просто по фану. 
+          </div>
       </div>
   </div>
 </template>
@@ -83,6 +127,86 @@ export default {
 };
 </script>
 <style lang="scss">
+.hill-2 {
+    width: 900px;
+    top: 800px;
+    left: calc(50% - 400px);
+}
+.people {
+    width: 490px;
+    top: 400px;
+    left: calc(50% - 700px);
+}
+.tree {
+  width: 1000px;
+  top: -334px;
+  left: calc(50% - 150px);
+}
+.chairs {
+  width: 400px;
+  top: 0;
+  left: calc(50% - 200px);
+}
+.pillows {
+  width: 620px;
+  top: 250px;
+  left: calc(50% - 250px);
+}
+.mountain {
+  width: 855px;
+  top: 150px;
+  left: calc(50% - 800px);
+}
+.hill-1 {
+  width: 381px;
+  top: 224px;
+  left: calc(50% - 203px);
+}
+.img-bubble {
+  width: 621px;
+  top: 94px;
+  left: calc(50% - 303px);
+}
+.heroes {
+  width: 250px;
+  top: 100px;
+  left: calc(50% - 100px);
+}
+.hero-think-1 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
+.hero-think-2 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
+.hero-think-3 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
+.light-1 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
+.light-2 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
+.light-3 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
+.light-4 {
+  width: 420px;
+  top: 200px;
+  left: calc(50% - 500px);
+}
 .quest {
   width: 100px;
   position: absolute;
