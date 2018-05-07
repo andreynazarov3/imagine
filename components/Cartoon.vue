@@ -42,46 +42,42 @@
   </div>
 </template>
 <script>
+var imagesLoaded = require('imagesloaded');
 export default {
   data: function() {
     return {
       quests: [],
     };
   },
-  mounted: function() {
-    for (let i = 0; i < 400; i++) {
+  created: function() {
+    for (let i = 0; i < 100; i++) {
       this.quests.push({});
     }
-    this.$nextTick(() => {
-      let quests = document.querySelectorAll('.quest');
+  },
+  mounted: function() {
+    let quests = document.querySelectorAll('.quest');
 
-      for (let i = 0; i < quests.length; i++) {
-        const leftDeviation = Math.floor(Math.random() * 1400);
-        const topDeviation = Math.floor(Math.random() * 1000);
-        const width = 100 + Math.floor(Math.random() * 200);
-        const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-        const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-        const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation}px)`;
-        const top = `calc(30% ${topPlusOrMinus} ${topDeviation}px)`;
-        quests[i].style.left = left;
-        quests[i].style.top = top;
-        quests[i].style.width = `${width}px`;
-        // quests[i].style.opacity = `1`;
-      }
+    for (let i = 0; i < quests.length; i++) {
+      const leftDeviation = Math.floor(Math.random() * 1400);
+      const topDeviation = Math.floor(Math.random() * 1000);
+      const width = 100 + Math.floor(Math.random() * 200);
+      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation}px)`;
+      const top = `calc(30% ${topPlusOrMinus} ${topDeviation}px)`;
+      quests[i].style.left = left;
+      quests[i].style.top = top;
+      quests[i].style.width = `${width}px`;
+      // quests[i].style.opacity = `1`;
+    }
 
-      const animation = require('~/assets/js/cartoon.js');
-      function ready(fn) {
-        if (
-          document.attachEvent
-            ? document.readyState === 'complete'
-            : document.readyState !== 'loading'
-        ) {
-          fn();
-        } else {
-          document.addEventListener('DOMContentLoaded', fn(this));
-        }
-      }
-      ready(animation);
+    const animation = require('~/assets/js/cartoon.js');
+
+    imagesLoaded('img', function() {
+      console.log('images loaded');
+      let loading = document.querySelector('.loading');
+      loading.style.display = 'none';
+      animation(this);
     });
   },
 };

@@ -1,5 +1,6 @@
 <template>
 <div>
+  <div class="loading">Идет загрузка...</div>
   <header>
     <div class="wrapper">
         <a href="#">Стать героем</a>
@@ -25,6 +26,19 @@ export default {
 </script>
 
 <style lang="scss">
+.loading {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    font-size: 30px;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
 .welcome {
   width: 100%;
   height: 100vh;
