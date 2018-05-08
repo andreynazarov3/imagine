@@ -1,44 +1,64 @@
 <template>
-<div>
-  <div class="loading">Идет загрузка...</div>
-  <header>
-    <div class="wrapper">
-        <a href="#">Стать героем</a>
+<div>  
+    <Logo />
+    <main>
+    <Cartoon />
+    <div class="panel main">
+      <div class="additionalContent">
+        <Form />
+        <Speakers />
+      </div>
     </div>
-  </header>
-  <main>
-    <cartoon></cartoon>
-  </main>
+</main>
 </div>
 </template>
 
 <script>
 import Cartoon from '~/components/Cartoon';
-
+import Logo from '~/components/Logo';
+import Form from '~/components/Form';
+import Speakers from '~/components/Speakers';
 export default {
   components: {
-    Cartoon
+    Cartoon,
+    Logo,
+    Form,
+    Speakers,
   },
   mounted: function() {
-    console.log('mounted');
+    // init
+    const controller = new ScrollMagic.Controller({
+      globalSceneOptions: {
+        triggerHook: 'onLeave',
+      },
+    });
+
+    // get all slides
+    const slides = document.querySelectorAll('.panel');
+
+    // create scene for every slide
+    for (var i = 0; i < slides.length; i++) {
+      new ScrollMagic.Scene({
+        triggerElement: slides[i],
+      })
+        .setPin(slides[i])
+        .addTo(controller);
+    }
   },
 };
 </script>
 
 <style lang="scss">
-.loading {
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    font-size: 30px;
-    z-index: 9999;
-    align-items: center;
-    justify-content: center;
+main {
+  display: none;
 }
+.panel {
+  background: white;
+  &.main {
+    position: relative !important;
+  }
+}
+
 .welcome {
   width: 100%;
   height: 100vh;
@@ -53,7 +73,7 @@ header {
   padding-top: 75px;
   // margin-bottom: 180px;
   text-align: right;
-  position: absolute;
+  // position: absolute;
   width: 100%;
   z-index: 1;
   a {

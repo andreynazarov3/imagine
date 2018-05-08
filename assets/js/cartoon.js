@@ -1,26 +1,8 @@
-module.exports = function (self) {
-  const controller = new ScrollMagic.Controller();
-  const all_scenes = new TimelineMax({
-    repeat: 0,
-    paused: false
+module.exports = function (self) {  
+  const scene = new TimelineMax({
+    // paused: true
   });
-  const scene_0 = new TimelineMax({
-    paused: true
-  });
-  scene_0.to('.scene-0', 1.5, {
-      opacity: 1,
-    })
-    .to('.scene-0', 1.5, {
-      opacity: 0,
-    });
-  const scene_1 = new TimelineMax();
-  scene_1
-    .to('#cartoon', 0, {
-      height: '3000px',
-    })
-    .to('.scene-1', 0, {
-      opacity: 1,
-    })
+  scene       
     .to('.scene-img-hero', 1, {
       opacity: 1,
     })
@@ -70,13 +52,13 @@ module.exports = function (self) {
   for (let i = 0; i < 20; i++) {
     const index = Math.floor(Math.random() * quests.length);
     const quest = quests[index];
-    scene_1
+    scene
       .to(quest, 0.1, {
         opacity: 1,
       });
     quests.splice(index, 1);
   };
-  scene_1
+  scene
     .to('.bubble-4', 1, {
       opacity: 1,
     })
@@ -86,13 +68,13 @@ module.exports = function (self) {
   for (let i = 0; i < 50; i++) {
     const index = Math.floor(Math.random() * quests.length);
     const quest = quests[index];
-    scene_1
+    scene
       .to(quest, 0.05, {
         opacity: 1,
       });
     quests.splice(index, 1);
   };
-  scene_1
+  scene
     .to('.bubble-5', 1, {
       opacity: 1,
     })
@@ -105,13 +87,13 @@ module.exports = function (self) {
   for (let i = 0; i < 200; i++) {
     const index = Math.floor(Math.random() * quests.length);
     const quest = quests[index];
-    scene_1
+    scene
       .to(quest, 0.006, {
         opacity: 1,
       });
     quests.splice(index, 1);
   };
-  scene_1
+  scene
     .to('.bubble-6', 1, {
       opacity: 1,
     })
@@ -121,13 +103,13 @@ module.exports = function (self) {
   for (let i = 0; i < quests.length; i++) {
     const index = Math.floor(Math.random() * quests.length);
     const quest = quests[index];
-    scene_1
+    scene
       .to(quest, 0.006, {
         opacity: 1,
       });
     quests.splice(index, 1);
   };
-  scene_1
+  scene
     .to('.bubble-7', 1, {
       opacity: 1,
     })
@@ -254,9 +236,6 @@ module.exports = function (self) {
     .to('.hill-2', 1, {
       opacity: 1,
     })
-  // all_scenes.add(scene_0);
-  all_scenes.add(scene_1);
-
 }
 
 /*

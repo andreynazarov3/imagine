@@ -1,1 +1,8 @@
 @import 'reset';
+@import 'vars';
+p {
+  @extend %p;
+}
+html, body {
+  height: 100%;
+}

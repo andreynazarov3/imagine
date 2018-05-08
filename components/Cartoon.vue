@@ -1,8 +1,5 @@
 <template>
-  <div ref="cartoon" id="cartoon">
-    <div class="scene scene-0" id="scene-0">
-      <img class="scene-img-logo" src="~/static/logo.png" alt="" srcset="">
-      </div>
+  <section class="panel cartoon">    
       <div class="scene scene-1" id="scene-1">
           <img class="city scene-img-background" src="~/static/background.png" alt="">           
           <img class="city scene-img-moscow-city" src="~/static/moscow-city.png" alt="">
@@ -83,7 +80,7 @@
             Люди здесь ходили вверх ногами, но не по нужде, а просто по фану. 
           </div>
       </div>
-  </div>
+  </section>
 </template>
 <script>
 var imagesLoaded = require('imagesloaded');
@@ -119,14 +116,24 @@ export default {
 
     imagesLoaded('img', function() {
       console.log('images loaded');
-      let loading = document.querySelector('.loading');
+      const loading = document.querySelector('.loading');
+      const main =  document.querySelector('main');
       loading.style.display = 'none';
+      main.style.display = 'block';
+      const tbscene = new TimelineMax();
+      tbscene       
+        .to('.top-background', 2, {
+          opacity: 1,
+        });    
       animation(this);
     });
   },
 };
 </script>
 <style lang="scss">
+.cartoon {
+  height: 100vh;
+}
 .hill-2 {
     width: 900px;
     top: 800px;
@@ -235,6 +242,9 @@ export default {
   left: 0;
   top: 0;
   opacity: 0;
+  &-1 {
+    opacity: 1;
+  }
   &.scene-2 {
     background: black;
   }
@@ -294,12 +304,5 @@ export default {
       left: calc(50% - 650px);
     }
   }
-}
-#cartoon {
-  width: 100%;
-  min-height: 100vh;
-  // padding-bottom: 56.25%;
-  background: none;
-  position: relative;
 }
 </style>
