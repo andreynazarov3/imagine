@@ -390,7 +390,7 @@ export default {
         triggerElement: document.querySelectorAll('.panel')[1],
       })
         .on('enter', function() {
-          scene.play();
+          
         })
         .setPin(document.querySelectorAll('.panel')[1])
 
@@ -400,8 +400,16 @@ export default {
       })
         .setPin(document.querySelectorAll('.panel')[2])
         .addTo(controller);
+
+      var waypoint = new Waypoint({
+        element: document.querySelectorAll('.panel')[1],
+        handler: function(direction) {
+          console.log('scene play');
+          scene.play();
+        },
+        offset: '50%',
+      });
     });
-    // init
   },
 };
 </script>
