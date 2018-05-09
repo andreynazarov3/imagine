@@ -144,6 +144,7 @@ logoscene
   height: 100vh;
 }
 .logo {
+  max-width: 100%;
   width: 852px;
   margin: 0 auto;
   display: block;
