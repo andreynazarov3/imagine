@@ -383,16 +383,17 @@ export default {
       });
       new ScrollMagic.Scene({
         triggerElement: document.querySelectorAll('.panel')[0],
+        duration: '100%',
       })
-        .setPin(document.querySelectorAll('.panel')[0])
+        .setTween(document.querySelectorAll('.panel')[0], { scale: 0.7 })
+        .setPin(document.querySelectorAll('.panel')[0], { pushFollowers: false })
         .addTo(controller);
       new ScrollMagic.Scene({
         triggerElement: document.querySelectorAll('.panel')[1],
+        duration: '100%',
       })
-        .on('enter', function() {
-          
-        })
-        .setPin(document.querySelectorAll('.panel')[1])
+        .setTween(document.querySelectorAll('.panel')[1], { scale: 0.7 })
+        .setPin(document.querySelectorAll('.panel')[1], { pushFollowers: false })
 
         .addTo(controller);
       new ScrollMagic.Scene({
@@ -420,6 +421,7 @@ main {
 }
 .panel {
   background: white;
+  transform-origin: top;
   &.main {
     position: relative !important;
   }
