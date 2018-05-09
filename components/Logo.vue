@@ -134,6 +134,7 @@ logoscene
 };
 </script>
 <style lang="scss">
+@import "~/assets/scss/_vars.scss";
 .loading {
   text-align: center;
   font-size: 30px;
@@ -144,10 +145,17 @@ logoscene
   height: 100vh;
 }
 .logo {
-  max-width: 100%;
+  max-width: 100%;   
   width: 852px;
   margin: 0 auto;
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  @media #{$mediumScreen} {
+    width: 400px;
+  }
 }
 .top-background {
   position: absolute;
@@ -162,5 +170,29 @@ logoscene
   content: '';
   z-index: -1;
   opacity: 0;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+header {
+  padding: 75px 20px 0;
+  // margin-bottom: 180px;
+  text-align: right;
+  // position: absolute;
+  // width: 100%;
+  z-index: 1;
+  a {
+    opacity: 0.5;
+    font-family: GaramondPremrPro-Capt, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
 }
 </style>
