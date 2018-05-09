@@ -42,6 +42,7 @@ export default {
         paused: true,
       });
       scene
+        .add('start')
         .to('.scene-img-hero', 1, {
           opacity: 1,
         })
@@ -375,12 +376,14 @@ export default {
         )
         .to('.hill-2', 1, {
           opacity: 1,
-        });
+        })
+        .add('end');
       const controller = new ScrollMagic.Controller({
         globalSceneOptions: {
           triggerHook: 'onLeave',
         },
       });
+
       new ScrollMagic.Scene({
         triggerElement: document.querySelectorAll('.panel')[0],
         duration: '100%',
@@ -388,27 +391,84 @@ export default {
         .setTween(document.querySelectorAll('.panel')[0], { scale: 0.7 })
         .setPin(document.querySelectorAll('.panel')[0], { pushFollowers: false })
         .addTo(controller);
+
       new ScrollMagic.Scene({
         triggerElement: document.querySelectorAll('.panel')[1],
         duration: '100%',
       })
+
         .setTween(document.querySelectorAll('.panel')[1], { scale: 0.7 })
         .setPin(document.querySelectorAll('.panel')[1], { pushFollowers: false })
-
         .addTo(controller);
+
       new ScrollMagic.Scene({
         triggerElement: document.querySelectorAll('.panel')[2],
       })
         .setPin(document.querySelectorAll('.panel')[2])
         .addTo(controller);
 
+      document.querySelectorAll('.panel')[1].addEventListener('mousewheel', function(e) {
+        e.preventDefault();
+        if (e.wheelDelta < 0) {
+          //scroll down
+          console.log('Down');
+          scene.tweenTo( scene.getLabelAfter() );
+        } else {
+          //scroll up
+          console.log('Up');
+          scene.tweenTo( scene.getLabelBefore() );
+        }
+
+        //prevent page fom scrolling
+        return false;
+      });
+
       var waypoint = new Waypoint({
         element: document.querySelectorAll('.panel')[1],
         handler: function(direction) {
           console.log('scene play');
-          scene.play();
+          // scene.play();
         },
         offset: '50%',
+      });
+      var inview = new Waypoint.Inview({
+        element: document.querySelectorAll('.panel')[1],
+        enter: function(direction) {
+          console.log('Enter triggered with direction ' + direction);
+        },
+        entered: function(direction) {
+          console.log('Entered triggered with direction ' + direction);
+          if (direction === 'up') {
+            // TweenMax.to(window, 2, { scrollTo: 0 });
+          }
+        },
+        exit: function(direction) {
+          console.log('Exit triggered with direction ' + direction);
+        },
+        exited: function(direction) {
+          console.log('Exited triggered with direction ' + direction);
+        },
+      });
+      var inview2 = new Waypoint.Inview({
+        element: document.querySelectorAll('.panel')[0],
+        enter: function(direction) {
+          console.log('logo Enter triggered with direction ' + direction);
+        },
+        entered: function(direction) {
+          console.log('logo Entered triggered with direction ' + direction);
+          if (direction === 'up') {
+            TweenMax.to(window, 2, {
+              scrollTo: { y: 0, autoKill: false },
+              ease: Power2.easeOut,
+            });
+          }
+        },
+        exit: function(direction) {
+          console.log('logo Exit triggered with direction ' + direction);
+        },
+        exited: function(direction) {
+          console.log('logo Exited triggered with direction ' + direction);
+        },
       });
     });
   },

@@ -3,7 +3,7 @@
   <div class="top-background"></div>
    <header>
     <div class="wrapper">
-        <a href="#">Стать героем</a>
+        <a class="becomehero" href="#">Стать героем</a>
     </div>
   </header>
   <svg class="logo" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 849.79 708.227">
@@ -90,8 +90,9 @@
 </template>
 <script>
 export default {
-  data: function () { return {
-    logoscript: `<script>
+  data: function() {
+    return {
+      logoscript: `<script>
     var logoscene = new TimelineMax({
     paused: false,
   });
@@ -106,9 +107,30 @@ logoscene
   .from("#dot2-path", 0.5, { drawSVG: 0, ease: Power1.easeInOut })
   .from("#n-path", 0.5, { drawSVG: 0, ease: Power1.easeInOut })
   .from("#e-path", 0.5, { drawSVG: 0, ease: Power1.easeInOut });
-  <\/script>`
-  }},
-  mounted: function() {},
+  <\/script>`,
+    };
+  },
+  mounted: function() {
+    document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
+        e.preventDefault();
+        if (e.wheelDelta < 0) {
+          //scroll down
+          console.log('Down');
+          TweenMax.to(window, 1, {scrollTo:document.querySelector('main').offsetTop});
+        } else {
+          //scroll up
+          TweenMax.to(window, 1, {scrollTo:0});
+          console.log('Up');
+        }
+
+        //prevent page fom scrolling
+        return false;
+      });
+    document.querySelector('.becomehero').addEventListener('click', function(e) {
+      e.preventDefault();
+      TweenMax.to(window, 1, { scrollTo: document.querySelector('main').offsetTop * 2 });
+    });
+  },
 };
 </script>
 <style lang="scss">
@@ -135,8 +157,8 @@ logoscene
   background: url('~/static/logo-backjpg.jpg') no-repeat;
   background-size: cover;
   background-position: top;
-  opacity: .4;
-  content: "";
+  opacity: 0.4;
+  content: '';
   z-index: -1;
   opacity: 0;
 }
