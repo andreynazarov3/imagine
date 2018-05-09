@@ -1,6 +1,6 @@
-module.exports = function (self) {  
+
   const scene = new TimelineMax({
-    // paused: true
+    paused: true
   });
   scene       
     .to('.scene-img-hero', 1, {
@@ -236,7 +236,7 @@ module.exports = function (self) {
     .to('.hill-2', 1, {
       opacity: 1,
     })
-}
+
 
 /*
 const scene = new ScrollMagic.Scene({

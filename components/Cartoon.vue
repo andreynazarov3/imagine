@@ -83,7 +83,7 @@
   </section>
 </template>
 <script>
-var imagesLoaded = require('imagesloaded');
+
 export default {
   data: function() {
     return {
@@ -111,22 +111,6 @@ export default {
       quests[i].style.width = `${width}px`;
       // quests[i].style.opacity = `1`;
     }
-
-    const animation = require('~/assets/js/cartoon.js');
-
-    imagesLoaded('img', function() {
-      console.log('images loaded');
-      const loading = document.querySelector('.loading');
-      const main =  document.querySelector('main');
-      loading.style.display = 'none';
-      main.style.display = 'block';
-      const tbscene = new TimelineMax();
-      tbscene       
-        .to('.top-background', 2, {
-          opacity: 1,
-        });    
-      animation(this);
-    });
   },
 };
 </script>
@@ -135,14 +119,14 @@ export default {
   height: 100vh;
 }
 .hill-2 {
-    width: 900px;
-    top: 800px;
-    left: calc(50% - 400px);
+  width: 900px;
+  top: 800px;
+  left: calc(50% - 400px);
 }
 .people {
-    width: 490px;
-    top: 400px;
-    left: calc(50% - 700px);
+  width: 490px;
+  top: 400px;
+  left: calc(50% - 700px);
 }
 .tree {
   width: 1000px;
