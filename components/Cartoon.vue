@@ -221,12 +221,13 @@ export default {
   opacity: 0;
 }
 .bubble {
-  padding: 0 40px;
+  padding: 0px 80px;
   opacity: 0;
   position: absolute;
-  font-size: 40px;
-  background: white;
-  border: 2px solid black;
+  font-size: 30px;
+  background: url('~/static/bubble-white-1.png');
+  background-size: 100%;
+  // border: 2px solid black;
   width: 600px;
   height: 300px;
   display: flex;
