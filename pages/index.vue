@@ -61,13 +61,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-1')
-        .to(
-          '.bubble-1',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-1', 1, {
+          opacity: 0,
+        })
         .to('.scene-img-moscow-city', 1, {
           opacity: 1,
         })
@@ -78,13 +74,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-2')
-        .to(
-          '.bubble-2',
-          1,
-          {
-            opacity: 0,
-          },
-        )        
+        .to('.bubble-2', 1, {
+          opacity: 0,
+        })
         .to('.scene-img-house-1', 1, {
           opacity: 1,
         })
@@ -98,13 +90,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-3')
-        .to(
-          '.bubble-3',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-3', 1, {
+          opacity: 0,
+        })
         .to('.city', 1, {
           opacity: 0.5,
         });
@@ -122,13 +110,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-4')
-        .to(
-          '.bubble-4',
-          1,
-          {
-            opacity: 0,
-          },
-        );
+        .to('.bubble-4', 1, {
+          opacity: 0,
+        });
       for (let i = 0; i < 50; i++) {
         const index = Math.floor(Math.random() * quests.length);
         const quest = quests[index];
@@ -142,13 +126,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-5')
-        .to(
-          '.bubble-5',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-5', 1, {
+          opacity: 0,
+        })
         .to('.city', 1, {
           opacity: 0,
         });
@@ -165,13 +145,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-6')
-        .to(
-          '.bubble-6',
-          1,
-          {
-            opacity: 0,
-          },
-        );
+        .to('.bubble-6', 1, {
+          opacity: 0,
+        });
       for (let i = 0; i < quests.length; i++) {
         const index = Math.floor(Math.random() * quests.length);
         const quest = quests[index];
@@ -185,13 +161,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-7')
-        .to(
-          '.bubble-7',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-7', 1, {
+          opacity: 0,
+        })
         .to('.scene-2', 1, {
           opacity: 1,
         })
@@ -227,13 +199,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-8')
-        .to(
-          '.bubble-8',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-8', 1, {
+          opacity: 0,
+        })
         .to('.img-bubble', 1, {
           opacity: 1,
         })
@@ -244,13 +212,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-9')
-        .to(
-          '.bubble-9',
-          1,
-          {
-            opacity: 0,
-          }
-        )
+        .to('.bubble-9', 1, {
+          opacity: 0,
+        })
         .to('.hill-1', 1, {
           opacity: 1,
         })
@@ -258,13 +222,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-10')
-        .to(
-          '.bubble-10',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-10', 1, {
+          opacity: 0,
+        })
         .to('.img-bubble', 2, {
           transform: 'scale(10)',
         })
@@ -306,13 +266,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-11')
-        .to(
-          '.bubble-11',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-11', 1, {
+          opacity: 0,
+        })
         .to('.chairs', 1, {
           opacity: 1,
         })
@@ -328,13 +284,9 @@ export default {
           opacity: 1,
         })
         .add('bubble-12')
-        .to(
-          '.bubble-12',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-12', 1, {
+          opacity: 0,
+        })
         .to('.tree', 1, {
           opacity: 1,
         })
@@ -342,24 +294,16 @@ export default {
           opacity: 1,
         })
         .add('bubble-13')
-        .to(
-          '.bubble-13',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-13', 1, {
+          opacity: 0,
+        })
         .to('.bubble-14', 1, {
           opacity: 1,
         })
         .add('bubble-14')
-        .to(
-          '.bubble-14',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-14', 1, {
+          opacity: 0,
+        })
         .to('.people', 1, {
           opacity: 1,
         })
@@ -367,15 +311,46 @@ export default {
           opacity: 1,
         })
         .add('bubble-15')
-        .to(
-          '.bubble-15',
-          1,
-          {
-            opacity: 0,
-          },
-        )
+        .to('.bubble-15', 1, {
+          opacity: 0,
+        })
         .to('.hill-2', 1, {
           opacity: 1,
+        })
+        .to(
+          '.hill-3',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to('.bubble-16', 1, {
+          opacity: 1,
+        })
+        .add('bubble-16')
+        .to('.bubble-16', 1, {
+          opacity: 0,
+        })
+        .to('.lamp', 1, {
+          opacity: 1,
+        })
+        .to('.bubble-17', 1, {
+          opacity: 1,
+        })
+        .add('bubble-17')
+        .to('.bubble-17', 1, {
+          opacity: 0,
+        })
+        .to('.expoint', 1, {
+          opacity: 1,
+        })
+        .to('.bubble-18', 1, {
+          opacity: 1,
+        })
+        .add('bubble-18')
+        .to('.bubble-18', 1, {
+          opacity: 0,
         })
         .add('end');
       const controller = new ScrollMagic.Controller({
@@ -410,18 +385,31 @@ export default {
       document.querySelectorAll('.panel')[1].addEventListener('mousewheel', function(e) {
         e.preventDefault();
         if (e.wheelDelta < 0) {
-          scene.tweenTo( scene.getLabelAfter() );
+          scene.tweenTo(scene.getLabelAfter());
+          if (scene.progress() === 1) {
+            TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop * 2 });
+          }
         } else {
-          
-          scene.tweenTo( scene.getLabelBefore() );
+          scene.tweenTo(scene.getLabelBefore());
+          if (scene.progress() === 0) {
+            TweenMax.to(window, 0.5, { scrollTo: 0 });
+          }
         }
         return false;
       });
-
+      document.querySelectorAll('.panel')[2].addEventListener('mousewheel', function(e) {        
+        if (e.wheelDelta > 0) {        
+          if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
+            e.preventDefault();
+            TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
+          }       
+        }
+        return false;
+      });
       var waypoint = new Waypoint({
         element: document.querySelectorAll('.panel')[1],
-        handler: function(direction) {          
-          scene.tweenTo( scene.getLabelAfter() );
+        handler: function(direction) {
+          scene.tweenTo(scene.getLabelAfter());
         },
         offset: '50%',
       });
@@ -441,6 +429,4 @@ main {
     position: relative !important;
   }
 }
-
-
 </style>

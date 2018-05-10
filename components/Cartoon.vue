@@ -52,9 +52,14 @@
         <img class="mountain" src="~/static/fantasy/mountain.png" alt="" srcset="">      
         <img class="chairs" src="~/static/fantasy/chairs.png" alt="" srcset="">
         <img class="pillows" src="~/static/fantasy/pillows.png" alt="" srcset="">
+        <img class="hill-3" src="~/static/fantasy/hill3.png" alt="" srcset="">
         <img class="people" src="~/static/fantasy/people.png" alt="" srcset="">
+        
         <img class="hill-2" src="~/static/fantasy/hill2.png" alt="" srcset="">
+        
         <img class="heroes" src="~/static/fantasy/heroes.png" alt="" srcset="">
+        <img class="lamp" src="~/static/fantasy/lamp.png" alt="" srcset="">
+        <img class="expoint" src="~/static/expoint.png" alt="" srcset="">
         <div class="bubble bubble-8">
            Совсем обессилев, забылся Человек тревожным сном.  
           </div>
@@ -78,6 +83,15 @@
           </div>
           <div class="bubble bubble-15">
             Люди здесь ходили вверх ногами, но не по нужде, а просто по фану. 
+          </div>
+            <div class="bubble bubble-16">
+            По дороге как змей полз бесконечный синий лимузин. 
+          </div>
+           <div class="bubble bubble-17">
+Все здесь было чудно и знакомо. И казалось человеку, что он вернулся в место, где никогда не был. 
+          </div>
+           <div class="bubble bubble-18">
+“Здесь ты найдешь ответы” – сказал Некто и подтолкнул Человека в спину (ведь иногда человека нужно чуть-чуть подтолкнуть). И ступил человек в неизвестную страну и отправился искать ответы. 
           </div>
       </div>
   </section>
@@ -131,9 +145,24 @@ export default {
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
+.expoint {
+    width: 56px;
+    top: 130px;
+    left: calc(50% - 452px);
+}
+.lamp {
+   width: 434px;
+    top: 1000px;
+    left: calc(50% - 482px);
+}
 .cartoon {
   height: 100vh;
   overflow: hidden;
+}
+.hill-3 {
+    width: 900px;
+    top: 450px;
+    left: calc(50% - 682px);
 }
 .hill-2 {
   width: 900px;
