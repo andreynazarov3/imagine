@@ -83,7 +83,6 @@
   </section>
 </template>
 <script>
-
 export default {
   data: function() {
     return {
@@ -96,6 +95,22 @@ export default {
     }
   },
   mounted: function() {
+    const scaleCartoon = function () {
+      let scenes = document.querySelectorAll('.scene');
+      const scaleCoef = window.innerWidth / 1920;
+      scenes.forEach(function(scene) {
+        if (window.innerWidth < 1920) {
+          scene.style.transform = `translateY(-50%) translateX(-50%) scale(${scaleCoef})`;
+          scene.style.height = `${window.innerHeight / scaleCoef}px`;
+          scene.style.width = `${window.innerWidth / scaleCoef}px`;
+        } else {
+          scene.style.transform = '';
+          scene.style.height = ``;
+        }
+      });
+    }
+    window.addEventListener('resize', scaleCartoon);
+    scaleCartoon();
     let quests = document.querySelectorAll('.quest');
 
     for (let i = 0; i < quests.length; i++) {
@@ -115,8 +130,10 @@ export default {
 };
 </script>
 <style lang="scss">
+@import '~/assets/scss/_vars.scss';
 .cartoon {
   height: 100vh;
+  overflow: hidden;
 }
 .hill-2 {
   width: 900px;
@@ -215,7 +232,7 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  top: 300px;
+  top: calc(50% - 150px);
   left: calc(50% - 300px);
 }
 .scene {
@@ -223,9 +240,13 @@ export default {
   height: 100%;
   overflow: hidden;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
   opacity: 0;
+  @media #{$mediumScreen} {
+    transform: translateY(-50%) translateX(-50%) scale(0.75);
+  }
   &-1 {
     opacity: 1;
   }

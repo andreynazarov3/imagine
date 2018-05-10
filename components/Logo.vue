@@ -114,16 +114,10 @@ logoscene
     document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
         e.preventDefault();
         if (e.wheelDelta < 0) {
-          //scroll down
-          console.log('Down');
-          TweenMax.to(window, 1, {scrollTo:document.querySelector('main').offsetTop});
-        } else {
-          //scroll up
-          TweenMax.to(window, 1, {scrollTo:0});
-          console.log('Up');
+          TweenMax.to(window, 0.5, {scrollTo:document.querySelector('main').offsetTop});
+        } else {        
+          TweenMax.to(window, 0.5, {scrollTo:0});          
         }
-
-        //prevent page fom scrolling
         return false;
       });
     document.querySelector('.becomehero').addEventListener('click', function(e) {
@@ -135,9 +129,14 @@ logoscene
 </script>
 <style lang="scss">
 @import "~/assets/scss/_vars.scss";
-.loading {
-  text-align: center;
-  font-size: 30px;
+
+  .loading {
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+
 }
 .top {
   position: relative;
