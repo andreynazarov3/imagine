@@ -58,6 +58,7 @@
         <img class="hill-2" src="~/static/fantasy/hill2.png" alt="" srcset="">
         
         <img class="heroes" src="~/static/fantasy/heroes.png" alt="" srcset="">
+        <img class="hero-2" src="~/static/hero-2.png" alt="" srcset="">
         <img class="lamp" src="~/static/fantasy/lamp.png" alt="" srcset="">
         <img class="expoint" src="~/static/expoint.png" alt="" srcset="">
         <div class="bubble bubble-8">
@@ -208,6 +209,11 @@ export default {
   width: 400px;
   top: calc(50% - 600px);
   left: calc(50% - 100px);
+}
+.hero-2 {
+      width: 200px;
+    top: calc(50% - 520px);
+    left: calc(50% + 110px);
 }
 .hero-think-1 {
   width: 620px;

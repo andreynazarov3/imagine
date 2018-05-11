@@ -205,6 +205,12 @@ export default {
         .to('.img-bubble', 1, {
           opacity: 1,
         })
+        .to('.hero-2', 1, {
+          opacity: 1,
+        })
+        .to('.hero-2', 1, {
+          opacity: 0,
+        }, '+=1')
         .to('.heroes', 1, {
           opacity: 1,
         })
