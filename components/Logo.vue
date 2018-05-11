@@ -121,7 +121,7 @@ logoscene
         return false;
       });
     // touch event listeners
-      const touchLogo = new Hammer(document.querySelectorAll('.panel')[1]);
+      const touchLogo = new Hammer(document.querySelectorAll('.panel')[0]);
       touchLogo.get('pan').set({ direction: Hammer.DIRECTION_ALL });
       touchLogo.on('panup', function(e) {
         e.preventDefault();       
