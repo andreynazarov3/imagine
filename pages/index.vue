@@ -605,7 +605,7 @@ export default {
       });
       const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
       touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-      touchCartoon.on('pandown', function(e) {
+      touchMain.on('pandown', function(e) {
         if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
           e.preventDefault();
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
