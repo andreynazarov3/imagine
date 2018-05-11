@@ -605,21 +605,20 @@ export default {
       });
       const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
       touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-      touchCartoon.on('pandown', function(e) {
-        e.preventDefault();
+      touchCartoon.on('pandown', function(e) {        
         if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
           e.preventDefault();
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
         }
       });
 
-      let waypoint = new Waypoint({
-        element: document.querySelectorAll('.panel')[1],
-        handler: function(direction) {
-          scene.tweenTo(scene.getLabelAfter());
-        },
-        offset: '50%',
-      });
+      // let waypoint = new Waypoint({
+      //   element: document.querySelectorAll('.panel')[1],
+      //   handler: function(direction) {
+      //     scene.tweenTo(scene.getLabelAfter());
+      //   },
+      //   offset: '50%',
+      // });
     });
   },
 };
