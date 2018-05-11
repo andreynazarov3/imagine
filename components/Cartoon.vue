@@ -109,20 +109,20 @@ export default {
     }
   },
   mounted: function() {
-    const scaleCartoon = function () {
+    const scaleCartoon = function() {
       let scenes = document.querySelectorAll('.scene');
-      const scaleCoef = window.innerWidth / 1920;
+      const scaleCoef = window.innerHeight / 1533;
       scenes.forEach(function(scene) {
-        if (window.innerWidth < 1920) {
+        if (scaleCoef) {
           scene.style.transform = `translateY(-50%) translateX(-50%) scale(${scaleCoef})`;
           scene.style.height = `${window.innerHeight / scaleCoef}px`;
-          scene.style.width = `${window.innerWidth / scaleCoef}px`;
+          scene.style.width = `${window.innerWidth  / scaleCoef}px`;
         } else {
           scene.style.transform = '';
           scene.style.height = ``;
         }
       });
-    }
+    };
     window.addEventListener('resize', scaleCartoon);
     scaleCartoon();
     let quests = document.querySelectorAll('.quest');
@@ -146,103 +146,103 @@ export default {
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
 .expoint {
-    width: 56px;
-    top: 130px;
-    left: calc(50% - 452px);
+  width: 56px;
+  top: calc(50% - 720px);
+  left: calc(50% - 452px);
 }
 .lamp {
-   width: 434px;
-    top: 1000px;
-    left: calc(50% - 482px);
+  width: 434px;
+  top: calc(50% + 270px);
+  left: calc(50% - 482px);
 }
 .cartoon {
   height: 100vh;
   overflow: hidden;
 }
 .hill-3 {
-    width: 900px;
-    top: 450px;
-    left: calc(50% - 682px);
+  width: 900px;
+  top: calc(50% - 370px);
+  left: calc(50% - 682px);
 }
 .hill-2 {
   width: 900px;
-  top: 800px;
+  top: calc(50% - 30px);
   left: calc(50% - 400px);
 }
 .people {
   width: 490px;
-  top: 400px;
+  top: calc(50% - 450px);
   left: calc(50% - 700px);
 }
 .tree {
   width: 1000px;
-  top: -334px;
+  top: calc(50% - 1100px);
   left: calc(50% - 150px);
 }
 .chairs {
   width: 400px;
-  top: 0;
+      top: calc(50% - 750px);
   left: calc(50% - 200px);
 }
 .pillows {
   width: 620px;
-  top: 250px;
+  top: calc(50% - 550px);
   left: calc(50% - 250px);
 }
 .mountain {
-  width: 855px;
-  top: 150px;
-  left: calc(50% - 800px);
+      width: 855px;
+    top: calc(50% - 700px);
+    left: calc(50% - 800px);
 }
 .hill-1 {
-  width: 381px;
-  top: 224px;
+  width: 581px;
+  top: calc(50% - 410px);
   left: calc(50% - 203px);
 }
 .img-bubble {
-  width: 621px;
-  top: 94px;
-  left: calc(50% - 303px);
+  width: 921px;
+  top: calc(50% - 590px);
+  left: calc(50% - 353px);
 }
 .heroes {
-  width: 250px;
-  top: 100px;
+  width: 400px;
+  top: calc(50% - 600px);
   left: calc(50% - 100px);
 }
 .hero-think-1 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .hero-think-2 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .hero-think-3 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .light-1 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .light-2 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .light-3 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .light-4 {
-  width: 420px;
-  top: 200px;
-  left: calc(50% - 500px);
+  width: 620px;
+  top: calc(50% - 400px);
+  left: calc(50% - 600px);
 }
 .quest {
   width: 100px;
@@ -250,6 +250,7 @@ export default {
   opacity: 0;
 }
 .bubble {
+  // display: none !important;
   padding: 0px 80px;
   opacity: 0;
   position: absolute;
@@ -295,47 +296,47 @@ export default {
     }
     &-background {
       width: 1194px;
-      top: 0;
+      top: calc(50% - 800px);
       left: calc(50% - 400px);
     }
     &-hero {
-      width: 755px;
-      top: 550px;
-      left: calc(50% - 700px);
+      width: 555px;
+      top: calc(50% - 200px);
+      left: calc(50% - 600px);
     }
     &-bridge {
       width: 1100px;
-      top: 900px;
+      top: calc(50% + 100px);
       left: calc(50% - 700px);
     }
     &-house-1 {
       // display: none;
       width: 500px;
-      top: 600px;
-      left: calc(50% + 150px);
+      top: calc(50% - 150px);
+      left: calc(50% + 90px);
     }
     &-house-2 {
       // display: none;
       width: 450px;
-      top: 400px;
+      top: calc(50% - 400px);
       left: calc(50% - 100px);
     }
     &-house-3 {
       // display: none;
       width: 550px;
-      top: 800px;
+      top: calc(50%);
       left: calc(50% - 500px);
     }
     &-lighters {
       // display: none;
-      width: 650px;
-      top: 800px;
-      left: calc(50%);
+      width: 850px;
+      top: calc(50%);
+      left: calc(50% - 100px);
     }
     &-moscow-city {
       // display: none;
       width: 650px;
-      top: 120px;
+      top: calc(50% - 600px);
       left: calc(50% - 650px);
     }
   }

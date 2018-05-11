@@ -233,7 +233,7 @@ export default {
           2,
           {
             width: '800px',
-            top: '600px',
+            top: 'calc(50% - 199px)',
           },
           '-=2',
         )
@@ -242,7 +242,7 @@ export default {
           2,
           {
             width: '1281px',
-            top: '990px',
+            top: 'calc(50% + 150px);',
             left: 'calc(50% - 403px)',
           },
           '-=2',
@@ -421,6 +421,7 @@ export default {
 <style lang="scss">
 main {
   display: none;
+  overflow: hidden;
 }
 .panel {
   background: white;
