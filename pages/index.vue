@@ -600,12 +600,12 @@ export default {
         e.preventDefault();
         scene.tweenTo(scene.getLabelBefore());
         if (scene.progress() === 0) {
-          TweenMax.to(window, 0.5, { scrollTo: 0 });
+          TweenMax.to(window, 0.5, { scrollTo: { y: 0, autoKill: false } });
         }
       });
       const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
       touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-      touchCartoon.on('pandown', function(e) {        
+      touchCartoon.on('pandown', function(e) {
         if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
           e.preventDefault();
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
