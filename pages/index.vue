@@ -242,7 +242,7 @@ export default {
           2,
           {
             width: '1281px',
-            top: 'calc(50% + 150px);',
+            top: 'calc(50% + 150px)',
             left: 'calc(50% - 403px)',
           },
           '-=2',
