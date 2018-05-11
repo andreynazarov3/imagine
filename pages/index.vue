@@ -611,7 +611,37 @@ export default {
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
         }
       });
-
+      // logo scene
+    document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
+        e.preventDefault();
+        if (e.wheelDelta < 0) {
+          TweenMax.to(window, 0.5, {scrollTo:document.querySelector('main').offsetTop});      
+          if (scene.progress() === 0) {
+            scene.tweenTo(scene.getLabelAfter());
+          }
+        } else {        
+          TweenMax.to(window, 0.5, {scrollTo:0});          
+        }
+        return false;
+      });
+    // touch event listeners
+      const touchLogo = new Hammer(document.querySelectorAll('.panel')[0]);
+      touchLogo.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+      touchLogo.on('panup', function(e) {
+        e.preventDefault();       
+        TweenMax.to(window, 0.5, {scrollTo:document.querySelector('main').offsetTop});
+        if (scene.progress() === 0) {
+            scene.tweenTo(scene.getLabelAfter());
+          }
+      });
+      touchLogo.on('pandown', function(e) {
+        e.preventDefault();
+        TweenMax.to(window, 0.5, {scrollTo:0});     
+      });
+    document.querySelector('.becomehero').addEventListener('click', function(e) {
+      e.preventDefault();
+      TweenMax.to(window, 1, { scrollTo: document.querySelector('main').offsetTop * 2 });
+    });
       // let waypoint = new Waypoint({
       //   element: document.querySelectorAll('.panel')[1],
       //   handler: function(direction) {
