@@ -95,32 +95,108 @@ export default {
         })
         .to('.city', 1, {
           opacity: 0.5,
-        });
-      let quests = [].slice.call(document.querySelectorAll('.quest'));
-      for (let i = 0; i < 20; i++) {
-        const index = Math.floor(Math.random() * quests.length);
-        const quest = quests[index];
-        scene.to(quest, 0.1, {
-          opacity: 1,
-        });
-        quests.splice(index, 1);
-      }
-      scene
+        })
+        .to('.quests-1', 2, {
+          transform: 'translateY(1200px)',
+        })
+        .to(
+          '.quests-2',
+          1.7,
+          {
+            transform: 'translateY(1200px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-3',
+          1.5,
+          {
+            transform: 'translateY(1200px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-4',
+          1.2,
+          {
+            transform: 'translateY(1200px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-5',
+          1.1,
+          {
+            transform: 'translateY(1200px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-6',
+          1,
+          {
+            transform: 'translateY(1200px)',
+          },
+          '-=2',
+        )
         .to('.bubble-4', 1, {
           opacity: 1,
         })
         .add('bubble-4')
         .to('.bubble-4', 1, {
           opacity: 0,
-        });
-      for (let i = 0; i < 50; i++) {
-        const index = Math.floor(Math.random() * quests.length);
-        const quest = quests[index];
-        scene.to(quest, 0.05, {
-          opacity: 1,
-        });
-        quests.splice(index, 1);
-      }
+        })
+        .to('.scene-img-hero', 1, {
+          transform: 'scale(0.9)',
+        })
+        .to(
+          '.quests-1',
+          2,
+          {
+            transform: 'translateY(900px)',
+          },
+          '-=1',
+        )
+        .to(
+          '.quests-2',
+          1.7,
+          {
+            transform: 'translateY(900px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-3',
+          1.5,
+          {
+            transform: 'translateY(900px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-4',
+          1.2,
+          {
+            transform: 'translateY(900px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-5',
+          1.1,
+          {
+            transform: 'translateY(900px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-6',
+          1,
+          {
+            transform: 'translateY(900px)',
+          },
+          '-=2',
+        );
       scene
         .to('.bubble-5', 1, {
           opacity: 1,
@@ -131,15 +207,58 @@ export default {
         })
         .to('.city', 1, {
           opacity: 0,
-        });
-      for (let i = 0; i < 200; i++) {
-        const index = Math.floor(Math.random() * quests.length);
-        const quest = quests[index];
-        scene.to(quest, 0.006, {
-          opacity: 1,
-        });
-        quests.splice(index, 1);
-      }
+        })
+        .to('.scene-img-hero', 1, {
+          transform: 'scale(0.7)',
+        })
+        .to(
+          '.quests-1',
+          2,
+          {
+            transform: 'translateY(500px)',
+          },
+          '-=1',
+        )
+        .to(
+          '.quests-2',
+          1.7,
+          {
+            transform: 'translateY(500px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-3',
+          1.5,
+          {
+            transform: 'translateY(500px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-4',
+          1.2,
+          {
+            transform: 'translateY(500px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-5',
+          1.1,
+          {
+            transform: 'translateY(500px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-6',
+          1,
+          {
+            transform: 'translateY(500px)',
+          },
+          '-=2',
+        );
       scene
         .to('.bubble-6', 1, {
           opacity: 1,
@@ -147,15 +266,59 @@ export default {
         .add('bubble-6')
         .to('.bubble-6', 1, {
           opacity: 0,
-        });
-      for (let i = 0; i < quests.length; i++) {
-        const index = Math.floor(Math.random() * quests.length);
-        const quest = quests[index];
-        scene.to(quest, 0.006, {
-          opacity: 1,
-        });
-        quests.splice(index, 1);
-      }
+        })
+        .to('.scene-img-hero', 1, {
+          transform: 'scale(0.3)',
+          opacity: 0,
+        })
+        .to(
+          '.quests-1',
+          2,
+          {
+            transform: 'translateY(0px)',
+          },
+          '-=1',
+        )
+        .to(
+          '.quests-2',
+          1.7,
+          {
+            transform: 'translateY(0px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-3',
+          1.5,
+          {
+            transform: 'translateY(0px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-4',
+          1.2,
+          {
+            transform: 'translateY(0px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-5',
+          1.1,
+          {
+            transform: 'translateY(0px)',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-6',
+          1,
+          {
+            transform: 'translateY(0px)',
+          },
+          '-=2',
+        );
       scene
         .to('.bubble-7', 1, {
           opacity: 1,
@@ -208,12 +371,22 @@ export default {
         .to('.hero-2', 1, {
           opacity: 1,
         })
-        .to('.hero-2', 1, {
-          opacity: 0,
-        }, '+=1')
-        .to('.heroes', 1, {
-          opacity: 1,
-        })
+        .to(
+          '.hero-2',
+          1,
+          {
+            opacity: 0,
+          },
+          '+=1',
+        )
+        .to(
+          '.heroes',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
         .to('.bubble-9', 1, {
           opacity: 1,
         })
@@ -387,7 +560,7 @@ export default {
       })
         .setPin(document.querySelectorAll('.panel')[2])
         .addTo(controller);
-
+      // mouse event listeners
       document.querySelectorAll('.panel')[1].addEventListener('mousewheel', function(e) {
         e.preventDefault();
         if (e.wheelDelta < 0) {
@@ -403,16 +576,44 @@ export default {
         }
         return false;
       });
-      document.querySelectorAll('.panel')[2].addEventListener('mousewheel', function(e) {        
-        if (e.wheelDelta > 0) {        
+      document.querySelectorAll('.panel')[2].addEventListener('mousewheel', function(e) {
+        if (e.wheelDelta > 0) {
           if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
             e.preventDefault();
             TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
-          }       
+          }
         }
         return false;
       });
-      var waypoint = new Waypoint({
+
+      // touch event listeners
+      const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
+      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+      touchCartoon.on('pandown', function(e) {
+        e.preventDefault();
+        scene.tweenTo(scene.getLabelAfter());
+        if (scene.progress() === 1) {
+          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop * 2 });
+        }
+      });
+      touchCartoon.on('panup', function(e) {
+        e.preventDefault();
+        scene.tweenTo(scene.getLabelBefore());
+        if (scene.progress() === 0) {
+          TweenMax.to(window, 0.5, { scrollTo: 0 });
+        }
+      });
+      const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
+      touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+      touchCartoon.on('panup', function(e) {
+        e.preventDefault();
+        if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
+          e.preventDefault();
+          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
+        }
+      });
+
+      let waypoint = new Waypoint({
         element: document.querySelectorAll('.panel')[1],
         handler: function(direction) {
           scene.tweenTo(scene.getLabelAfter());

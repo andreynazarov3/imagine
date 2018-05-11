@@ -9,12 +9,25 @@
           <img class="city scene-img-bridge" src="~/static/bridge.png" alt="">
           <img class="city scene-img-lighters" src="~/static/lighters.png" alt="">
           <img class="scene-img-hero" src="~/static/hero.png" alt="">
-          <img :key="`q1-${index}`" v-for="(quest, index) in quests" class="quest quest-1" alt="" srcset="" src="~/static/ques1.png">
-          <img :key="`q2-${index}`" v-for="(quest, index) in quests" class="quest quest-2" alt="" srcset="" src="~/static/ques2.png">
-          <img :key="`q3-${index}`" v-for="(quest, index) in quests" class="quest quest-3" alt="" srcset="" src="~/static/ques3.png">
-          <img :key="`q4-${index}`" v-for="(quest, index) in quests" class="quest quest-4" alt="" srcset="" src="~/static/ques4.png">
-          <img :key="`q5-${index}`" v-for="(quest, index) in quests" class="quest quest-5" alt="" srcset="" src="~/static/ques5.png">
-          <img :key="`q6-${index}`" v-for="(quest, index) in quests" class="quest quest-6" alt="" srcset="" src="~/static/ques6.png">
+          <div class="quests quests-1">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests" class="quest quest-1 quest-size-1" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+          <div class="quests quests-2">
+             <img :key="`q2-${index}`" v-for="(quest, index) in quests" class="quest quest-2 quest-size-2" alt="" srcset="" src="~/static/ques2.png">
+          </div>
+          <div class="quests quests-3">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests" class="quest quest-3 quest-size-3" alt="" srcset="" src="~/static/ques3.png">
+          </div>
+          <div class="quests quests-4">
+            <img :key="`q4-${index}`" v-for="(quest, index) in quests" class="quest quest-4 quest-size-4" alt="" srcset="" src="~/static/ques4.png">
+          </div>
+          <div class="quests quests-5">
+              <img :key="`q5-${index}`" v-for="(quest, index) in quests" class="quest quest-5 quest-size-5" alt="" srcset="" src="~/static/ques5.png">
+          </div>
+          <div class="quests quests-6">
+             <img :key="`q6-${index}`" v-for="(quest, index) in quests" class="quest quest-6 quest-size-6" alt="" srcset="" src="~/static/ques6.png">
+          </div>        
+
           <div class="bubble bubble-1">
             В одном большом и всем знакомом городе жил Человек. 
           </div>
@@ -58,7 +71,7 @@
         <img class="hill-2" src="~/static/fantasy/hill2.png" alt="" srcset="">
         
         <img class="heroes" src="~/static/fantasy/heroes.png" alt="" srcset="">
-        <img class="hero-2" src="~/static/hero-2.png" alt="" srcset="">
+        <img class="hero-2" src="~/static/kid_handless.png" alt="" srcset="">
         <img class="lamp" src="~/static/fantasy/lamp.png" alt="" srcset="">
         <img class="expoint" src="~/static/expoint.png" alt="" srcset="">
         <div class="bubble bubble-8">
@@ -129,17 +142,23 @@ export default {
     let quests = document.querySelectorAll('.quest');
 
     for (let i = 0; i < quests.length; i++) {
-      const leftDeviation = Math.floor(Math.random() * 1400);
+      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizeScale = 0.6;
+      const height = sizes[Math.floor(Math.random()*sizes.length)];
+      const width = height * sizeScale;
+      const leftDeviation = Math.floor(Math.random() * 1300);
       const topDeviation = Math.floor(Math.random() * 1000);
-      const width = 100 + Math.floor(Math.random() * 200);
+      // const width = 100 + Math.floor(Math.random() * 200);
       const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
       const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation}px)`;
-      const top = `calc(30% ${topPlusOrMinus} ${topDeviation}px)`;
+      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
+      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
       quests[i].style.left = left;
       quests[i].style.top = top;
+      quests[i].style.height = `${height}px`;
       quests[i].style.width = `${width}px`;
-      // quests[i].style.opacity = `1`;
+      quests[i].style.opacity = `1`;
+      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
     }
   },
 };
@@ -211,9 +230,9 @@ export default {
   left: calc(50% - 100px);
 }
 .hero-2 {
-      width: 200px;
-    top: calc(50% - 520px);
-    left: calc(50% + 110px);
+    width: 80px;
+    top: calc(50% - 310px);
+    left: calc(50% + -15px);
 }
 .hero-think-1 {
   width: 620px;
@@ -251,9 +270,16 @@ export default {
   left: calc(50% - 600px);
 }
 .quest {
-  width: 100px;
+  // width: 100px;
   position: absolute;
   opacity: 0;
+  
+}
+.quests {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translateY(1750px);
 }
 .bubble {
   // display: none !important;
@@ -309,6 +335,7 @@ export default {
       width: 555px;
       top: calc(50% - 200px);
       left: calc(50% - 600px);
+      transform-origin: bottom;
     }
     &-bridge {
       width: 1100px;
