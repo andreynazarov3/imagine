@@ -583,7 +583,7 @@ export default {
             TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
           }
         }
-        return false;
+         
       });
 
       // touch event listeners
@@ -610,6 +610,9 @@ export default {
           e.preventDefault();
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
         }
+      });
+      touchMain.on('panup', function(e) {
+          console.log('pan up')
       });
       // logo scene
     document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
