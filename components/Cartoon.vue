@@ -124,13 +124,19 @@ export default {
   },
   mounted: function() {
     const scaleCartoon = function() {
+      let windowHeight;
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        windowHeight = window.screen.height;
+      } else {
+        windowHeight = window.innerHeight;
+      }
       let scenes = document.querySelectorAll('.scene');
-      const scaleCoef = window.innerHeight / 1533;
-      scenes.forEach(function(scene) {
+      const scaleCoef = windowHeight / 1533;
+      scenes.forEach(function(scene) {        
         if (scaleCoef) {
           scene.style.transform = `translateY(-50%) translateX(-50%) scale(${scaleCoef})`;
-          scene.style.height = `${window.innerHeight / scaleCoef}px`;
-          scene.style.width = `${window.innerWidth  / scaleCoef}px`;
+          scene.style.height = `${windowHeight / scaleCoef}px`;
+          scene.style.width = `${windowHeight  / scaleCoef}px`;
         } else {
           scene.style.transform = '';
           scene.style.height = ``;
