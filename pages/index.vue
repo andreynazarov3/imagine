@@ -43,7 +43,7 @@ export default {
           '.becomehero',
           1,
           {
-            opacity: 1,
+            opacity: 0.5,
           },
           '-=2',
         );
