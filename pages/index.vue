@@ -35,11 +35,18 @@ export default {
       loading.style.display = 'none';
       main.style.display = 'block';
       const tbscene = new TimelineMax();
-      tbscene.to('.top-background', 2, {
-        opacity: 1,
-      }).to('.becomehero', 1, {
-        opacity: 1,
-      }, '-=2');
+      tbscene
+        .to('.top-background', 2, {
+          opacity: 1,
+        })
+        .to(
+          '.becomehero',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=2',
+        );
       scene = new TimelineMax({
         paused: true,
       });
@@ -582,21 +589,27 @@ export default {
         if (e.wheelDelta > 0) {
           if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 20) {
             e.preventDefault();
+            if (scene.progress() === 0) {
+              scene.tweenTo(scene.getLabelAfter());
+            }
             TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
           }
-        }         
+        }
       });
       document.querySelectorAll('.panel')[2].addEventListener('scroll', function(e) {
         if (e.wheelDelta > 0) {
           if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 20) {
             e.preventDefault();
+            if (scene.progress() === 0) {
+              scene.tweenTo(scene.getLabelAfter());
+            }
             TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
           }
-        }         
+        }
       });
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
-      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL  });
+      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
       touchCartoon.on('panup', function(e) {
         e.preventDefault();
         scene.tweenTo(scene.getLabelAfter());
@@ -612,43 +625,37 @@ export default {
         }
       });
 
-
-      
-
-
       // logo scene
-    document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
+      document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
         e.preventDefault();
         if (e.wheelDelta < 0) {
-          TweenMax.to(window, 0.5, {scrollTo:document.querySelector('main').offsetTop});      
+          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
           if (scene.progress() === 0) {
             scene.tweenTo(scene.getLabelAfter());
           }
-        } else {        
-          TweenMax.to(window, 0.5, {scrollTo:0});          
+        } else {
+          TweenMax.to(window, 0.5, { scrollTo: 0 });
         }
         return false;
       });
-    // touch event listeners
+      // touch event listeners
       const touchLogo = new Hammer(document.querySelectorAll('.panel')[0]);
-      touchLogo.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL  });
+      touchLogo.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
       touchLogo.on('panup', function(e) {
-        e.preventDefault();       
-        TweenMax.to(window, 0.5, {scrollTo:document.querySelector('main').offsetTop});
+        e.preventDefault();
+        TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
         if (scene.progress() === 0) {
-            scene.tweenTo(scene.getLabelAfter());
-          }
+          scene.tweenTo(scene.getLabelAfter());
+        }
       });
       touchLogo.on('pandown', function(e) {
         e.preventDefault();
-        TweenMax.to(window, 0.5, {scrollTo:0});     
+        TweenMax.to(window, 0.5, { scrollTo: 0 });
       });
-    document.querySelector('.becomehero').addEventListener('click', function(e) {
-      e.preventDefault();
-      TweenMax.to(window, 1, { scrollTo: document.querySelector('main').offsetTop * 2 });
-    });
-
-
+      document.querySelector('.becomehero').addEventListener('click', function(e) {
+        e.preventDefault();
+        TweenMax.to(window, 1, { scrollTo: document.querySelector('main').offsetTop * 2 });
+      });
 
       // let waypoint = new Waypoint({
       //   element: document.querySelectorAll('.panel')[1],
