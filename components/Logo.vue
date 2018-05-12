@@ -150,6 +150,7 @@ logoscene
   max-width: 100%;
 }
 .ideas {
+  opacity: 0;
   position: absolute;
   bottom: calc(50% - 173px);
   right: 0;

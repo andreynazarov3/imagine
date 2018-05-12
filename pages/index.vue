@@ -40,6 +40,14 @@ export default {
           opacity: 1,
         })
         .to(
+          '.ideas',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=2',
+        )
+        .to(
           '.becomehero',
           1,
           {
