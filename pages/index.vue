@@ -605,17 +605,17 @@ export default {
       });
 
 
-      // const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
-      // touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL, touchAction: "auto" });
-      // touchMain.on('pandown', function(e) {
-      //   if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
-      //     e.preventDefault();
-      //     TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
-      //   }
-      // });
-      // touchMain.on('panup', function(e) {
-      //     console.log('pan up')
-      // });
+      const touchMain = new Hammer(document.querySelectorAll('.panel')[2], { touchAction: "auto" });
+      touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL});
+      touchMain.on('pandown', function(e) {
+        if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
+          e.preventDefault();
+          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
+        }
+      });
+      touchMain.on('panup', function(e) {
+          console.log('pan up')
+      });
 
 
       // logo scene
