@@ -607,7 +607,7 @@ export default {
       });
 
 
-      const touchMain = new Hammer(document.querySelectorAll('.panel')[2], { touchAction: "auto" });
+      const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
       touchMain.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
       touchMain.on('pandown', function(e) {
         if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
