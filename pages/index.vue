@@ -547,28 +547,28 @@ export default {
         },
       });
 
-      new ScrollMagic.Scene({
-        triggerElement: document.querySelectorAll('.panel')[0],
-        duration: '100%',
-      })
-        .setTween(document.querySelectorAll('.panel')[0], { scale: 0.7 })
-        .setPin(document.querySelectorAll('.panel')[0], { pushFollowers: false })
-        .addTo(controller);
+      // new ScrollMagic.Scene({
+      //   triggerElement: document.querySelectorAll('.panel')[0],
+      //   duration: '100%',
+      // })
+      //   .setTween(document.querySelectorAll('.panel')[0], { scale: 0.7 })
+      //   .setPin(document.querySelectorAll('.panel')[0], { pushFollowers: false })
+      //   .addTo(controller);
 
-      new ScrollMagic.Scene({
-        triggerElement: document.querySelectorAll('.panel')[1],
-        duration: '100%',
-      })
+      // new ScrollMagic.Scene({
+      //   triggerElement: document.querySelectorAll('.panel')[1],
+      //   duration: '100%',
+      // })
 
-        .setTween(document.querySelectorAll('.panel')[1], { scale: 0.7 })
-        .setPin(document.querySelectorAll('.panel')[1], { pushFollowers: false })
-        .addTo(controller);
+      //   .setTween(document.querySelectorAll('.panel')[1], { scale: 0.7 })
+      //   .setPin(document.querySelectorAll('.panel')[1], { pushFollowers: false })
+      //   .addTo(controller);
 
-      new ScrollMagic.Scene({
-        triggerElement: document.querySelectorAll('.panel')[2],
-      })
-        .setPin(document.querySelectorAll('.panel')[2])
-        .addTo(controller);
+      // new ScrollMagic.Scene({
+      //   triggerElement: document.querySelectorAll('.panel')[2],
+      // })
+      //   .setPin(document.querySelectorAll('.panel')[2])
+      //   .addTo(controller);
       // mouse event listeners
       document.querySelectorAll('.panel')[1].addEventListener('mousewheel', function(e) {
         e.preventDefault();
