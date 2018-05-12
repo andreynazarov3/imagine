@@ -299,6 +299,7 @@ export default {
   padding: 0px 80px;
   opacity: 0;
   position: absolute;
+  font-family: $basicFont;
   font-size: 30px;
   background: url('~/static/bubble-white-1.png');
   background-size: 100%;
