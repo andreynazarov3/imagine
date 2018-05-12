@@ -596,23 +596,7 @@ export default {
           }
         }
       });
-      let mainlastScrollTop = 0;
-      document.querySelectorAll('.panel')[2].addEventListener('scroll', function(e) {
-        st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop) {
-          // downscroll code
-        } else {
-          if (window.scrollY <= document.querySelector('main').offsetTop * 2) {
-            e.preventDefault();
-            if (scene.progress() === 0) {
-              scene.tweenTo(scene.getLabelAfter());
-            }
-            TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
-          }
-          // upscroll code
-        }
-        lastScrollTop = st;
-      });
+     
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
       touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
