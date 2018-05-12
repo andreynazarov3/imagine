@@ -37,7 +37,9 @@ export default {
       const tbscene = new TimelineMax();
       tbscene.to('.top-background', 2, {
         opacity: 1,
-      });
+      }).to('.becomehero', 1, {
+        opacity: 1,
+      }, '-=2');
       scene = new TimelineMax({
         paused: true,
       });
