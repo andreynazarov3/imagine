@@ -143,7 +143,7 @@ export default {
         if (scaleCoef) {
           scene.style.transform = `translateY(-50%) translateX(-50%) scale(${scaleCoef})`;
           scene.style.height = `${windowHeight / scaleCoef}px`;
-          scene.style.width = `${windowHeight / scaleCoef}px`;
+          scene.style.width = `${window.innerWidth / scaleCoef}px`;
         } else {
           scene.style.transform = '';
           scene.style.height = ``;
