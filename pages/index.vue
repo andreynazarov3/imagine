@@ -578,7 +578,7 @@ export default {
       });
       document.querySelectorAll('.panel')[2].addEventListener('mousewheel', function(e) {
         if (e.wheelDelta > 0) {
-          if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
+          if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 20) {
             e.preventDefault();
             TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
           }
@@ -603,17 +603,21 @@ export default {
           TweenMax.to(window, 0.5, { scrollTo: { y: 0, autoKill: false } });
         }
       });
-      const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
-      touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL, touchAction: "auto" });
-      touchMain.on('pandown', function(e) {
-        if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
-          e.preventDefault();
-          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
-        }
-      });
-      touchMain.on('panup', function(e) {
-          console.log('pan up')
-      });
+
+
+      // const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
+      // touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL, touchAction: "auto" });
+      // touchMain.on('pandown', function(e) {
+      //   if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
+      //     e.preventDefault();
+      //     TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
+      //   }
+      // });
+      // touchMain.on('panup', function(e) {
+      //     console.log('pan up')
+      // });
+
+
       // logo scene
     document.querySelectorAll('.panel')[0].addEventListener('mousewheel', function(e) {
         e.preventDefault();
@@ -645,6 +649,9 @@ export default {
       e.preventDefault();
       TweenMax.to(window, 1, { scrollTo: document.querySelector('main').offsetTop * 2 });
     });
+
+
+
       // let waypoint = new Waypoint({
       //   element: document.querySelectorAll('.panel')[1],
       //   handler: function(direction) {
