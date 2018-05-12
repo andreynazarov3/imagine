@@ -191,6 +191,7 @@ export default {
 .cartoon {
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 .hill-3 {
   width: 900px;

@@ -154,7 +154,7 @@ logoscene
   background-position: top;
   opacity: 0.4;
   content: '';
-  z-index: -1;
+  z-index: 0;
   opacity: 0;
 }
 
