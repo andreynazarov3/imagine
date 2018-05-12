@@ -610,15 +610,16 @@ export default {
 
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
-      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-      touchCartoon.on('panright', function(e) {
+      
+      touchCartoon.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+      touchCartoon.on('swiperight', function(e) {
         e.preventDefault();
         scene.tweenTo(scene.getLabelAfter());
         if (scene.progress() === 1) {
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop * 2 });
         }
       });
-      touchCartoon.on('panleft', function(e) {
+      touchCartoon.on('swipeleft', function(e) {
         e.preventDefault();
         scene.tweenTo(scene.getLabelBefore());
         if (scene.progress() === 0) {
