@@ -584,10 +584,16 @@ export default {
             e.preventDefault();
             TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
           }
-        }
-         
+        }         
       });
-
+      document.querySelectorAll('.panel')[2].addEventListener('scroll', function(e) {
+        if (e.wheelDelta > 0) {
+          if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 20) {
+            e.preventDefault();
+            TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
+          }
+        }         
+      });
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
       touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL  });
@@ -607,17 +613,7 @@ export default {
       });
 
 
-      const touchMain = new Hammer(document.querySelectorAll('.panel')[2]);
-      touchMain.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
-      touchMain.on('pandown', function(e) {
-        if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
-          e.preventDefault();
-          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop });
-        }
-      });
-      touchMain.on('panup', function(e) {
-          console.log('pan up')
-      });
+      
 
 
       // logo scene
