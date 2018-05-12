@@ -110,21 +110,20 @@ logoscene
   <\/script>`,
     };
   },
-  mounted: function() {
-    
-  },
+  mounted: function() {},
 };
 </script>
 <style lang="scss">
-@import "~/assets/scss/_vars.scss";
-
-  .loading {
-    text-align: center;
-    font-size: 16px;
-    position: absolute;
-    width: 100%;
-    bottom: 40px;
-
+@import '~/assets/scss/_vars.scss';
+.becomehero {
+  opacity: 0;
+}
+.loading {
+  text-align: center;
+  font-size: 16px;
+  position: absolute;
+  width: 100%;
+  bottom: 40px;
 }
 .top {
   position: relative;
@@ -132,7 +131,7 @@ logoscene
   height: 100vh;
 }
 .logo {
-  max-width: 100%;   
+  max-width: 100%;
   width: 852px;
   margin: 0 auto;
   display: block;
@@ -170,6 +169,11 @@ header {
   // position: absolute;
   // width: 100%;
   z-index: 1;
+  .wrapper {
+    @media #{$mediumScreen} {
+      text-align: center;
+    }
+  }
   a {
     opacity: 0.5;
     font-family: GaramondPremrPro-Capt, sans-serif;
