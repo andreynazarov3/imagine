@@ -588,7 +588,7 @@ export default {
 
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
-      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL  });
       touchCartoon.on('panup', function(e) {
         e.preventDefault();
         scene.tweenTo(scene.getLabelAfter());
@@ -606,7 +606,7 @@ export default {
 
 
       const touchMain = new Hammer(document.querySelectorAll('.panel')[2], { touchAction: "auto" });
-      touchMain.get('pan').set({ direction: Hammer.DIRECTION_ALL});
+      touchMain.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
       touchMain.on('pandown', function(e) {
         if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 100) {
           e.preventDefault();
@@ -633,7 +633,7 @@ export default {
       });
     // touch event listeners
       const touchLogo = new Hammer(document.querySelectorAll('.panel')[0]);
-      touchLogo.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+      touchLogo.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL  });
       touchLogo.on('panup', function(e) {
         e.preventDefault();       
         TweenMax.to(window, 0.5, {scrollTo:document.querySelector('main').offsetTop});
