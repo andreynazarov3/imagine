@@ -587,7 +587,7 @@ export default {
       });
       document.querySelectorAll('.panel')[2].addEventListener('mousewheel', function(e) {
         if (e.wheelDelta > 0) {
-          if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 20) {
+          if (window.scrollY <= document.querySelector('main').offsetTop * 2) {
             e.preventDefault();
             if (scene.progress() === 0) {
               scene.tweenTo(scene.getLabelAfter());
@@ -602,7 +602,7 @@ export default {
         if (st > lastScrollTop) {
           // downscroll code
         } else {
-          if (window.scrollY <= document.querySelector('main').offsetTop * 2 + 20) {
+          if (window.scrollY <= document.querySelector('main').offsetTop * 2) {
             e.preventDefault();
             if (scene.progress() === 0) {
               scene.tweenTo(scene.getLabelAfter());
@@ -615,15 +615,15 @@ export default {
       });
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
-      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
-      touchCartoon.on('panup', function(e) {
+      touchCartoon.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+      touchCartoon.on('panright', function(e) {
         e.preventDefault();
         scene.tweenTo(scene.getLabelAfter());
         if (scene.progress() === 1) {
           TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop * 2 });
         }
       });
-      touchCartoon.on('pandown', function(e) {
+      touchCartoon.on('panleft', function(e) {
         e.preventDefault();
         scene.tweenTo(scene.getLabelBefore());
         if (scene.progress() === 0) {

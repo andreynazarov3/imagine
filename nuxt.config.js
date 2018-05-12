@@ -25,6 +25,9 @@ module.exports = {
       rel: 'icon',
       type: 'image/x-icon',
       href: '/favicon.ico'
+    }, {
+      href: "https://fonts.googleapis.com/css?family=Alegreya:400,500&amp;subset=cyrillic",
+      rel: "stylesheet"
     }],
     script: [{
         src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'
@@ -52,7 +55,7 @@ module.exports = {
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'
       }
-      
+
     ]
   },
   /*

@@ -1,5 +1,9 @@
+$basicFont: 'Alegreya', serif;
+$mediumScreen: 'screen and (max-width: 1440px)';
+$smallScreen: 'screen and (max-width: 480px)';
+
 %p {
-  font-family: Alegreya, sans-serif;
+  font-family: $basicFont;
   font-size: 16px;
   font-weight: 500;
   font-style: normal;
@@ -9,4 +13,4 @@
   color: #000000;
 }
 
-$mediumScreen: 'screen and (max-width: 1440px)';
+

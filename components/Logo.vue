@@ -6,6 +6,8 @@
         <a class="becomehero" href="#">Стать героем</a>
     </div>
   </header>
+  <div class="logo-wrapper">
+  <img class="ideas" src="~/static/100ideas.png" alt="" srcset="">
   <svg class="logo" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 849.79 708.227">
   <defs>
     <clipPath id="clip-path" transform="translate(53.551 210.312)">
@@ -83,6 +85,7 @@
     </g>
   </g>
 </svg>
+</div>
 <div class="logoscript" v-html="logoscript">
 </div>
 <div class="loading">Идет загрузка...</div> 
@@ -130,7 +133,7 @@ logoscene
   overflow: hidden;
   height: 100vh;
 }
-.logo {
+.logo-wrapper {
   max-width: 100%;
   width: 852px;
   margin: 0 auto;
@@ -141,6 +144,24 @@ logoscene
   transform: translateY(-50%) translateX(-50%);
   @media #{$mediumScreen} {
     width: 400px;
+  }
+}
+.logo {
+  max-width: 100%;
+}
+.ideas {
+  position: absolute;
+  bottom: calc(50% - 173px);
+  right: 0;
+  width: 294px;
+  @media #{$mediumScreen} {
+    bottom: calc(50% - 85px);    
+    width: 144px;
+  }
+  @media #{$smallScreen} {
+    bottom: calc(21%);
+    right: 10px;
+    width: 40%;
   }
 }
 .top-background {
@@ -170,7 +191,7 @@ header {
   // width: 100%;
   z-index: 1;
   .wrapper {
-    @media #{$mediumScreen} {
+    @media #{$smallScreen} {
       text-align: center;
     }
   }
