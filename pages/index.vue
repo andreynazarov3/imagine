@@ -170,7 +170,7 @@ export default {
 
       document.querySelectorAll('.quests-more-1 .quest').forEach(function(item) {
         let delay = Math.random();
-        delay = 0.5 + Math.round(delay * 100) / 100;        
+        delay = 0.3 + Math.round(delay * 100) / 100;        
         scene.to(
           item,
           delay,
@@ -198,7 +198,7 @@ export default {
       });
       document.querySelectorAll('.quests-more-2 .quest').forEach(function(item) {
         let delay = Math.random();
-        delay = 0.5 + Math.round(delay * 100) / 100;       
+        delay = 0.3 + Math.round(delay * 100) / 100;       
         scene.to(
           item,
           delay,
@@ -222,7 +222,7 @@ export default {
       });
       document.querySelectorAll('.quests-more-3 .quest').forEach(function(item) {
         let delay = Math.random();
-        delay = 0.5 + Math.round(delay * 100) / 100;       
+        delay = 0.3 + Math.round(delay * 100) / 100;       
         scene.to(
           item,
           delay,
