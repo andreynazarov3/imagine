@@ -168,7 +168,6 @@ export default {
         transform: 'scale(0.9)',
       });
 
-
       document.querySelectorAll('.quests-more-1 .quest').forEach(function(item) {
         let delay = Math.random();
         delay = 0.3 + Math.round(delay * 100) / 100;        
