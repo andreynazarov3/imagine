@@ -177,18 +177,18 @@ export default {
     };
   },
   created: function() {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 3; i++) {
       this.quests.push({});
-    };
-    for (let i = 0; i < 10; i++) {
+    }
+    for (let i = 0; i < 5; i++) {
       this.morequests1.push({});
-    };
-    for (let i = 0; i < 20; i++) {
+    }
+    for (let i = 0; i < 8; i++) {
       this.morequests2.push({});
-    };
-    for (let i = 0; i < 30; i++) {
+    }
+    for (let i = 0; i < 10; i++) {
       this.morequests3.push({});
-    };
+    }
   },
   mounted: function() {
     const scaleCartoon = function() {
@@ -223,17 +223,20 @@ export default {
     let quests = document.querySelectorAll('.quests .quest');
 
     for (let i = 0; i < quests.length; i++) {
-      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizes = [100, 150, 200, 300, 400, 500];
       const sizeScale = 0.6;
       const height = sizes[Math.floor(Math.random() * sizes.length)];
       const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 1300);
+      const leftDeviation = Math.floor(Math.random() * 900);
       const topDeviation = Math.floor(Math.random() * 300);
-      // const width = 100 + Math.floor(Math.random() * 200);
-      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
-      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+      const left =
+        Math.random() < 0.5
+          ? `calc(50% - ${leftDeviation + width / 2}px)`
+          : `calc(50% + ${leftDeviation - width / 2}px)`;
+      const top =
+        Math.random() < 0.5
+          ? `calc(50% - ${topDeviation + height / 2}px)`
+          : `calc(50% + ${topDeviation - height / 2}px)`;
       quests[i].style.left = left;
       quests[i].style.top = top;
       quests[i].style.height = `${height}px`;
@@ -243,69 +246,85 @@ export default {
     }
     let morequests1 = document.querySelectorAll('.quests-more-1 .quest');
     for (let i = 0; i < morequests1.length; i++) {
-      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizes = [100, 200, 300, 400, 500, 600];
       const sizeScale = 0.6;
       const height = sizes[Math.floor(Math.random() * sizes.length)];
       const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 1300);
-      const topDeviation = Math.floor(Math.random() * 800);
-      // const width = 100 + Math.floor(Math.random() * 200);
-      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
-      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+      const leftDeviation = Math.floor(Math.random() * 900);
+      const topDeviation = Math.floor(Math.random() * 600);
 
-      // const translateX = Math.floor(Math.random() * 1300);
+      const left =
+        Math.random() < 0.5
+          ? `calc(50% - ${leftDeviation + width / 2}px)`
+          : `calc(50% + ${leftDeviation - width / 2}px)`;
+      const top =
+        Math.random() < 0.5
+          ? `calc(50% - ${topDeviation + height / 2}px)`
+          : `calc(50% + ${topDeviation - height / 2}px)`;
 
       morequests1[i].style.left = left;
       morequests1[i].style.top = top;
       morequests1[i].style.height = `${height}px`;
       morequests1[i].style.width = `${width}px`;
       morequests1[i].style.opacity = `1`;
-      morequests1[i].style.transform = `translateX(${leftPlusOrMinus}1800px) translateY(${topPlusOrMinus}1000px)`;
-      
+      morequests1[i].style.transform = `translateX(${
+        Math.random() < 0.5 ? '-' : '+'
+      }800px) translateY(-2000px)`;
+
       // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
     }
     let morequests2 = document.querySelectorAll('.quests-more-2 .quest');
     for (let i = 0; i < morequests2.length; i++) {
-      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizes = [500, 600, 600, 700, 800, 1000];
       const sizeScale = 0.6;
       const height = sizes[Math.floor(Math.random() * sizes.length)];
       const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 1300);
-      const topDeviation = Math.floor(Math.random() * 800);
-      // const width = 100 + Math.floor(Math.random() * 200);
-      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
-      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+      const leftDeviation = Math.floor(Math.random() * 900);
+      const topDeviation = Math.floor(Math.random() * 600);
+
+      const left =
+        Math.random() < 0.5
+          ? `calc(50% - ${leftDeviation + width / 2}px)`
+          : `calc(50% + ${leftDeviation - width / 2}px)`;
+      const top =
+        Math.random() < 0.5
+          ? `calc(50% - ${topDeviation + height / 2}px)`
+          : `calc(50% + ${topDeviation - height / 2}px)`;
+
       morequests2[i].style.left = left;
       morequests2[i].style.top = top;
       morequests2[i].style.height = `${height}px`;
       morequests2[i].style.width = `${width}px`;
       morequests2[i].style.opacity = `1`;
-      morequests2[i].style.transform = `translateX(${leftPlusOrMinus}1800px) translateY(${topPlusOrMinus}1000px)`;
+      morequests2[i].style.transform = `translateX(${
+        Math.random() < 0.5 ? '-' : '+'
+      }800px) translateY(-2000px)`;
       // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
     }
     let morequests3 = document.querySelectorAll('.quests-more-3 .quest');
     for (let i = 0; i < morequests3.length; i++) {
-      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizes = [600, 800, 1000, 1200, 1400, 1600];
       const sizeScale = 0.6;
       const height = sizes[Math.floor(Math.random() * sizes.length)];
       const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 1300);
-      const topDeviation = Math.floor(Math.random() * 800);
-      // const width = 100 + Math.floor(Math.random() * 200);
-      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
-      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
-      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+      const leftDeviation = Math.floor(Math.random() * 900);
+      const topDeviation = Math.floor(Math.random() * 600);
+      const left =
+        Math.random() < 0.5
+          ? `calc(50% - ${leftDeviation + width / 2}px)`
+          : `calc(50% + ${leftDeviation - width / 2}px)`;
+      const top =
+        Math.random() < 0.5
+          ? `calc(50% - ${topDeviation + height / 2}px)`
+          : `calc(50% + ${topDeviation - height / 2}px)`;
       morequests3[i].style.left = left;
       morequests3[i].style.top = top;
       morequests3[i].style.height = `${height}px`;
       morequests3[i].style.width = `${width}px`;
       morequests3[i].style.opacity = `1`;
-      morequests3[i].style.transform = `translateX(${leftPlusOrMinus}1800px) translateY(${topPlusOrMinus}1000px)`;
+      morequests3[i].style.transform = `translateX(${
+        Math.random() < 0.5 ? '-' : '+'
+      }800px) translateY(-2500px)`;
       // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
     }
   },
@@ -430,9 +449,9 @@ export default {
 }
 .quests {
   width: 100%;
-  height: 40%;
+  height: 30%;
   position: absolute;
-  transform: translateY(600px);
+  transform: translateY(1500px);
   bottom: 0;
 }
 .bubble {
