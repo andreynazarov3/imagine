@@ -186,7 +186,7 @@ export default {
     for (let i = 0; i < 20; i++) {
       this.morequests2.push({});
     };
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 30; i++) {
       this.morequests3.push({});
     };
   },
