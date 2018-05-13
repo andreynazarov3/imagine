@@ -183,10 +183,10 @@ export default {
     for (let i = 0; i < 5; i++) {
       this.morequests1.push({});
     }
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 10; i++) {
       this.morequests2.push({});
     }
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
       this.morequests3.push({});
     }
   },
