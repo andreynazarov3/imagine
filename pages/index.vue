@@ -114,13 +114,13 @@ export default {
           opacity: 0.5,
         })
         .to('.quests-1', 2, {
-          transform: 'translateY(1200px)',
+          transform: 'translateY(0)',
         })
         .to(
           '.quests-2',
           1.7,
           {
-            transform: 'translateY(1200px)',
+            transform: 'translateY(0)',
           },
           '-=2',
         )
@@ -128,7 +128,7 @@ export default {
           '.quests-3',
           1.5,
           {
-            transform: 'translateY(1200px)',
+            transform: 'translateY(0)',
           },
           '-=2',
         )
@@ -136,7 +136,7 @@ export default {
           '.quests-4',
           1.2,
           {
-            transform: 'translateY(1200px)',
+            transform: 'translateY(0)',
           },
           '-=2',
         )
@@ -144,7 +144,7 @@ export default {
           '.quests-5',
           1.1,
           {
-            transform: 'translateY(1200px)',
+            transform: 'translateY(0)',
           },
           '-=2',
         )
@@ -152,7 +152,7 @@ export default {
           '.quests-6',
           1,
           {
-            transform: 'translateY(1200px)',
+            transform: 'translateY(0)',
           },
           '-=2',
         )
@@ -162,58 +162,26 @@ export default {
         .add('bubble-4')
         .to('.bubble-4', 1, {
           opacity: 0,
-        })
-        .to('.scene-img-hero', 1, {
-          transform: 'scale(0.9)',
-        })
-        .to(
-          '.quests-1',
-          2,
+        });
+
+      scene.to('.scene-img-hero', 1, {
+        transform: 'scale(0.9)',
+      });
+
+      document.querySelectorAll('.quests-more-1 .quest').forEach(function(item) {
+        let delay = Math.random();
+        delay = Math.round(delay * 100) / 100;
+        if (delay === 0) delay += 0.1;
+        scene.to(
+          item,
+          delay,
           {
-            transform: 'translateY(900px)',
+            transform: 'translateX(0) translateY(0)',
           },
           '-=1',
-        )
-        .to(
-          '.quests-2',
-          1.7,
-          {
-            transform: 'translateY(900px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-3',
-          1.5,
-          {
-            transform: 'translateY(900px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-4',
-          1.2,
-          {
-            transform: 'translateY(900px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-5',
-          1.1,
-          {
-            transform: 'translateY(900px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-6',
-          1,
-          {
-            transform: 'translateY(900px)',
-          },
-          '-=2',
         );
+      });
+
       scene
         .to('.bubble-5', 1, {
           opacity: 1,
@@ -224,58 +192,24 @@ export default {
         })
         .to('.city', 1, {
           opacity: 0,
-        })
-        .to('.scene-img-hero', 1, {
-          transform: 'scale(0.7)',
-        })
-        .to(
-          '.quests-1',
-          2,
+        });
+
+      scene.to('.scene-img-hero', 1, {
+        transform: 'scale(0.7)',
+      });
+      document.querySelectorAll('.quests-more-2 .quest').forEach(function(item) {
+        let delay = Math.random();
+        delay = Math.round(delay * 100) / 100;
+        if (delay === 0) delay += 0.1;
+        scene.to(
+          item,
+          delay,
           {
-            transform: 'translateY(500px)',
+            transform: 'translateX(0) translateY(0)',
           },
           '-=1',
-        )
-        .to(
-          '.quests-2',
-          1.7,
-          {
-            transform: 'translateY(500px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-3',
-          1.5,
-          {
-            transform: 'translateY(500px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-4',
-          1.2,
-          {
-            transform: 'translateY(500px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-5',
-          1.1,
-          {
-            transform: 'translateY(500px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-6',
-          1,
-          {
-            transform: 'translateY(500px)',
-          },
-          '-=2',
         );
+      });
       scene
         .to('.bubble-6', 1, {
           opacity: 1,
@@ -283,59 +217,24 @@ export default {
         .add('bubble-6')
         .to('.bubble-6', 1, {
           opacity: 0,
-        })
-        .to('.scene-img-hero', 1, {
-          transform: 'scale(0.3)',
-          opacity: 0,
-        })
-        .to(
-          '.quests-1',
-          2,
+        });
+
+      scene.to('.scene-img-hero', 1, {
+        transform: 'scale(0)',
+      });
+      document.querySelectorAll('.quests-more-3 .quest').forEach(function(item) {
+        let delay = Math.random();
+        delay = Math.round(delay * 100) / 100;
+        if (delay === 0) delay += 0.1;
+        scene.to(
+          item,
+          delay,
           {
-            transform: 'translateY(0px)',
+            transform: 'translateX(0) translateY(0)',
           },
           '-=1',
-        )
-        .to(
-          '.quests-2',
-          1.7,
-          {
-            transform: 'translateY(0px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-3',
-          1.5,
-          {
-            transform: 'translateY(0px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-4',
-          1.2,
-          {
-            transform: 'translateY(0px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-5',
-          1.1,
-          {
-            transform: 'translateY(0px)',
-          },
-          '-=2',
-        )
-        .to(
-          '.quests-6',
-          1,
-          {
-            transform: 'translateY(0px)',
-          },
-          '-=2',
         );
+      });
       scene
         .to('.bubble-7', 1, {
           opacity: 1,
@@ -618,7 +517,7 @@ export default {
 
       // touch event listeners
       const touchCartoon = new Hammer(document.querySelectorAll('.panel')[1]);
-      
+
       touchCartoon.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
       touchCartoon.on('swiperight', function(e) {
         e.preventDefault();

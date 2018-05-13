@@ -26,8 +26,64 @@
           </div>
           <div class="quests quests-6">
              <img :key="`q6-${index}`" v-for="(quest, index) in quests" class="quest quest-6 quest-size-6" alt="" srcset="" src="~/static/ques6.png">
-          </div>        
-
+          </div>   
+          <!-- more quests 1      -->
+          <div class="quests-more quests-more-1">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-1" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-1">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-2" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-1">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-3" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-1">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-4" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-1">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-5" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-1">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-6" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+          <!-- more quests 2      -->
+          <div class="quests-more quests-more-2">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-1" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-2">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-2" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-2">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-3" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-2">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-4" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-2">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-5" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-2">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-6" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+          <!-- more quests 3      -->
+          <div class="quests-more quests-more-3">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-1" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-3">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-2" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-3">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-3" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-3">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-4" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-3">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-5" alt="" srcset="" src="~/static/ques1.png">
+          </div>
+           <div class="quests-more quests-more-3">
+            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-6" alt="" srcset="" src="~/static/ques1.png">
+          </div>
           <div class="bubble bubble-1">
             В одном большом и всем знакомом городе жил Человек. 
           </div>
@@ -115,12 +171,24 @@ export default {
   data: function() {
     return {
       quests: [],
+      morequests1: [],
+      morequests2: [],
+      morequests3: [],
     };
   },
   created: function() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 10; i++) {
       this.quests.push({});
-    }
+    };
+    for (let i = 0; i < 10; i++) {
+      this.morequests1.push({});
+    };
+    for (let i = 0; i < 20; i++) {
+      this.morequests2.push({});
+    };
+    for (let i = 0; i < 50; i++) {
+      this.morequests3.push({});
+    };
   },
   mounted: function() {
     const scaleCartoon = function() {
@@ -152,7 +220,7 @@ export default {
     };
     window.addEventListener('resize', scaleCartoon);
     scaleCartoon();
-    let quests = document.querySelectorAll('.quest');
+    let quests = document.querySelectorAll('.quests .quest');
 
     for (let i = 0; i < quests.length; i++) {
       const sizes = [50, 100, 150, 200, 250, 300];
@@ -160,7 +228,7 @@ export default {
       const height = sizes[Math.floor(Math.random() * sizes.length)];
       const width = height * sizeScale;
       const leftDeviation = Math.floor(Math.random() * 1300);
-      const topDeviation = Math.floor(Math.random() * 1000);
+      const topDeviation = Math.floor(Math.random() * 300);
       // const width = 100 + Math.floor(Math.random() * 200);
       const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
       const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
@@ -173,11 +241,83 @@ export default {
       quests[i].style.opacity = `1`;
       // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
     }
+    let morequests1 = document.querySelectorAll('.quests-more-1 .quest');
+    for (let i = 0; i < morequests1.length; i++) {
+      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizeScale = 0.6;
+      const height = sizes[Math.floor(Math.random() * sizes.length)];
+      const width = height * sizeScale;
+      const leftDeviation = Math.floor(Math.random() * 1300);
+      const topDeviation = Math.floor(Math.random() * 800);
+      // const width = 100 + Math.floor(Math.random() * 200);
+      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
+      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+
+      // const translateX = Math.floor(Math.random() * 1300);
+
+      morequests1[i].style.left = left;
+      morequests1[i].style.top = top;
+      morequests1[i].style.height = `${height}px`;
+      morequests1[i].style.width = `${width}px`;
+      morequests1[i].style.opacity = `1`;
+      morequests1[i].style.transform = `translateX(${leftPlusOrMinus}1800px) translateY(${topPlusOrMinus}1000px)`;
+      
+      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
+    }
+    let morequests2 = document.querySelectorAll('.quests-more-2 .quest');
+    for (let i = 0; i < morequests2.length; i++) {
+      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizeScale = 0.6;
+      const height = sizes[Math.floor(Math.random() * sizes.length)];
+      const width = height * sizeScale;
+      const leftDeviation = Math.floor(Math.random() * 1300);
+      const topDeviation = Math.floor(Math.random() * 800);
+      // const width = 100 + Math.floor(Math.random() * 200);
+      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
+      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+      morequests2[i].style.left = left;
+      morequests2[i].style.top = top;
+      morequests2[i].style.height = `${height}px`;
+      morequests2[i].style.width = `${width}px`;
+      morequests2[i].style.opacity = `1`;
+      morequests2[i].style.transform = `translateX(${leftPlusOrMinus}1800px) translateY(${topPlusOrMinus}1000px)`;
+      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
+    }
+    let morequests3 = document.querySelectorAll('.quests-more-3 .quest');
+    for (let i = 0; i < morequests3.length; i++) {
+      const sizes = [50, 100, 150, 200, 250, 300];
+      const sizeScale = 0.6;
+      const height = sizes[Math.floor(Math.random() * sizes.length)];
+      const width = height * sizeScale;
+      const leftDeviation = Math.floor(Math.random() * 1300);
+      const topDeviation = Math.floor(Math.random() * 800);
+      // const width = 100 + Math.floor(Math.random() * 200);
+      const leftPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const topPlusOrMinus = Math.random() < 0.5 ? '-' : '+';
+      const left = `calc(50% ${leftPlusOrMinus} ${leftDeviation - width / 2}px)`;
+      const top = `calc(50% ${topPlusOrMinus} ${topDeviation - height / 2}px)`;
+      morequests3[i].style.left = left;
+      morequests3[i].style.top = top;
+      morequests3[i].style.height = `${height}px`;
+      morequests3[i].style.width = `${width}px`;
+      morequests3[i].style.opacity = `1`;
+      morequests3[i].style.transform = `translateX(${leftPlusOrMinus}1800px) translateY(${topPlusOrMinus}1000px)`;
+      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
+    }
   },
 };
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
+.quests-more {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 .expoint {
   width: 56px;
   top: calc(50% - 720px);
@@ -290,9 +430,10 @@ export default {
 }
 .quests {
   width: 100%;
-  height: 100%;
+  height: 40%;
   position: absolute;
-  transform: translateY(1750px);
+  transform: translateY(600px);
+  bottom: 0;
 }
 .bubble {
   // display: none !important;
