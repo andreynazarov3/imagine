@@ -170,7 +170,7 @@ export default {
 
       document.querySelectorAll('.quests-more-1 .quest').forEach(function(item) {
         let delay = Math.random();
-        delay = 0.3 + Math.round(delay * 100) / 100;        
+        delay = 0.3 + Math.round(delay * 100) / 100;
         scene.to(
           item,
           delay,
@@ -198,7 +198,7 @@ export default {
       });
       document.querySelectorAll('.quests-more-2 .quest').forEach(function(item) {
         let delay = Math.random();
-        delay = 0.3 + Math.round(delay * 100) / 100;       
+        delay = 0.3 + Math.round(delay * 100) / 100;
         scene.to(
           item,
           delay,
@@ -222,7 +222,7 @@ export default {
       });
       document.querySelectorAll('.quests-more-3 .quest').forEach(function(item) {
         let delay = Math.random();
-        delay = 0.3 + Math.round(delay * 100) / 100;       
+        delay = 0.3 + Math.round(delay * 100) / 100;
         scene.to(
           item,
           delay,
@@ -445,11 +445,7 @@ export default {
           opacity: 0,
         })
         .add('end');
-      const controller = new ScrollMagic.Controller({
-        globalSceneOptions: {
-          triggerHook: 'onLeave',
-        },
-      });
+    
 
       // new ScrollMagic.Scene({
       //   triggerElement: document.querySelectorAll('.panel')[0],
@@ -570,6 +566,17 @@ export default {
       //   },
       //   offset: '50%',
       // });
+      const controller2 = new ScrollMagic.Controller();
+      // build scene
+      const scrollscene = new ScrollMagic.Scene({ triggerElement: '.cartoon', triggerHook: 0.5 })
+        .on('enter', function() {
+          console.log('enter');
+          if (scene.progress() === 0) {
+            scene.tweenTo(scene.getLabelAfter());
+          }
+        })
+        .addIndicators() 
+        .addTo(controller2);
     });
   },
 };

@@ -113,7 +113,22 @@ logoscene
   <\/script>`,
     };
   },
-  mounted: function() {},
+  mounted: function() {
+    // top parallax
+    // build tween
+    const tween = TweenMax.fromTo(
+      '.top-background',
+      1,
+      { transform: 'translateY(0)' },
+      { transform: 'translateY(100px)', ease: Linear.easeNone },
+    );
+    const controller = new ScrollMagic.Controller();
+    // build scene
+    const scene = new ScrollMagic.Scene({ triggerElement: '.top', duration: '100%', triggerHook: 0 })
+      .setTween(tween)
+      .addIndicators() // add indicators (requires plugin)
+      .addTo(controller);
+  },
 };
 </script>
 <style lang="scss">
@@ -156,7 +171,7 @@ logoscene
   right: 0;
   width: 294px;
   @media #{$mediumScreen} {
-    bottom: calc(50% - 85px);    
+    bottom: calc(50% - 85px);
     width: 144px;
   }
   @media #{$smallScreen} {
