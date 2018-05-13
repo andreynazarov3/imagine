@@ -126,7 +126,7 @@ logoscene
     // build scene
     const scene = new ScrollMagic.Scene({ triggerElement: '.top', duration: '100%', triggerHook: 0 })
       .setTween(tween)
-      .addIndicators() // add indicators (requires plugin)
+      // .addIndicators() 
       .addTo(controller);
   },
 };
