@@ -1,9 +1,13 @@
 <template>
 <section class="panel top">
-  <div class="top-background"></div>
-   <header>
+  <div class="top-background"></div>  
+   <header>     
+     <div class="header-content">
     <div class="wrapper">
-        <a class="becomehero" href="#">Стать героем</a>
+        <div class="format">KNOW-WOW формат</div>         
+        <a class="becomehero" href="#schedule"><img src="~/static/become.png" alt="Стать героем"></a>
+        <a class="phone" href="tel:+7 (916) 996–63–28">+7 (916) 996–63–28</a>
+    </div>
     </div>
   </header>
   <div class="logo-wrapper">
@@ -124,18 +128,27 @@ logoscene
     );
     const controller = new ScrollMagic.Controller();
     // build scene
-    const scene = new ScrollMagic.Scene({ triggerElement: '.top', duration: '100%', triggerHook: 0 })
+    const scene = new ScrollMagic.Scene({
+      triggerElement: '.top',
+      duration: '100%',
+      triggerHook: 0,
+    })
       .setTween(tween)
-      // .addIndicators() 
+      // .addIndicators()
+      .addTo(controller);
+    const headerscene = new ScrollMagic.Scene({
+      triggerElement: 'header .header-content',
+      triggerHook: 0,
+    })
+      .setPin('header .header-content')
+      .setClassToggle('header', 'pinned')
       .addTo(controller);
   },
 };
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
-.becomehero {
-  opacity: 0;
-}
+
 .loading {
   text-align: center;
   font-size: 16px;
@@ -198,21 +211,55 @@ logoscene
 .wrapper {
   max-width: 1100px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 header {
-  padding: 75px 20px 0;
-  // margin-bottom: 180px;
+  position: absolute;
+  width: 100%;
   text-align: right;
-  // position: absolute;
-  // width: 100%;
-  z-index: 1;
-  .wrapper {
-    @media #{$smallScreen} {
-      text-align: center;
+  z-index: 9999;
+  &.pinned {
+    .wrapper {
+      right: 0 !important;
+    }
+  }
+  .header-content {
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .wrapper {    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .format {
+      @extend %p;
+      font-size: 21px;
+    }
+    .phone {
+      @extend %p;
+    }
+    .becomehero {
+      font-size: 0;
+      img {
+        width: 187px;
+      }
+    }
+    @media #{$tabletScreen} {
+      flex-direction: column;
+      margin-top: 20px;
+      .format {
+        display: none;
+      }
+      .becomehero img {
+        width: 150px;
+      }
+      .phone {
+        order: -1;
+      }
     }
   }
   a {
-    opacity: 0.5;
     font-family: GaramondPremrPro-Capt, sans-serif;
     font-size: 16px;
     font-weight: normal;

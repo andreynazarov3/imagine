@@ -2,9 +2,9 @@
   <section class="speakers">    
     <img class="blur3" src="~/static/blur3.png" alt="">
     <div class="wrapper">
-    <div class="heading">      
+    <div class="block-heading">      
       <img class="speakers-img" src="~/static/speakers.png" alt="">
-      <p class="withsidebar">
+      <p>
         The eyes of the Fair are on the future — not in the sense of peering toward the unknown nor attempting to foretell the events of tomorrow and the shape of things to come
       </p>
       </div>
@@ -101,18 +101,10 @@ export default {
   position: relative;
   padding-top: 260px;
 }
-.heading {
-  display: flex;
-  align-items: center;
-  // max-width: 1100px;
-}
+
 .speakers-img {
   width: 242px;
   margin-right: 160px;
 }
-.withsidebar {
-  @extend %p;
-  border-left: 1px solid rgba(0,0,0,0.3);
-  padding: 17px 60px;
-}
+
 </style>

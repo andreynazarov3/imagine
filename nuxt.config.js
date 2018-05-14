@@ -61,7 +61,9 @@ module.exports = {
   loading: {
     color: '#3B8070'
   },
-
+  plugins: [
+   
+  ],
   /*
    ** Build configuration
    */

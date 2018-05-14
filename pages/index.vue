@@ -1,13 +1,14 @@
-<template>
+<template lang="html">
 <div>  
     <Logo />
     <main>
     <Cartoon />
     <div class="panel main">
-      <div class="additionalContent">
+
         <Form />
+        <Schedule />
         <Speakers />
-      </div>
+     
     </div>
 </main>
 </div>
@@ -19,12 +20,14 @@ import Cartoon from '~/components/Cartoon';
 import Logo from '~/components/Logo';
 import Form from '~/components/Form';
 import Speakers from '~/components/Speakers';
+import Schedule from '~/components/Schedule';
 export default {
   components: {
     Cartoon,
     Logo,
     Form,
     Speakers,
+    Schedule,
   },
   mounted: function() {
     let scene;
@@ -44,14 +47,6 @@ export default {
           1,
           {
             opacity: 1,
-          },
-          '-=2',
-        )
-        .to(
-          '.becomehero',
-          1,
-          {
-            opacity: 0.5,
           },
           '-=2',
         );
@@ -445,7 +440,6 @@ export default {
           opacity: 0,
         })
         .add('end');
-    
 
       // new ScrollMagic.Scene({
       //   triggerElement: document.querySelectorAll('.panel')[0],
@@ -568,7 +562,7 @@ export default {
             scene.tweenTo(scene.getLabelAfter());
           }
         })
-        // .addIndicators() 
+        // .addIndicators()
         .addTo(controller2);
     });
   },

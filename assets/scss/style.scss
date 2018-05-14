@@ -3,6 +3,34 @@
 p {
   @extend %p;
 }
-html, body {
+
+html,
+body {
   height: 100%;
+}
+
+.block-heading {
+  display: flex;
+  align-items: center;
+  .line {
+    width: 1px;
+    height: 100px;
+    opacity: 0.3;
+    background-color: #000000;
+    margin:0 60px;
+    @media #{$bigTabletScreen} {
+      order: -1;
+      width: 100px;
+      height: 1px;
+      margin-bottom:32px;
+    }
+  }
+  @media #{$bigTabletScreen} {
+    flex-direction: column;
+  }
+  p {
+    @extend %p;
+    padding: 17px 0;
+    max-width: 500px;
+  }
 }
