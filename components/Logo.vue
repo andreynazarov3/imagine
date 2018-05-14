@@ -208,11 +208,7 @@ logoscene
   opacity: 0;
 }
 
-.wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+
 header {
   position: absolute;
   width: 100%;

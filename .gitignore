@@ -12,3 +12,4 @@ dist
 
 *.psd
 *.ai
+/static/js/gsap
