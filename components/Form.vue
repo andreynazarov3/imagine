@@ -38,6 +38,9 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
+  @media #{$tabletScreen} {
+    width: 224px;
+  }
 }
 .become {
   opacity: 0.6;

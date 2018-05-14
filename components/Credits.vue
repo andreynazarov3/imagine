@@ -30,15 +30,7 @@
           <p>Digital агенство</p>    
           <p><a href="">Gstudio</a></p>
       </div>
-      <div class="spacer"></div>
-       <div class="credits-row">
-          <p>Главные герои</p>
-          <p><a href="">Вы</a></p>
-      </div>
-       <div class="credits-row">
-          <p>Кто-то очень важный</p>   
-          <p><a href="">Некто</a></p>
-      </div>
+     
 
     </div>
   </div>
@@ -51,6 +43,13 @@
 .credits {
   margin-top: 150px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  @media #{$tabletScreen} {
+    margin-top: 0;
+    text-align: left;
+    padding-left: 16px;
+  }
   .spacer {
     display: block;
     height: 0px;
@@ -64,6 +63,11 @@
   display: flex;
   align-items: center;
   margin-bottom: 35px;
+  @media #{$tabletScreen} {
+    flex-direction: column;
+    align-items: flex-start;
+     margin-bottom: 28px;
+  }
   a {
     font-size: 20px;
     color: black;
@@ -79,6 +83,9 @@
       text-align: right;
       font-size: 15px;
       opacity: 0.5;
+      @media #{$tabletScreen} {
+        width: auto;
+      }
     }
   }
 }

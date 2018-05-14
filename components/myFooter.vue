@@ -28,8 +28,15 @@ not in the sense of peering toward </p>
 .realfooter {
   height: 300px;
   background-color: #000000;
+  @media #{$tabletScreen} {
+    height: auto;
+    img {
+      width: 200px;
+      margin-bottom: 42px;
+    }
+  }
   .social {
-    margin-right:90px;
+    margin-right: 90px;
     a {
       @extend %p;
       font-size: 15px;
@@ -38,6 +45,18 @@ not in the sense of peering toward </p>
       margin-right: 24px;
       &:hover {
         opacity: 1;
+      }
+    }
+    @media #{$tabletScreen} {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+      margin-bottom: 84px;
+      a {
+        margin-right: 0;
+        margin-bottom: 24px;
+        text-decoration: none;
       }
     }
   }
@@ -63,11 +82,20 @@ not in the sense of peering toward </p>
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    @media #{$tabletScreen} {
+      padding: 48px 0;
+      flex-direction: column;
+    }
   }
 }
 .tel {
   text-align: center;
   margin-bottom: 78px;
+  padding: 0 16px;
+  img {
+    width: 383px;
+    max-width: 100%;
+  }
   p {
     @extend %p;
     font-size: 16px;
@@ -79,5 +107,8 @@ not in the sense of peering toward </p>
 }
 footer {
   margin-top: 200px;
+  @media #{$tabletScreen} {
+    margin-top: 120px;
+  }
 }
 </style>
