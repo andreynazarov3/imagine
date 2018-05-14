@@ -8,7 +8,7 @@
         <Form />
         <Schedule />
         <Speakers />
-     
+        <myFooter />
     </div>
 </main>
 </div>
@@ -21,6 +21,7 @@ import Logo from '~/components/Logo';
 import Form from '~/components/Form';
 import Speakers from '~/components/Speakers';
 import Schedule from '~/components/Schedule';
+import myFooter from '~/components/myFooter';
 export default {
   components: {
     Cartoon,
@@ -28,6 +29,7 @@ export default {
     Form,
     Speakers,
     Schedule,
+    myFooter
   },
   mounted: function() {
     let scene;

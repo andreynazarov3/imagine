@@ -75,8 +75,8 @@ export default {
   position: relative;
   padding-right: 292px;
   @media #{$tabletScreen} {
-      padding-right: 40px;
-    }
+    padding-right: 40px;
+  }
   &:last-child {
     padding-right: 232px;
     .schedule-item-line {
@@ -121,35 +121,47 @@ export default {
     border: 1px solid white;
     border-bottom: 1px solid black;
     letter-spacing: 2.5px;
-    margin-top: 34px;  
+    margin-top: 34px;
     &:hover {
-       border: 1px solid black;
+      border: 1px solid black;
     }
   }
   &:hover {
-    opacity: 1;     
-  }  
+    opacity: 1;
+  }
 }
 
 .schedule-items {
-  max-width: 1500px;
-  padding-left: 170px;
+  width: 100%;
+  padding-left: calc(50% - 500px);  
   padding-bottom: 30px;
-  @media #{$tabletScreen} {      
-      padding-left: 16px;
+  @media screen and (max-width:1200px) {
+    padding-left: 16px;  
   }
-   &::-webkit-scrollbar {
-      display: none;
-    }
+  @media #{$tabletScreen} {
+    padding-left: 16px;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
   > div {
     display: flex !important;
-   
   }
 }
 .schedule {
   padding-top: 260px;
+   @media #{$tabletScreen} {
+    padding-top: 80px;
+    .block-heading {
+      margin-bottom: 32px;
+    }
+  }
 }
 .schedule-img {
   width: 268px;
+   @media #{$tabletScreen} {
+      margin-left: -20px;
+  }
+   
 }
 </style>

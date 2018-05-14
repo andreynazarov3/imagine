@@ -1,5 +1,6 @@
 <template>
   <section class="form">    
+    <img src="~/static/form-back.png" srcset="~/static/blue-mobile-2.png 211w,~/static/form-back.png 1010w" sizes="(max-width: 768px) 211px, 1010px" class="blue-form">
     <div class="wrapper">
     <h1>
       Ну что, пошли?
@@ -8,9 +9,9 @@
       У тебя тоже есть вопрос? Пора искать ответ.
     </p>
     <div class="inputs">
-      <input v-model="name" type="text" name="name" id="" placeholder="Имя">
-      <input v-model="phone" type="text" name="phone" id="" placeholder="Телефон">
-      <input v-model="email" type="text" name="email" id="" placeholder="E-mail">
+      <input :class="{ filled: name}"  v-model="name" type="text" name="name" id="" placeholder="Имя">
+      <input :class="{ filled: phone}" v-model="phone" type="text" name="phone" id="" placeholder="Телефон">
+      <input :class="{ filled: email}" v-model="email" type="text" name="email" id="" placeholder="E-mail">
     </div>
     <button class="become" :class="{ active: name && phone && email }" :disabled="!name || !phone || !email">
       <div class="box"></div>
@@ -33,6 +34,11 @@ export default {
 
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
+.blue-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .become {
   opacity: 0.6;
   margin-top: 55px;
@@ -43,6 +49,10 @@ export default {
   transition: 300ms ease;
   width: 100%;
   max-width: 525px;
+  @media #{$tabletScreen} {
+    margin-top: 48px;
+    width: 179px;
+  }
   &.active {
     opacity: 1;
     .box {
@@ -60,6 +70,12 @@ export default {
     height: 100px;
     width: 100px;
     border: 1px solid grey;
+    @media #{$tabletScreen} {
+      top: calc(50% - 30px);
+      left: calc(50% - 30px);
+      height: 60px;
+      width: 60px;
+    }
   }
   img {
     position: relative;
@@ -67,11 +83,21 @@ export default {
     z-index: 1;
   }
 }
+@keyframes autofill {
+  to {
+    background: transparent;
+  }
+}
 .form {
   padding-top: 400px;
-  background: url(~/static/form-back.png) no-repeat;
+  background: url() no-repeat;
   background-position: top left;
+  @media #{$tabletScreen} {
+    padding-top: 100px;
+  }
   .wrapper {
+    z-index: 1;
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -94,6 +120,14 @@ export default {
       outline: none;
       margin-right: 60px;
       padding: 10px 0;
+      background: none;
+      &:-webkit-autofill {
+        animation-name: autofill;
+        animation-fill-mode: both;
+      }
+      &.filled {
+        opacity: 1;
+      }
       &:hover,
       &:focus {
         opacity: 1;
@@ -111,6 +145,9 @@ export default {
     text-align: center;
     max-width: 485px;
     margin: 20px 0 100px 0;
+    @media #{$tabletScreen} {
+      margin-bottom: 40px;
+    }
   }
   @media #{$bigTabletScreen} {
     .inputs {
@@ -119,10 +156,13 @@ export default {
   }
   @media #{$tabletScreen} {
     h1 {
-      font-size: 34px;
+      font-size: 40px;
     }
     p {
       font-size: 15px;
+    }
+    .inputs input {
+      font-size: 24px;
     }
   }
 }
