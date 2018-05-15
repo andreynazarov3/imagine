@@ -42,7 +42,10 @@ export default {
         } else { this.validEmail = false; }
   },
   sendEmail: function () {
-    this.$emit('sendmail');
+    var img = new Image();
+    img.onload = function() { this.$emit('sendmail'); }
+    img.src = "/popup.png";
+    
     fetch('https://imaginemailer.herokuapp.com', {
           method: 'POST',
           headers: new Headers({
