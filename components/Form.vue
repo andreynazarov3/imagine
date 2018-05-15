@@ -51,7 +51,7 @@ export default {
           headers: new Headers({
             'Content-Type': 'application/x-www-form-urlencoded',
           }),
-          body: `name=${this.name}&phone=${this.phone}&name=${this.email}&`,
+          body: `name=${this.name}&phone=${this.phone}&email=${this.email}&`,
         });
   }
   }
