@@ -1,6 +1,5 @@
 <template>
-<section class="panel top">
-  <div class="top-background"></div>  
+<section class="panel top">  
    <header>     
      <div class="header-content">
     <div class="wrapper">
@@ -89,16 +88,29 @@
     </g>
   </g>
 </svg>
+<div class="loading">
+  <div class="progress-number">{{progressNumber}}%</div>
+  <div class="progress-bar">
+    <div :style="progressStyle" class="progress"></div>
+  </div>
+</div> 
 </div>
 <div class="logoscript" v-html="logoscript">
 </div>
-<div class="loading">Идет загрузка...</div> 
+
   </section>
 </template>
 <script>
 export default {
+  props: ['progressNumber'],
+  watch: {
+    progressNumber: function (newVal) {
+      this.progressStyle = {width:`${newVal}%`, height:'4px;', background: '#ff7c00'}
+    }
+  },
   data: function() {
     return {
+      progressStyle: {width:`0%`, height:'4px;', background: '#ff7c00'},
       logoscript: `<script>
     var logoscene = new TimelineMax({
     paused: false,
@@ -118,24 +130,8 @@ logoscene
     };
   },
   mounted: function() {
-    // top parallax
-    // build tween
-    const tween = TweenMax.fromTo(
-      '.top-background',
-      1,
-      { transform: 'translateY(0)' },
-      { transform: 'translateY(100px)', ease: Linear.easeNone },
-    );
     const controller = new ScrollMagic.Controller();
-    // build scene
-    const scene = new ScrollMagic.Scene({
-      triggerElement: '.top',
-      duration: '100%',
-      triggerHook: 0,
-    })
-      .setTween(tween)
-      // .addIndicators()
-      .addTo(controller);
+
     const headerscene = new ScrollMagic.Scene({
       triggerElement: 'header .header-content',
       triggerHook: 0,
@@ -150,11 +146,15 @@ logoscene
 @import '~/assets/scss/_vars.scss';
 
 .loading {
-  text-align: center;
-  font-size: 16px;
+  @extend %p;
+  text-align: left;
+  font-size: 21px;
   position: absolute;
-  width: 100%;
-  bottom: 40px;
+  width: 70%;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8000;
 }
 .top {
   position: relative;
@@ -167,7 +167,7 @@ logoscene
   margin: 0 auto;
   display: block;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   @media #{$mediumScreen} {
@@ -208,7 +208,6 @@ logoscene
   opacity: 0;
 }
 
-
 header {
   position: absolute;
   width: 100%;
@@ -223,7 +222,7 @@ header {
     margin-top: 40px;
     background: rgba(255, 255, 255, 0.5);
   }
-  .wrapper {    
+  .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;

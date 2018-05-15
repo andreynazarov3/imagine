@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "get-scrollbar-width": "^1.0.4",
     "gsap": "^1.20.4",
     "imagesloaded": "^4.1.4",
     "node-sass": "^4.9.0",

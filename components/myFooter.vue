@@ -43,6 +43,7 @@ not in the sense of peering toward </p>
       color: white;
       opacity: 0.6;
       margin-right: 24px;
+      text-decoration: none;
       &:hover {
         opacity: 1;
       }
@@ -56,7 +57,7 @@ not in the sense of peering toward </p>
       a {
         margin-right: 0;
         margin-bottom: 24px;
-        text-decoration: none;
+        
       }
     }
   }

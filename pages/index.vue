@@ -1,6 +1,6 @@
 <template lang="html">
-<div>  
-    <Logo />
+<div class="app">  
+    <Logo :progressNumber='progressNumber' />
     <main>
     <Cartoon />
     <div class="panel main">
@@ -29,20 +29,28 @@ export default {
     Form,
     Speakers,
     Schedule,
-    myFooter
+    myFooter,
+  },
+  data: function () {
+    return {
+      progressNumber: 0
+    }
   },
   mounted: function() {
     let scene;
-    imagesLoaded('img', function() {
+    let images = document.querySelectorAll('.cartoon img');
+    images.forEach(el => {
+      el.src = el.dataset.src;
+    });
+    const imgLoad = imagesLoaded('body', function() {
       console.log('images loaded');
       const loading = document.querySelector('.loading');
-      const main = document.querySelector('main');
-      loading.style.display = 'none';
+      const main = document.querySelector('main');      
       main.style.display = 'block';
       const tbscene = new TimelineMax();
       tbscene
-        .to('.top-background', 2, {
-          opacity: 1,
+        .to('.loading', 1, {
+          opacity: 0,
         })
         .to(
           '.ideas',
@@ -50,7 +58,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=2',
+          '-=1',
         );
       scene = new TimelineMax({
         paused: true,
@@ -567,14 +575,19 @@ export default {
         // .addIndicators()
         .addTo(controller2);
     });
+    imgLoad.on('progress', (instance, image) => {      
+      this.progressNumber = Math.floor(100*instance.progressedCount / instance.images.length);      
+    });
   },
 };
 </script>
 
 <style lang="scss">
+.app {
+  overflow: hidden;
+}
 main {
   display: none;
-  overflow: hidden;
 }
 .panel {
   background: white;

@@ -17,7 +17,7 @@
           <div class="schedule-item-time">{{item.time}}</div>
           <div class="schedule-item-name">{{item.name}}</div>
           <button class="schedule-item-button">Записаться</button>
-          <div class="schedule-item-line"></div>          
+          <!-- <div class="schedule-item-line"></div>           -->
         </div>
       </div>
    </div>
@@ -32,6 +32,12 @@ export default {
       edgeResistance: 0.75,
       throwProps: true,
     });
+    const buttons = document.querySelectorAll('.schedule-item-button');
+    buttons.forEach(element => {
+      element.addEventListener('click', function () {
+          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop * 2 });
+      });
+    });
   },
   components: {},
   data: function() {
@@ -43,18 +49,18 @@ export default {
           time: '19:00',
           name: 'Проекция мечты',
         },
-        {
-          id: 2,
-          date: '1 июля',
-          time: '19:00',
-          name: 'Ты герой',
-        },
-        {
-          id: 3,
-          date: '8 июля',
-          time: '19:00',
-          name: 'Проекция мечты',
-        },
+        // {
+        //   id: 2,
+        //   date: '1 июля',
+        //   time: '19:00',
+        //   name: 'Ты герой',
+        // },
+        // {
+        //   id: 3,
+        //   date: '8 июля',
+        //   time: '19:00',
+        //   name: 'Проекция мечты',
+        // },
       ],
     };
   },
@@ -146,6 +152,7 @@ export default {
   }
   > div {
     display: flex !important;
+    justify-content: center;
   }
 }
 .schedule {
