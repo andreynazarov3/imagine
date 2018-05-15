@@ -5,12 +5,13 @@
     <Cartoon />
     <div class="panel main">
 
-        <Form />
+        <Form @sendmail="showPopup = true" />
         <Schedule />
         <Speakers />
         <myFooter />
     </div>
 </main>
+<Popup v-if="showPopup" @close="showPopup = false" />
 </div>
 </template>
 
@@ -22,6 +23,7 @@ import Form from '~/components/Form';
 import Speakers from '~/components/Speakers';
 import Schedule from '~/components/Schedule';
 import myFooter from '~/components/myFooter';
+import Popup from '~/components/Popup';
 export default {
   components: {
     Cartoon,
@@ -30,13 +32,27 @@ export default {
     Speakers,
     Schedule,
     myFooter,
+    Popup
+  },
+  watch: {
+    showPopup: function (val) {
+      const body = document.querySelector('body');
+        if (val == true) {
+          body.style.overflow = 'hidden';
+        } else {
+          body.style.overflow = 'auto';
+        }
+    }
   },
   data: function () {
     return {
-      progressNumber: 0
+      progressNumber: 0,
+      showPopup: false
     }
   },
   mounted: function() {
+    const body = document.querySelector('body');
+    body.style.overflow = 'hidden';
     let scene;
     let images = document.querySelectorAll('.cartoon img');
     images.forEach(el => {

@@ -3,7 +3,7 @@
    <header>     
      <div class="header-content">
     <div class="wrapper">
-        <div class="format">KNOW-WOW формат</div>         
+        <div class="format">KNOW-WOW тренинг</div>         
         <a class="becomehero" href="#schedule"><img src="~/static/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (916) 996–63–28">+7 (916) 996–63–28</a>
     </div>
@@ -212,7 +212,7 @@ header {
   position: absolute;
   width: 100%;
   text-align: right;
-  z-index: 9999;
+  z-index: 9998;
   &.pinned {
     .wrapper {
       right: 0 !important;

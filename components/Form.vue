@@ -11,9 +11,9 @@
     <div class="inputs">
       <input :class="{ filled: name}"  v-model="name" type="text" name="name" id="" placeholder="Имя">
       <input :class="{ filled: phone}" v-model="phone" type="text" name="phone" id="" placeholder="Телефон">
-      <input :class="{ filled: email}" v-model="email" type="text" name="email" id="" placeholder="E-mail">
+      <input :class="{ filled: email, invalid: !validEmail}" v-model="email" type="email" name="email" id="" placeholder="E-mail">
     </div>
-    <button class="become" :class="{ active: name && phone && email }" :disabled="!name || !phone || !email">
+    <button @click="sendEmail" class="become" :class="{ active: name && phone && email && validEmail}" :disabled="!name || !phone || !email || !validEmail">
       <div class="box"></div>
       <img src="~/static/become.png" alt="">
     </button>
@@ -21,14 +21,37 @@
   </section>
 </template>
 <script>
+import 'whatwg-fetch';
 export default {
+  
   data: function() {
     return {
       name: null,
       phone: null,
       email: null,
+      validEmail: null
     };
   },
+  watch: {
+    email: function () { this.validateEmail(this.email) }
+  },
+  methods: {
+    validateEmail: function (email) {
+        if (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/.test(email)) {
+          this.validEmail = true;
+        } else { this.validEmail = false; }
+  },
+  sendEmail: function () {
+    this.$emit('sendmail');
+    fetch('https://imaginemailer.herokuapp.com', {
+          method: 'POST',
+          headers: new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded',
+          }),
+          body: `name=${this.name}&phone=${this.phone}&name=${this.email}&`,
+        });
+  }
+  }
 };
 </script>
 

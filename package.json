@@ -24,7 +24,8 @@
     "sass-loader": "^7.0.1",
     "scrollmagic": "^2.0.5",
     "vue-perfect-scrollbar": "^0.1.0",
-    "vue-style-loader": "^4.1.0"
+    "vue-style-loader": "^4.1.0",
+    "whatwg-fetch": "^2.0.4"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
