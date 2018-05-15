@@ -37,7 +37,7 @@ export default {
   watch: {
     showPopup: function (val) {
       const body = document.querySelector('body');
-        if (val == true) {
+        if (val === true) {
           body.style.overflow = 'hidden';
         } else {
           body.style.overflow = 'auto';
@@ -51,8 +51,6 @@ export default {
     }
   },
   mounted: function() {
-    const body = document.querySelector('body');
-    body.style.overflow = 'hidden';
     let scene;
     let images = document.querySelectorAll('.cartoon img');
     images.forEach(el => {
