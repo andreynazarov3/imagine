@@ -4,7 +4,7 @@
      <div class="header-content">
     <div class="wrapper">
         <div class="format">KNOW-WOW тренинг</div>         
-        <a class="becomehero" href="#schedule"><img src="~/static/become.png" alt="Стать героем"></a>
+        <a @click="$emit('scrollToForm')" class="becomehero" href="#schedule"><img src="~/static/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (916) 996–63–28">+7 (916) 996–63–28</a>
     </div>
     </div>

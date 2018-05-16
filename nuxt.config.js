@@ -54,6 +54,9 @@ module.exports = {
       },
       {
         src: '/js/gsap/ThrowPropsPlugin.min.js'
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js'
       }
 
     ]
@@ -65,7 +68,7 @@ module.exports = {
     color: '#3B8070'
   },
   plugins: [
-   
+
   ],
   /*
    ** Build configuration

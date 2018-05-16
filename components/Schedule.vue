@@ -33,9 +33,11 @@ export default {
       throwProps: true,
     });
     const buttons = document.querySelectorAll('.schedule-item-button');
-    buttons.forEach(element => {
-      element.addEventListener('click', function () {
-          TweenMax.to(window, 0.5, { scrollTo: document.querySelector('main').offsetTop * 2 });
+    const self = this;
+    buttons.forEach(function (element) {
+      element.addEventListener('click', function () {        
+          self.$emit('scrollToForm');
+          console.log('emit');
       });
     });
   },

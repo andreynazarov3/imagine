@@ -218,7 +218,6 @@ export default {
       triggerHook: 0,
     })
       .setTween(timeline)
-      // .addIndicators()
       .addTo(controller);
 
     const scaleCartoon = function() {
