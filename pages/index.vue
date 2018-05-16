@@ -2,22 +2,19 @@
 <div class="app">  
     <Logo :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
     <main>
-    <Cartoon />
-    <div class="panel main">
-
-        <Form @sendmail="showPopup = true" />
-        <Schedule @scrollToForm='scrollToForm' />
-        <Speakers />
-        <myFooter />
-    </div>
-</main>
+      <Cartoon />
+      <Form @sendmail="showPopup = true" />
+      <Schedule @scrollToForm='scrollToForm' />
+      <Speakers />
+      <myFooter />
+    </main>
 <Popup v-if="showPopup" @close="showPopup = false" />
 </div>
 </template>
 
 <script>
 const imagesLoaded = require('imagesloaded');
-// const smoothScroll = require('~/assets/js/smoothscroll.js');
+const smoothScroll = require('~/assets/js/smoothscroll.js');
 import Cartoon from '~/components/Cartoon';
 import Logo from '~/components/Logo';
 import Form from '~/components/Form';
@@ -94,59 +91,49 @@ export default {
       const scene = new TimelineMax();
       scene
         .add('start')
-        .to('.scene-img-hero', 1, {
-          opacity: 1,
-        })
+        .to('.scene-img-background', 2, { top: '50%', transform: 'translateY(-1100px)' })
+        .to('.scene-img-hero', 2, { top: '50%', transform: 'translateY(-300px) scale(1)' }, '-=2')
+        .to('.scene-img-bridge', 2, { top: '50%', transform: 'translateY(-400px) scale(1)' }, '-=2')
         .to(
-          '.scene-img-background',
-          1,
-          {
-            opacity: 1,
-          },
-          '-=0.5',
+          '.scene-img-house-1',
+          2,
+          { top: '50%', transform: 'translateY(-650px) scale(1.1)' },
+          '-=2',
         )
-        .to('.scene-img-bridge', 1, {
-          opacity: 1,
-        })
+        .to(
+          '.scene-img-house-2',
+          2,
+          { top: '50%', transform: 'translateY(-900px)  scale(0.9)' },
+          '-=2',
+        )
+        .to(
+          '.scene-img-house-3',
+          2,
+          { top: '50%', transform: 'translateY(-500px) scale(1)' },
+          '-=2',
+        )
+        .to(
+          '.scene-img-lighters',
+          2,
+          { top: '50%', transform: 'translateY(-400px) scale(1.15)' },
+          '-=2',
+        )
+        .to('.scene-img-moscow-city', 2, { top: '50%', transform: 'translateY(-950px)' }, '-=2')
         .to('.bubble-1', 1, {
-          opacity: 1,
-        })
-        .add('bubble-1')
-        .to('.bubble-1', 1, {
-          opacity: 0,
-          delay: 5,
-        })
-        .to('.scene-img-moscow-city', 1, {
-          opacity: 1,
-        })
-        .to('.scene-img-lighters', 1, {
-          opacity: 1,
-        })
+          top: '0%', 
+          transform: 'translateY(-500px)'
+        },'-=2',)
+    
         .to('.bubble-2', 1, {
-          opacity: 1,
-        })
-        .add('bubble-2')
-        .to('.bubble-2', 1, {
-          opacity: 0,
-          delay: 5,
-        })
-        .to('.scene-img-house-1', 1, {
-          opacity: 1,
-        })
-        .to('.scene-img-house-2', 1, {
-          opacity: 1,
-        })
-        .to('.scene-img-house-3', 1, {
-          opacity: 1,
-        })
+          top: '0%', 
+          transform: 'translateY(-500px)'
+        },'-=1.5')
+    
         .to('.bubble-3', 1, {
-          opacity: 1,
-        })
-        .add('bubble-3')
-        .to('.bubble-3', 1, {
-          opacity: 0,
-          delay: 5,
-        })
+          top: '0%', 
+          transform: 'translateY(-500px)'
+        },'-=1')
+        
         .to('.city', 1, {
           opacity: 0.5,
         })
@@ -503,33 +490,22 @@ export default {
       const pinscene = new ScrollMagic.Scene({
         triggerElement: '.cartoon',
         triggerHook: 0,
-        duration: '4000%',
+        duration: '50000%',
       })
         .setPin('.cartoon', { spacerClass: 'cartoonspacer', pushFollowers: true })
         .on('add', function() {
           const scrollscene = new ScrollMagic.Scene({
             triggerElement: '.cartoonspacer',
             triggerHook: 0,
-            duration: '4000%',
+            duration: '50000%',
           })
             .setTween(scene)
             .addTo(controller2);
 
           const cartoon = document.querySelector('.cartoon');
-
-          // window.smoothScroller = new smoothScroll(document, 120, 12);
-         
-
-          // cartoon.addEventListener('mousewheel', function(e) {
-          //   e.preventDefault()
-          //   if (e.deltaY > 0) {
-          //       TweenMax.to(window, 1, { scrollTo: window.scrollY + window.innerHeight });
-          //   }
-          //   if (e.deltaY < 0) {
-          //       TweenMax.to(window, 1, { scrollTo: window.scrollY - window.innerHeight });
-          //   }
-
-          // });
+          if (!/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+            window.smoothScroller = new smoothScroll(document, 120, 12);
+          }
         })
         .addTo(controller2);
     });
@@ -544,15 +520,5 @@ export default {
 <style lang="scss">
 .app {
   overflow: hidden;
-}
-main {
-  display: none;
-}
-.panel {
-  background: white;
-  transform-origin: top;
-  &.main {
-    position: relative !important;
-  }
 }
 </style>

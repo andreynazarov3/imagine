@@ -118,6 +118,7 @@ export default {
   }
 }
 .form {
+  position: relative;
   padding-top: 400px;
   background: url() no-repeat;
   background-position: top left;

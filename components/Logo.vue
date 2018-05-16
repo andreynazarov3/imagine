@@ -1,5 +1,5 @@
 <template>
-<section class="panel top">  
+<section class="top">
    <header>     
      <div class="header-content">
     <div class="wrapper">
@@ -157,9 +157,11 @@ logoscene
   z-index: 8000;
 }
 .top {
-  position: relative;
+  position: absolute;
   overflow: hidden;
   height: 100vh;
+  width: 100%;
+  z-index: 1;
 }
 .logo-wrapper {
   max-width: 100%;

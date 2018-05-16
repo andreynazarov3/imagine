@@ -1,18 +1,15 @@
 <template>
-  <section class="panel cartoon">    
-     <div class="scene scene-0 scene-0-1" style="z-index:0">             
-      <img class="city scene-img-background" data-src="/background.png" alt=""> 
-    </div>
-    <div class="scene scene-0 scene-0-2">         
-      <img class="scene-img-hero" data-src="/hero-2.png" alt="">     
-    </div>
-      <div class="scene scene-1" id="scene-1">                  
+  <section class="cartoon">    
+      <div class="scene scene-1" id="scene-1">      
+          <img class="city scene-img-background" data-src="/background.png" alt="">             
           <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">
-          <img class="city scene-img-house-3" data-src="/house_3.png" alt="">
+          
           <img class="city scene-img-house-2" data-src="/house_2.png" alt="">
           <img class="city scene-img-house-1" data-src="/house_1.png" alt="">
+          <img class="city scene-img-house-3" data-src="/house_3.png" alt="">
           <img class="city scene-img-bridge" data-src="/bridge.png" alt="">
-          <img class="city scene-img-lighters" data-src="/lighters.png" alt="">          
+          <img class="city scene-img-lighters" data-src="/lighters.png" alt=""> 
+          <img class="scene-img-hero" data-src="/hero-2.png" alt="">           
           <div class="quests quests-1">
               <img :key="`q1-${index}`" v-for="(quest, index) in quests" class="quest quest-1 quest-size-1" alt=""  data-src="/ques1.png">
           </div>
@@ -194,31 +191,7 @@ export default {
       this.morequests3.push({});
     }
   },
-  mounted: function() {
-    const timeline = new TimelineMax();
-    timeline.to(
-      '.scene-0-1',
-      1,
-      { top: '50%', ease: Power0.easeNone },
-    ).to(
-      '.scene-0-2',
-      1,
-      { top: '50%', ease: Power0.easeNone },'-=1',
-    )
-    .to(
-      '.scene-img-hero',
-      1,
-      { transform: 'scale(1)', yPercent: 0 },'-=1'
-    );
-    const controller = new ScrollMagic.Controller();
-    // build scene
-    const scene = new ScrollMagic.Scene({
-      triggerElement: '.top',
-      duration: '100%',
-      triggerHook: 0,
-    })
-      .setTween(timeline)
-      .addTo(controller);
+  mounted: function() {     
 
     const scaleCartoon = function() {
       let scrollBarWidth = 0;
@@ -372,7 +345,7 @@ export default {
 .scene.scene-0 {
   opacity: 1 !important;
   z-index: 2;
-  top: 10%;
+  // top: 0%;
 }
 .scene-1 {
   z-index: 1;
@@ -442,8 +415,9 @@ export default {
 }
 .img-bubble {
   width: 921px;
-  top: calc(50% - 590px);
-  left: calc(50% - 353px);
+  top: 100%;
+  left: calc(50%);
+  transform: translateX(-50%);
 }
 .heroes {
   width: 400px;
@@ -505,7 +479,7 @@ export default {
 .bubble {
   // display: none !important;
   padding: 0px 80px;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   font-family: $basicFont;
   font-size: 30px;
@@ -517,7 +491,7 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-  top: calc(50% - 150px);
+  top: 100%;
   left: calc(50% - 300px);
 }
 .scene {
@@ -536,8 +510,9 @@ export default {
     background: black;
   }
   img {
+    transform-origin: bottom;
     position: absolute;
-    opacity: 0;
+    // opacity: 0;
   }
   &-img {
     &-logo {
@@ -546,60 +521,70 @@ export default {
       left: calc(50% - 400px);
     }
     &-background {
-      opacity: 1 !important;
       width: 1194px;
-      top: 0px;
+      top: 50%;
       // top: calc(50% - 800px);
       left: calc(50% - 400px);
       position: absolute;
+      transform: translateY(200px);
     }
     &-hero {
-      opacity: 1 !important;
-      z-index: 10;
       position: absolute;
-      width: 555px;
-      top: 0px;
+      width: 300px;
+      top: 50%;
       // top: calc(50% - 200px);
-      left: calc(50% - 600px);
-      transform: scale(1.4);
-      transform-origin: top;
+      left: calc(50% - 400px);
+      transform: scale(1.9) translateY(100px);
+      transform-origin: top !important;
     }
     &-bridge {
       width: 1100px;
-      top: calc(50% + 100px);
-      left: calc(50% - 700px);
+      top: 100%;
+      // top: calc(50% + 100px);
+      left: calc(50% - 650px);
+      transform: translateY(600px);
     }
     &-house-1 {
       // display: none;
       width: 500px;
-      top: calc(50% - 150px);
-      left: calc(50% + 90px);
+      top: 100%;
+      // top: calc(50% - 150px);
+      left: calc(50% + 200px);
+      transform: translateY(350px);
     }
     &-house-2 {
       // display: none;
       width: 450px;
-      top: calc(50% - 400px);
-      left: calc(50% - 100px);
+      top: 100%;
+      // top: calc(50% - 400px);
+      left: calc(50% - 50px);
+      transform: translateY(100px);
     }
     &-house-3 {
       // display: none;
       width: 550px;
-      top: calc(50%);
-      left: calc(50% - 500px);
+      top: 100%;
+      // top: calc(50%);
+      left: calc(50% - 400px);      
+      transform: translateY(500px);
     }
     &-lighters {
       // display: none;
       width: 850px;
-      top: calc(50%);
+      top: 100%;
+      // top: calc(50%);
       left: calc(50% - 100px);
+      transform: translateY(600px);
     }
     &-moscow-city {
       // display: none;
       width: 650px;
-      top: calc(50% - 600px);
+      top: 100%;
+      // top: calc(50% - 600px);
       left: calc(50% - 650px);
+      transform: translateY(100px);
     }
-  }
+  } 
 }
 .scrollbar-measure {
   width: 100px;
