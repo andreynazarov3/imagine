@@ -17,6 +17,7 @@
 
 <script>
 const imagesLoaded = require('imagesloaded');
+const smoothScroll = require('~/assets/js/smoothscroll.js');
 import Cartoon from '~/components/Cartoon';
 import Logo from '~/components/Logo';
 import Form from '~/components/Form';
@@ -51,7 +52,18 @@ export default {
     };
   },
   methods: {
-    scrollToForm: function() {},
+    scrollToForm: function() {
+      function getOffsetTop(elem) {
+        let getOffsetTop = 0;
+        do {
+          if (!isNaN(elem.offsetTop)) {
+            getOffsetTop += elem.offsetTop;
+          }
+        } while ((elem = elem.offsetParent));
+        return getOffsetTop;
+      }
+      TweenMax.to(window, 1, { scrollTo: getOffsetTop(document.querySelector('.form')) });
+    },
   },
   mounted: function() {
     let scene;
@@ -503,19 +515,21 @@ export default {
             .setTween(scene)
             .addTo(controller2);
 
-          function getOffsetTop(elem) {
-            let getOffsetTop = 0;
-            do {
-              if (!isNaN(elem.offsetTop)) {
-                getOffsetTop += elem.offsetTop;
-              }
-            } while ((elem = elem.offsetParent));
-            return getOffsetTop;
-          }
+          const cartoon = document.querySelector('.cartoon');
 
-          vue.scrollToForm = function() {
-            TweenMax.to(window, 1, { scrollTo: getOffsetTop(document.querySelector('.form')) });            
-          };
+          window.smoothScroller = new smoothScroll(document, 120, 12);
+         
+
+          // cartoon.addEventListener('mousewheel', function(e) {
+          //   e.preventDefault()
+          //   if (e.deltaY > 0) {
+          //       TweenMax.to(window, 1, { scrollTo: window.scrollY + window.innerHeight });
+          //   }
+          //   if (e.deltaY < 0) {
+          //       TweenMax.to(window, 1, { scrollTo: window.scrollY - window.innerHeight });
+          //   }
+
+          // });
         })
         .addTo(controller2);
     });
