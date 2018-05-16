@@ -17,7 +17,7 @@
 
 <script>
 const imagesLoaded = require('imagesloaded');
-const smoothScroll = require('~/assets/js/smoothscroll.js');
+// const smoothScroll = require('~/assets/js/smoothscroll.js');
 import Cartoon from '~/components/Cartoon';
 import Logo from '~/components/Logo';
 import Form from '~/components/Form';
@@ -517,7 +517,7 @@ export default {
 
           const cartoon = document.querySelector('.cartoon');
 
-          window.smoothScroller = new smoothScroll(document, 120, 12);
+          // window.smoothScroller = new smoothScroll(document, 120, 12);
          
 
           // cartoon.addEventListener('mousewheel', function(e) {
