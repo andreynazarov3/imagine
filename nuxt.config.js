@@ -56,8 +56,9 @@ module.exports = {
         src: '/js/gsap/ThrowPropsPlugin.min.js'
       },
       {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js'
-      }
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js'
+      },
+      
 
     ]
   },

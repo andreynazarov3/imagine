@@ -208,7 +208,7 @@ export default {
     .to(
       '.scene-img-hero',
       1,
-      { transform: 'scale(1)' },'-=1'
+      { transform: 'scale(1)', yPercent: 0 },'-=1'
     );
     const controller = new ScrollMagic.Controller();
     // build scene
@@ -223,6 +223,7 @@ export default {
     const scaleCartoon = function() {
       let scrollBarWidth = 0;
       let windowHeight;
+      let windowWidth;
       if (
         /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(
           navigator.userAgent,
@@ -232,21 +233,22 @@ export default {
         )
       ) {
         windowHeight = window.screen.height;
+        windowWidth = window.screen.width;
       } else {
         windowHeight = window.innerHeight;
-   
+        windowWidth = window.innerWidth;
       }
 
 
       
 
       let scenes = document.querySelectorAll('.scene');
-      const scaleCoef = windowHeight / 1533;
+      const scaleCoef = windowWidth / 1533;
       scenes.forEach(function(scene) {
         if (scaleCoef) {
           scene.style.transform = `translateY(-50%) translateX(-50%) scale(${scaleCoef})`;
           scene.style.height = `${windowHeight / scaleCoef}px`;
-          scene.style.width = `${window.innerWidth / scaleCoef}px`;
+          scene.style.width = `${windowWidth / scaleCoef}px`;
         } else {
           scene.style.transform = '';
           scene.style.height = ``;
@@ -546,7 +548,8 @@ export default {
     &-background {
       opacity: 1 !important;
       width: 1194px;
-      top: calc(50% - 800px);
+      top: 0px;
+      // top: calc(50% - 800px);
       left: calc(50% - 400px);
       position: absolute;
     }
@@ -555,10 +558,11 @@ export default {
       z-index: 10;
       position: absolute;
       width: 555px;
-      top: calc(50% - 200px);
+      top: 0px;
+      // top: calc(50% - 200px);
       left: calc(50% - 600px);
       transform: scale(1.4);
-      transform-origin: bottom;
+      transform-origin: top;
     }
     &-bridge {
       width: 1100px;

@@ -32,8 +32,7 @@ module.exports = function SmoothScroll(target, speed, smooth) {
       requestFrame(update)
     } else {
       moving = false
-    }
-    console.log(moving);
+    }    
   }
 
   var requestFrame = function () { // requestAnimationFrame cross browser
