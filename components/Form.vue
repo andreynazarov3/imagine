@@ -1,5 +1,5 @@
 <template>
-  <section class="form">    
+  <section class="form" id="form">    
     <img src="~/static/form-back.png" srcset="~/static/blue-mobile-2.png 211w,~/static/form-back.png 1010w" sizes="(max-width: 768px) 211px, 1010px" class="blue-form">
     <div class="wrapper">
     <h1>
