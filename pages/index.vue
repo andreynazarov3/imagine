@@ -440,14 +440,14 @@ export default {
       const pinscene = new ScrollMagic.Scene({
         triggerElement: '.cartoon',
         triggerHook: 0,
-        duration: '8000%',
+        duration: '14000%',
       })
         .setPin('.cartoon', { spacerClass: 'cartoonspacer', pushFollowers: true })
         .on('add', function() {
           const scrollscene = new ScrollMagic.Scene({
             triggerElement: '.cartoonspacer',
             triggerHook: 0,
-            duration: '8000%',
+            duration: '14000%',
           })
             .setTween(scene)
             .addTo(controller2);
