@@ -90,7 +90,7 @@ export default {
         );
       const scene = new TimelineMax();
       scene
- 
+
         .to('.scene-img-background', 2, { top: '50%', transform: 'translateY(-1100px)' })
         .to('.scene-img-hero', 2, { top: '50%', transform: 'translateY(-300px) scale(1)' }, '-=2')
         .to('.scene-img-bridge', 2, { top: '50%', transform: 'translateY(-400px) scale(1)' }, '-=2')
@@ -119,84 +119,131 @@ export default {
           '-=2',
         )
         .to('.scene-img-moscow-city', 2, { top: '50%', transform: 'translateY(-950px)' }, '-=2')
-        .to('.bubble-1', 1, {
-          top: '0%', 
-          y:'-100%'
-        },'-=2',)
-    
-        .to('.bubble-2', 1, {
-          top: '0%', 
-          y:'-100%'
-        },'-=1.5')
-    
-        .to('.bubble-3', 1, { 
-          top: '0%', 
-          y:'-100%'
-        },'-=1')
-        
+        .to(
+          '.bubble-1',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=2',
+        )
+
+        .to(
+          '.bubble-2',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=1.5',
+        )
+
+        .to(
+          '.bubble-3',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=1',
+        )
+
         .to('.city', 0.3, {
           opacity: 0.3,
         })
         .to('.quests-1', 1, {
           y: '0%',
-          x: '-50%'
-        })  
-        .to('.bubble-4', 1, {
-          top: '0%', 
-          y:'-100%'
-        },
-          '-=1',)
-          .to('.scene-img-hero', 1, {
-        transform: 'scale(0.9)',
-      })
-        .to('.quests-2', 1, {
-          y: '0%',
-          x: '-50%'
-        },
-          '-=1',)
-        .to('.bubble-5', 1, {
-         top: '0%', 
-          y:'-100%'
-        },
-          '-=1',)        
+          x: '-50%',
+        })
+        .to(
+          '.bubble-4',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=1',
+        )
+        .to('.scene-img-hero', 1, {
+          transform: 'scale(0.9)',
+        })
+        .to(
+          '.quests-2',
+          1,
+          {
+            y: '0%',
+            x: '-50%',
+          },
+          '-=1',
+        )
+        .to(
+          '.bubble-5',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=1',
+        )
         .to('.city', 1, {
           opacity: 0,
         })
+        .to(
+          '.scene-img-hero',
+          1,
+          {
+            transform: 'scale(0.7)',
+          },
+          '-=1',
+        )
+        .to(
+          '.quests-3',
+          1,
+          {
+            y: '0%',
+            x: '-50%',
+          },
+          '-=1',
+        )
+
         .to('.scene-img-hero', 1, {
-        transform: 'scale(0.7)',
-      },          '-=1')
-      .to('.quests-3', 1, {
-          y: '0%',
-          x: '-50%'
-        },
-          '-=1',)
-        
-          
-          .to('.scene-img-hero', 1, {
           transform: 'scale(0)',
         })
-        .to('.bubble-6', 1, {
-          top: '0%', 
-          y:'-100%'
-        },
-          '-=1',)
+        .to(
+          '.bubble-6',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=1',
+        )
 
         .to('.bubble-7', 1, {
-          top: '0%', 
-          y:'-100%'
-        }
-        ,)
-               
-        .to('.quest', 1, {
-          transform: 'scale(6)'
-        },
-          '-=1',)
+          top: '0%',
+          y: '-100%',
+        })
+
+        .to(
+          '.quest',
+          1,
+          {
+            transform: 'scale(6)',
+          },
+          '-=1',
+        )
         .to('.scene-2', 1, {
           opacity: 1,
         })
-        .to('.light', 1, {
-          opacity: 1,
-        },'-=1',)
+        .to(
+          '.light',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
         .to(
           '.hero-think-1',
           0.5,
@@ -219,15 +266,24 @@ export default {
         .to('.hero-think-2', 0.5, {
           opacity: 0,
         })
-        .to('.hero-think-3', 0.5, {
-          opacity: 1,
-        },
-          '-=0.25',)
-        .to('.bubble-8', 1, {
-          top: '0%', 
-          y:'-100%'
-        },'-=0.5',)
-        .to('.img-bubble',  0.5, {
+        .to(
+          '.hero-think-3',
+          0.5,
+          {
+            opacity: 1,
+          },
+          '-=0.25',
+        )
+        .to(
+          '.bubble-8',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=0.5',
+        )
+        .to('.img-bubble', 0.5, {
           opacity: 1,
         })
         .to('.hero-2', 0.5, {
@@ -235,7 +291,7 @@ export default {
         })
         .to(
           '.hero-2',
-           0.5,
+          0.5,
           {
             opacity: 0,
           },
@@ -243,23 +299,33 @@ export default {
         )
         .to(
           '.heroes',
-           0.5,
+          0.5,
           {
             opacity: 1,
           },
           '-=1',
         )
-        .to('.bubble-9', 1, {
-          top: '0%', 
-          y:'-100%'
-        },'-=0.5',)
+        .to(
+          '.bubble-9',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=0.5',
+        )
         .to('.hill-1', 1, {
           opacity: 1,
         })
-        .to('.bubble-10', 1, {
-          top: '0%', 
-          y:'-100%'
-        },'-=0.5',)
+        .to(
+          '.bubble-10',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=0.5',
+        )
         .to('.img-bubble', 2, {
           transform: 'scale(10)',
         })
@@ -282,7 +348,7 @@ export default {
           },
           '-=2',
         )
-        
+
         .to('.img-bubble', 0, {
           opacity: 0,
         })
@@ -295,86 +361,162 @@ export default {
         .to('.scene-2', 0, {
           backgroundColor: 'white',
         })
-        .to('.mountain', 1, {
-          opacity: 1,
-        },'-=1')
-        .to('.chairs', 1, {
-          opacity: 1,
-        },'-=1')
+        .to(
+          '.mountain',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.chairs',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
         .to(
           '.pillows',
           1,
           {
             opacity: 1,
-          }
-          ,'-=1'
-        )
-        .to('.tree', 1, {
-          opacity: 1,
-        },'-=1')
-        .to('.people', 1, {
-          opacity: 1,
-        },'-=1')
-        .to('.hill-2', 1, {
-          opacity: 1,
-        },'-=1')
-        .to('.hill-3', 1,{
-          opacity: 1,
           },
           '-=1',
         )
-        .to('.lamp', 1, {
-          opacity: 1,
-        },
-          '-=1')
-          .to('.expoint', 1, {
-          opacity: 1,
-        },
-          '-=1')
+        .to(
+          '.tree',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.people',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.hill-2',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.hill-3',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.lamp',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.expoint',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
         // move up
-        .to('.mountain', 7, {
-          y: '-700px',
-        },'-=1')
-        .to('.expoint', 7, {
-          y: '-720px'
-        },
-          '-=7')
-        .to('.chairs', 7, {
-          y: '-1200px',
-        },'-=7')
+        .to(
+          '.mountain',
+          7,
+          {
+            y: '-700px',
+          },
+          '-=1',
+        )
+        .to(
+          '.expoint',
+          7,
+          {
+            y: '-720px',
+          },
+          '-=7',
+        )
+        .to(
+          '.chairs',
+          7,
+          {
+            y: '-1200px',
+          },
+          '-=7',
+        )
         .to(
           '.pillows',
           7,
           {
             y: '-700px',
-          }
-          ,'-=7'
-        )
-        .to('.tree', 7, {
-          y: '-1400px',
-        },'-=7')
-        .to('.people', 7, {
-          y: '-700px',
-        },'-=7')
-        .to('.hill-2', 7, {
-          y: '-700px',
-        },'-=7')
-        .to('.hill-3', 7,{
-          y: '-700px',
           },
           '-=7',
         )
-        .to('.lamp', 7, {
-          y: '-400px',
-        },
+        .to(
+          '.tree',
+          7,
+          {
+            y: '-1400px',
+          },
+          '-=7',
+        )
+        .to(
+          '.people',
+          7,
+          {
+            y: '-700px',
+          },
+          '-=7',
+        )
+        .to(
+          '.hill-2',
+          7,
+          {
+            y: '-700px',
+          },
+          '-=7',
+        )
+        .to(
+          '.hill-3',
+          7,
+          {
+            y: '-700px',
+          },
+          '-=7',
+        )
+        .to(
+          '.lamp',
+          7,
+          {
+            y: '-400px',
+          },
           '-=17',
         )
 
-        .to('.bubble-11', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=7',)
-     
+        .to(
+          '.bubble-11',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=7',
+        )
+
         .to(
           '.heroes',
           7,
@@ -394,46 +536,76 @@ export default {
           },
           '-=7',
         )
-        
-        
-        .to('.bubble-12', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=7',)
-     
-        
-        
-        .to('.bubble-13', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=6',)
-     
-        
-        .to('.bubble-14', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=5',)
-        
-        .to('.bubble-15', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=4',)
-        
-        .to('.bubble-16', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=3')
-        
-        .to('.bubble-17', 1, {
-           top: '0%', 
-          y:'-100%'
-        },'-=2',)
-        
-        .to('.bubble-18', 1, {
-           top: '50%', 
-          y:'-50%'
-        },'-=1',)
-  
+
+        .to(
+          '.bubble-12',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=7',
+        )
+
+        .to(
+          '.bubble-13',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=6',
+        )
+
+        .to(
+          '.bubble-14',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=5',
+        )
+
+        .to(
+          '.bubble-15',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=4',
+        )
+
+        .to(
+          '.bubble-16',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=3',
+        )
+
+        .to(
+          '.bubble-17',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+          },
+          '-=2',
+        )
+
+        .to(
+          '.bubble-18',
+          1,
+          {
+            top: '50%',
+            y: '-50%',
+          },
+          '-=1',
+        );
 
       const controller2 = new ScrollMagic.Controller();
       // build scene
@@ -453,8 +625,9 @@ export default {
             .addTo(controller2);
 
           const cartoon = document.querySelector('.cartoon');
-          if (!/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
-            window.smoothScroller = new smoothScroll(document, 120, 12);
+          const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+          if (!isMacLike) {
+            window.smoothScroller = new smoothScroll(document, 400, 12);
           }
         })
         .addTo(controller2);
