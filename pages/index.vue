@@ -612,14 +612,14 @@ export default {
       const pinscene = new ScrollMagic.Scene({
         triggerElement: '.cartoon',
         triggerHook: 0,
-        duration: '14000%',
+        duration: '9000%',
       })
         .setPin('.cartoon', { spacerClass: 'cartoonspacer', pushFollowers: true })
         .on('add', function() {
           const scrollscene = new ScrollMagic.Scene({
             triggerElement: '.cartoonspacer',
             triggerHook: 0,
-            duration: '14000%',
+            duration: '9000%',
           })
             .setTween(scene)
             .addTo(controller2);
@@ -627,7 +627,7 @@ export default {
           const cartoon = document.querySelector('.cartoon');
           const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
           if (!isMacLike) {
-            window.smoothScroller = new smoothScroll(document, 400, 12);
+            window.smoothScroller = new smoothScroll(document, 200, 12);
           }
         })
         .addTo(controller2);
