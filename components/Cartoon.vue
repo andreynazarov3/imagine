@@ -9,81 +9,150 @@
           <img class="city scene-img-house-3" data-src="/house_3.png" alt="">
           <img class="city scene-img-bridge" data-src="/bridge.png" alt="">
           <img class="city scene-img-lighters" data-src="/lighters.png" alt=""> 
-          <img class="scene-img-hero" data-src="/hero-2.png" alt="">           
-          <div class="quests quests-1">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests" class="quest quest-1 quest-size-1" alt=""  data-src="/ques1.png">
+          <img class="scene-img-hero" data-src="/hero-2.png" alt="">                  
+          <div class="quests quests-1" data-size="1">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <div class="quests quests-2">
-             <img :key="`q2-${index}`" v-for="(quest, index) in quests" class="quest quest-2 quest-size-2" alt=""  data-src="/ques2.png">
+          <div class="quests quests-1" data-size="2">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <div class="quests quests-3">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests" class="quest quest-3 quest-size-3" alt=""  data-src="/ques3.png">
+          <div class="quests quests-1" data-size="3">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <div class="quests quests-4">
-            <img :key="`q4-${index}`" v-for="(quest, index) in quests" class="quest quest-4 quest-size-4" alt=""  data-src="/ques4.png">
+          <div class="quests quests-1" data-size="4">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <div class="quests quests-5">
-              <img :key="`q5-${index}`" v-for="(quest, index) in quests" class="quest quest-5 quest-size-5" alt=""  data-src="/ques5.png">
+          <div class="quests quests-1" data-size="5">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <div class="quests quests-6">
-             <img :key="`q6-${index}`" v-for="(quest, index) in quests" class="quest quest-6 quest-size-6" alt=""  data-src="/ques6.png">
-          </div>   
-          <!-- more quests 1      -->
-          <div class="quests-more quests-more-1">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-1" alt=""  data-src="/ques1.png">
+          <div class="quests quests-1" data-size="6">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-1">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-2" alt=""  data-src="/ques1.png">
+          <div class="quests quests-2" data-size="1">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-1">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-3" alt=""  data-src="/ques1.png">
+          <div class="quests quests-2" data-size="2">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-1">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-4" alt=""  data-src="/ques1.png">
+          <div class="quests quests-2" data-size="3">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-1">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-5" alt=""  data-src="/ques1.png">
+          <div class="quests quests-2" data-size="4">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-1">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests1" class="quest quest-1 quest-size-6" alt=""  data-src="/ques1.png">
+          <div class="quests quests-2" data-size="5">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <!-- more quests 2      -->
-          <div class="quests-more quests-more-2">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-1" alt=""  data-src="/ques1.png">
+          <div class="quests quests-2" data-size="6">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-2">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-2" alt=""  data-src="/ques1.png">
+          <div class="quests quests-3" data-size="1">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-2">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-3" alt=""  data-src="/ques1.png">
+          <div class="quests quests-3" data-size="2">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-2">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-4" alt=""  data-src="/ques1.png">
+          <div class="quests quests-3" data-size="3">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-2">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-5" alt=""  data-src="/ques1.png">
+          <div class="quests quests-3" data-size="4">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
           </div>
-           <div class="quests-more quests-more-2">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests2" class="quest quest-1 quest-size-6" alt=""  data-src="/ques1.png">
+          <div class="quests quests-3" data-size="5">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
           </div>
-          <!-- more quests 3      -->
-          <div class="quests-more quests-more-3">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-1" alt=""  data-src="/ques1.png">
-          </div>
-           <div class="quests-more quests-more-3">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-2" alt=""  data-src="/ques1.png">
-          </div>
-           <div class="quests-more quests-more-3">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-3" alt=""  data-src="/ques1.png">
-          </div>
-           <div class="quests-more quests-more-3">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-4" alt=""  data-src="/ques1.png">
-          </div>
-           <div class="quests-more quests-more-3">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-5" alt=""  data-src="/ques1.png">
-          </div>
-           <div class="quests-more quests-more-3">
-            <img :key="`qm1-${index}`" v-for="(quest, index) in morequests3" class="quest quest-1 quest-size-6" alt=""  data-src="/ques1.png">
+          <div class="quests quests-3" data-size="6">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
           </div>
           <div class="bubble bubble-1">
             В одном большом и всем знакомом городе жил Человек. 
@@ -108,6 +177,7 @@
           </div>
       </div>
       <div class="scene scene-2" id="scene-2">
+         
         <img class="light light-1"  data-src="/light/light1.png" alt="" >
         <img class="light light-2" data-src="/light/light2.png" alt="" >
         <img class="light light-3" data-src="/light/light3.png" alt="" >
@@ -115,22 +185,25 @@
          <img class="hero-think-1" data-src="/light/hero1.png" alt="" >
         <img class="hero-think-2" data-src="/light/hero2.png" alt="" >
         <img class="hero-think-3" data-src="/light/hero3.png" alt="" >
-        <img class="tree" data-src="/fantasy/tree.png" alt="" >
+       
         <img class="img-bubble" data-src="/bubble1b.png" alt="" >
+         <img class="mountain" data-src="/fantasy/mountain.png" alt="" >
         <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
-        
-        <img class="mountain" data-src="/fantasy/mountain.png" alt="" >      
-        <img class="chairs" data-src="/fantasy/chairs.png" alt="" >
-        <img class="pillows" data-src="/fantasy/pillows.png" alt="" >
-        <img class="hill-3" data-src="/fantasy/hill3.png" alt="" >
-        <img class="people" data-src="/fantasy/people.png" alt="" >
-        
-        <img class="hill-2" data-src="/fantasy/hill2.png" alt="" >
-        
-        <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
         <img data-src="/kid_handless.png" alt=""  class="hero-2">
-        <img class="lamp" data-src="/fantasy/lamp.png" alt="" >
-        <img class="expoint" data-src="/expoint.png" alt="" >
+      
+             
+          
+        
+          <img class="hill-3" data-src="/fantasy/hill3.png" alt="" >
+          <img class="people" data-src="/fantasy/people.png" alt="" >        
+          <img class="hill-2" data-src="/fantasy/hill2.png" alt="" >        
+           <img class="tree" data-src="/fantasy/tree.png" alt="" >
+             <img class="pillows" data-src="/fantasy/pillows.png" alt="" >
+           <img class="chairs" data-src="/fantasy/chairs.png" alt="" >
+          <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
+          <img class="lamp" data-src="/fantasy/lamp.png" alt="" >
+          <img class="expoint" data-src="/expoint.png" alt="" >
+       
         <div class="bubble bubble-8">
            Совсем обессилев, забылся Человек тревожным сном.  
           </div>
@@ -171,28 +244,23 @@
 export default {
   data: function() {
     return {
-      quests: [],
-      morequests1: [],
-      morequests2: [],
-      morequests3: [],
+      quests1: [],
+      quests2: [],
+      quests3: [],
     };
   },
   created: function() {
-    for (let i = 0; i < 3; i++) {
-      this.quests.push({});
+    for (let i = 0; i < 1; i++) {
+      this.quests1.push({});
+    }
+    for (let i = 0; i < 2; i++) {
+      this.quests2.push({});
     }
     for (let i = 0; i < 5; i++) {
-      this.morequests1.push({});
-    }
-    for (let i = 0; i < 10; i++) {
-      this.morequests2.push({});
-    }
-    for (let i = 0; i < 15; i++) {
-      this.morequests3.push({});
+      this.quests3.push({});
     }
   },
-  mounted: function() {     
-
+  mounted: function() {
     const scaleCartoon = function() {
       let scrollBarWidth = 0;
       let windowHeight;
@@ -212,9 +280,6 @@ export default {
         windowWidth = window.innerWidth;
       }
 
-
-      
-
       let scenes = document.querySelectorAll('.scene');
       const scaleCoef = windowWidth / 1533;
       scenes.forEach(function(scene) {
@@ -230,112 +295,41 @@ export default {
     };
     window.addEventListener('resize', scaleCartoon);
     scaleCartoon();
-    let quests = document.querySelectorAll('.quests .quest');
+    let questsBlocks = document.querySelectorAll('.quests');
 
-    for (let i = 0; i < quests.length; i++) {
-      const sizes = [100, 150, 200, 300, 400, 500];
-      const sizeScale = 0.6;
-      const height = sizes[Math.floor(Math.random() * sizes.length)];
-      const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 900);
-      const topDeviation = Math.floor(Math.random() * 300);
-      const left =
-        Math.random() < 0.5
-          ? `calc(50% - ${leftDeviation + width / 2}px)`
-          : `calc(50% + ${leftDeviation - width / 2}px)`;
-      const top =
-        Math.random() < 0.5
-          ? `calc(50% - ${topDeviation + height / 2}px)`
-          : `calc(50% + ${topDeviation - height / 2}px)`;
-      quests[i].style.left = left;
-      quests[i].style.top = top;
-      quests[i].style.height = `${height}px`;
-      quests[i].style.width = `${width}px`;
-      quests[i].style.opacity = `1`;
-      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
-    }
-    let morequests1 = document.querySelectorAll('.quests-more-1 .quest');
-    for (let i = 0; i < morequests1.length; i++) {
-      const sizes = [100, 200, 300, 400, 500, 600];
-      const sizeScale = 0.6;
-      const height = sizes[Math.floor(Math.random() * sizes.length)];
-      const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 900);
-      const topDeviation = Math.floor(Math.random() * 600);
+    for (let i = 0; i < questsBlocks.length; i++) {
+      switch (questsBlocks[i].dataset.size) {
+        case '1':
+          questsBlocks[i].style.transform = 'translateX(-50%) translateY(100%)';
+        case '2':
+          questsBlocks[i].style.transform = 'translateX(-50%) translateY(105%)';
+        case '3':
+          questsBlocks[i].style.transform = 'translateX(-50%) translateY(110%)';
+        case '4':
+          questsBlocks[i].style.transform = 'translateX(-50%) translateY(125%)';
+        case '5':
+          questsBlocks[i].style.transform = 'translateX(-50%) translateY(145%)';
+        case '6':
+      }
+      let quests = questsBlocks[i].querySelectorAll('img');
+      for (let j = 0; j < quests.length; j++) {
+        const sizes = [100, 150, 200, 250, 350, 450];
+        const sizeScale = 0.6;
+        const height = sizes[questsBlocks[i].dataset.size - 1];
+        const width = height * sizeScale;
+        const leftDeviation = Math.floor(Math.random() * 900);
+        const topDeviation = Math.floor(Math.random() * 3500);
 
-      const left =
-        Math.random() < 0.5
-          ? `calc(50% - ${leftDeviation + width / 2}px)`
-          : `calc(50% + ${leftDeviation - width / 2}px)`;
-      const top =
-        Math.random() < 0.5
-          ? `calc(50% - ${topDeviation + height / 2}px)`
-          : `calc(50% + ${topDeviation - height / 2}px)`;
-
-      morequests1[i].style.left = left;
-      morequests1[i].style.top = top;
-      morequests1[i].style.height = `${height}px`;
-      morequests1[i].style.width = `${width}px`;
-      morequests1[i].style.opacity = `1`;
-      morequests1[i].style.transform = `translateX(${
-        Math.random() < 0.5 ? '-' : '+'
-      }800px) translateY(-2000px)`;
-
-      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
-    }
-    let morequests2 = document.querySelectorAll('.quests-more-2 .quest');
-    for (let i = 0; i < morequests2.length; i++) {
-      const sizes = [500, 600, 600, 700, 800, 1000];
-      const sizeScale = 0.6;
-      const height = sizes[Math.floor(Math.random() * sizes.length)];
-      const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 900);
-      const topDeviation = Math.floor(Math.random() * 600);
-
-      const left =
-        Math.random() < 0.5
-          ? `calc(50% - ${leftDeviation + width / 2}px)`
-          : `calc(50% + ${leftDeviation - width / 2}px)`;
-      const top =
-        Math.random() < 0.5
-          ? `calc(50% - ${topDeviation + height / 2}px)`
-          : `calc(50% + ${topDeviation - height / 2}px)`;
-
-      morequests2[i].style.left = left;
-      morequests2[i].style.top = top;
-      morequests2[i].style.height = `${height}px`;
-      morequests2[i].style.width = `${width}px`;
-      morequests2[i].style.opacity = `1`;
-      morequests2[i].style.transform = `translateX(${
-        Math.random() < 0.5 ? '-' : '+'
-      }800px) translateY(-2000px)`;
-      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
-    }
-    let morequests3 = document.querySelectorAll('.quests-more-3 .quest');
-    for (let i = 0; i < morequests3.length; i++) {
-      const sizes = [600, 800, 1000, 1200, 1400, 1600];
-      const sizeScale = 0.6;
-      const height = sizes[Math.floor(Math.random() * sizes.length)];
-      const width = height * sizeScale;
-      const leftDeviation = Math.floor(Math.random() * 900);
-      const topDeviation = Math.floor(Math.random() * 600);
-      const left =
-        Math.random() < 0.5
-          ? `calc(50% - ${leftDeviation + width / 2}px)`
-          : `calc(50% + ${leftDeviation - width / 2}px)`;
-      const top =
-        Math.random() < 0.5
-          ? `calc(50% - ${topDeviation + height / 2}px)`
-          : `calc(50% + ${topDeviation - height / 2}px)`;
-      morequests3[i].style.left = left;
-      morequests3[i].style.top = top;
-      morequests3[i].style.height = `${height}px`;
-      morequests3[i].style.width = `${width}px`;
-      morequests3[i].style.opacity = `1`;
-      morequests3[i].style.transform = `translateX(${
-        Math.random() < 0.5 ? '-' : '+'
-      }800px) translateY(-2500px)`;
-      // quests[i].style.transform = `translateY(${window.innerHeight + 700}px)`;
+        const left =
+          Math.random() < 0.5
+            ? `calc(50% - ${leftDeviation + width / 2}px)`
+            : `calc(50% + ${leftDeviation - width / 2}px)`;
+        const top = `${topDeviation}px`;
+        quests[j].style.left = left;
+        quests[j].style.top = top;
+        quests[j].style.height = `${height}px`;
+        quests[j].style.width = `${width}px`;
+      }
     }
   },
 };
@@ -352,20 +346,19 @@ export default {
 }
 .scene-2 {
   z-index: 3;
+  img {
+    opacity: 0;
+  }
 }
-.quests-more {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+
 .expoint {
   width: 56px;
-  top: calc(50% - 720px);
+  top: calc(50% + 80px);
   left: calc(50% - 452px);
 }
 .lamp {
   width: 434px;
-  top: calc(50% + 270px);
+  top: calc(50% + 600px);
   left: calc(50% - 482px);
 }
 .cartoon {
@@ -375,106 +368,108 @@ export default {
 }
 .hill-3 {
   width: 900px;
-  top: calc(50% - 370px);
+  top: calc(50% + 430px);
   left: calc(50% - 682px);
 }
 .hill-2 {
   width: 900px;
-  top: calc(50% - 30px);
+  top: calc(50% + 670px);
   left: calc(50% - 400px);
 }
 .people {
   width: 490px;
-  top: calc(50% - 450px);
+  top: calc(50% + 450px);
   left: calc(50% - 700px);
 }
 .tree {
   width: 1000px;
-  top: calc(50% - 1100px);
+  top: calc(50%  + 400px);
   left: calc(50% - 150px);
 }
 .chairs {
   width: 400px;
-  top: calc(50% - 750px);
+  top: calc(50% + 850px);
   left: calc(50% - 200px);
 }
 .pillows {
   width: 620px;
-  top: calc(50% - 550px);
+  top: calc(50% + 550px);
   left: calc(50% - 250px);
 }
 .mountain {
   width: 855px;
-  top: calc(50% - 700px);
+  top: calc(50% + 100px);
   left: calc(50% - 800px);
 }
 .hill-1 {
-  width: 581px;
-  top: calc(50% - 410px);
-  left: calc(50% - 203px);
+  width: 281px;
+  top: calc(50%);
+  left: calc(50%);
+  transform: translateY(-120px) translateX(-153px);
 }
 .img-bubble {
-  width: 921px;
-  top: 100%;
-  left: calc(50%);
-  transform: translateX(-50%);
+  width: 521px;
+  top: calc(50% - 250px);
+  left: calc(50% - 300px);  
+  transform-origin: center !important;
 }
 .heroes {
-  width: 400px;
-  top: calc(50% - 600px);
-  left: calc(50% - 100px);
+  width: 200px;
+  top: calc(50%);
+  left: calc(50%);
+  transform: translateY(-232px) translateX(-107px);
 }
 .hero-2 {
-  width: 80px;
-  top: calc(50% - 310px);
-  left: calc(50% + -15px);
+  width: 40px;
+  top: calc(50% - 90px);
+  left: calc(50% - 65px);
 }
 .hero-think-1 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .hero-think-2 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .hero-think-3 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .light-1 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .light-2 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .light-3 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .light-4 {
-  width: 620px;
-  top: calc(50% - 400px);
-  left: calc(50% - 600px);
+  width: 320px;
+  top: calc(50% - 100px);
+  left: calc(50% - 400px);
 }
 .quest {
-  // width: 100px;
   position: absolute;
-  opacity: 0;
+  opacity: 1;
 }
 .quests {
   width: 100%;
-  height: 30%;
+  height: 100%;
   position: absolute;
-  transform: translateY(1500px);
-  bottom: 0;
+  transform: translateY(100%) translateX(-50%);
+  top: 0;
+  left: 50%;
 }
 .bubble {
   // display: none !important;
@@ -565,7 +560,7 @@ export default {
       width: 550px;
       top: 100%;
       // top: calc(50%);
-      left: calc(50% - 400px);      
+      left: calc(50% - 400px);
       transform: translateY(500px);
     }
     &-lighters {
@@ -584,7 +579,7 @@ export default {
       left: calc(50% - 650px);
       transform: translateY(100px);
     }
-  } 
+  }
 }
 .scrollbar-measure {
   width: 100px;
