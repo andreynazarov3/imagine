@@ -87,22 +87,20 @@ export default {
             opacity: 1,
           },
           '-=1',
-        ).to(
+        )
+        .to(
           '.scene-img-hero',
           1,
           {
             opacity: 1,
           },
           '-=1',
-        ).to(
-          '.scene-img-background',
-          1,
-          {
-            opacity: 1,
-          }
-        );
+        )
+        .to('.scene-img-background', 1, {
+          opacity: 1,
+        });
       const scene = new TimelineMax();
-      scene        
+      scene
         .to('.scene-img-background', 2, { top: '50%', transform: 'translateY(-1100px)' })
         .to('.scene-img-hero', 2, { top: '50%', transform: 'translateY(-300px) scale(1)' }, '-=2')
         .to('.scene-img-bridge', 2, { top: '50%', transform: 'translateY(-400px) scale(1)' }, '-=2')
@@ -112,90 +110,172 @@ export default {
           { top: '50%', transform: 'translateY(-650px) scale(1.1)' },
           '-=2',
         )
-        .to(
-          '.scene-img-house-2',
-          2,
-          { top: '50%', transform: 'translateY(-900px)  scale(0.9)' },
-          '-=2',
-        )
-        .to(
-          '.scene-img-house-3',
-          2,
-          { top: '50%', transform: 'translateY(-500px) scale(1)' },
-          '-=2',
-        )
+        .to('.scene-img-house-2', 2, { top: '50%', transform: 'translateY(-900px)' }, '-=2')
+        .to('.scene-img-house-3', 2, { top: '50%', transform: 'translateY(-400px)' }, '-=2')
         .to(
           '.scene-img-lighters',
           2,
           { top: '50%', transform: 'translateY(-400px) scale(1.15)' },
           '-=2',
         )
-        .to('.scene-img-moscow-city', 2, { top: '50%', transform: 'translateY(-950px)',opacity: 1, }, '-=2')  
-        .to('.scene-img-house-1', 1, { opacity: 1, }, '-=1.5') 
-        .to('.scene-img-house-2', 1, { opacity: 1, }, '-=2')     
+        .to(
+          '.scene-img-moscow-city',
+          2,
+          { top: '50%', transform: 'translateY(-950px)', opacity: 1 },
+          '-=2',
+        )
+        .to('.scene-img-house-1', 1, { opacity: 1 }, '-=1.5')
+        .to('.scene-img-house-2', 1, { opacity: 1 }, '-=2')
         .to(
           '.bubble-1',
           1,
           {
             top: '0%',
             y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false)
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=2',
-        )        
-        .to('.scene-img-bridge', 1, { opacity: 1 }, '-=1.5')        
+        )
+        .to('.scene-img-bridge', 1, { opacity: 1 }, '-=1.5')
         .to(
           '.bubble-2',
           1,
           {
             top: '0%',
             y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false)
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
-          '-=1'
-        )        
+          '-=1',
+        )
         .to(
           '.bubble-3',
           1,
           {
             top: '0%',
             y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false)
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=1',
         )
-        .to('.scene-img-lighters', 1, { opacity: 1, }, '-=1.5')
-        .to('.scene-img-house-3', 1, { opacity: 1, }, '-=1.5')
+        .to('.scene-img-lighters', 1, { opacity: 1 }, '-=1.5')
+        .to('.scene-img-house-3', 1, { opacity: 1 }, '-=1.5')
         .to('.city', 0.3, {
           opacity: 0.3,
         })
-        .to('.quests-1', 1, {
-          y: '0%',
+        .to('.quests-1[data-size="1"]', 3, {
+          y: '-100%',
           x: '-50%',
         })
+        .to(
+          '.quests-1[data-size="2"]',
+          3,
+          {
+            y: '-120%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-1[data-size="3"]',
+          3,
+          {
+            y: '-150%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-1[data-size="4"]',
+          3,
+          {
+            y: '-200%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-1[data-size="5"]',
+          3,
+          {
+            y: '-250%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-1[data-size="6"]',
+          3,
+          {
+            y: '-300%',
+            x: '-50%',
+          },
+          '-=3',
+        )
         .to(
           '.bubble-4',
           1,
           {
             top: '0%',
             y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false)
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
-          '-=1',
+          '-=3',
         )
-    
-        .to('.scene-img-hero', 1, {          
-          transform: 'scale(0.9)',
-  
-        })
+
         .to(
-          '.quests-2',
-          1,
+          '.quests-2[data-size="1"]',
+          3,
           {
-            y: '0%',
+            y: '-100%',
             x: '-50%',
           },
-          '-=1',
+          '-=2',
+        )
+
+        .to(
+          '.quests-2[data-size="2"]',
+          3,
+          {
+            y: '-120%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-2[data-size="3"]',
+          3,
+          {
+            y: '-140%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-2[data-size="4"]',
+          3,
+          {
+            y: '-160%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-2[data-size="5"]',
+          3,
+          {
+            y: '-180%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-2[data-size="6"]',
+          3,
+          {
+            y: '-200%',
+            x: '-50%',
+          },
+          '-=3',
         )
         .to(
           '.bubble-5',
@@ -203,70 +283,99 @@ export default {
           {
             top: '0%',
             y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false)
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
-          '-=1',
-        )
-        .to('.city', 1, {
-          opacity: 0,
-        })
-        .to(
-          '.scene-img-hero',
-          1,
-          {
-            transform: 'scale(0.7)',         
-          
-          },
-          '-=1',
-        )
-        .to(
-          '.quests-3',
-          1,
-          {
-            y: '0%',
-            x: '-50%',
-          },
-          '-=1',
+          '-=3',
         )
 
-        .to('.scene-img-hero', 1, {          
-          transform: 'scale(0)',
-      
-        })
         .to(
           '.bubble-6',
           1,
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
-          '-=1',
+          '-=2',
         )
-
-        .to('.bubble-7', 1, {
-          top: '0%',
-          y: '-100%',
-        })
-
         .to(
-          '.quest',
+          '.quests-3[data-size="1"]',
+          3,
+          {
+            y: '-100%',
+            x: '-50%',
+          },
+          '-=2',
+        )
+        .to(
+          '.quests-3[data-size="2"]',
+          3,
+          {
+            y: '-120%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-3[data-size="3"]',
+          3,
+          {
+            y: '-140%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-3[data-size="4"]',
+          3,
+          {
+            y: '-160%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-3[data-size="5"]',
+          3,
+          {
+            y: '-180%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.quests-3[data-size="6"]',
+          3,
+          {
+            y: '-200%',
+            x: '-50%',
+          },
+          '-=3',
+        )
+        .to(
+          '.curtain',
           1,
           {
-            transform: 'scale(6)',
+            y: '-50%',
           },
-          '-=1',
+          '-=2',
         )
-        .to('.scene-2', 1, {
+        .to(
+          '.bubble-7',
+          1,
+          {
+            top: '0%',
+            y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
+          },
+          '-=2',
+        )
+        .to('.scene-2', 0, {
           opacity: 1,
-        })
-        .to(
-          '.light',
-          1,
-          {
-            opacity: 1,
-          },
-          '-=1',
-        )
+        },'-=1')
+        .to('.light', 1, {
+          opacity: 1,
+        },'-=1')
         .to(
           '.hero-think-1',
           0.5,
@@ -303,6 +412,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=0.5',
         )
@@ -334,6 +444,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=0.5',
         )
@@ -346,6 +457,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=0.5',
         )
@@ -356,41 +468,76 @@ export default {
           '.heroes',
           2,
           {
-            width: '800px',
-            y: '0px',
+            y: '1240px',
+            x: '200px',
+            scale: 4
           },
           '-=2',
-        )
+        )        
         .to(
           '.hill-1',
           2,
           {
-            width: '1281px',
-            y: '350px',
-            x: '-403px',
+            transform: 'translateY(1240px) translateX(200px) scale(4)'
           },
           '-=2',
         )
-
+        .to(
+          '.heroes',
+          0,
+          {
+             y: '1940px',
+            x: '200px',
+            scale: 4
+          },
+        )
+        .to(
+          '.hill-1',
+          0,
+          {
+            transform: 'translateY(1940px) translateX(200px) scale(4)'
+          }
+        )
+        .to(
+          '.heroes',
+          7,
+          {
+             y: '540px',
+            x: '200px',
+            scale: 4
+          },
+        )
+        .to(
+          '.hill-1',
+          7,
+          {
+            transform: 'translateY(540px) translateX(200px) scale(4)'
+          },
+          '-=7',)
+        
         .to('.img-bubble', 0, {
           opacity: 0,
-        })
+        },
+          '-=7',)
         .to('.light', 0, {
           opacity: 0,
-        })
+        },
+          '-=7',)
         .to('.hero-think-3', 0, {
           opacity: 0,
-        })
+        },
+          '-=7',)
         .to('.scene-2', 0, {
           backgroundColor: 'white',
-        })
+        },
+          '-=7',)
         .to(
           '.mountain',
           1,
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.chairs',
@@ -398,7 +545,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.pillows',
@@ -406,7 +553,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.tree',
@@ -414,7 +561,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.people',
@@ -422,7 +569,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.hill-2',
@@ -430,7 +577,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.hill-3',
@@ -438,7 +585,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.lamp',
@@ -446,7 +593,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.expoint',
@@ -454,7 +601,7 @@ export default {
           {
             opacity: 1,
           },
-          '-=1',
+          '-=7',
         )
         // move up
         .to(
@@ -463,7 +610,7 @@ export default {
           {
             y: '-700px',
           },
-          '-=1',
+          '-=7',
         )
         .to(
           '.expoint',
@@ -477,7 +624,7 @@ export default {
           '.chairs',
           7,
           {
-            y: '-1200px',
+            y: '-1000px',
           },
           '-=7',
         )
@@ -485,7 +632,7 @@ export default {
           '.pillows',
           7,
           {
-            y: '-700px',
+            y: '-500px',
           },
           '-=7',
         )
@@ -493,7 +640,7 @@ export default {
           '.tree',
           7,
           {
-            y: '-1400px',
+            y: '-800px',
           },
           '-=7',
         )
@@ -501,7 +648,7 @@ export default {
           '.people',
           7,
           {
-            y: '-700px',
+            y: '-800px',
           },
           '-=7',
         )
@@ -509,7 +656,7 @@ export default {
           '.hill-2',
           7,
           {
-            y: '-700px',
+            y: '-950px',
           },
           '-=7',
         )
@@ -517,7 +664,7 @@ export default {
           '.hill-3',
           7,
           {
-            y: '-700px',
+            y: '-800px',
           },
           '-=7',
         )
@@ -525,40 +672,23 @@ export default {
           '.lamp',
           7,
           {
-            y: '-400px',
+            y: '-2000px',
           },
-          '-=17',
+          '-=7',
         )
-
+        
         .to(
           '.bubble-11',
           1,
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=7',
         )
 
-        .to(
-          '.heroes',
-          7,
-          {
-            width: '600px',
-            y: '-200px',
-          },
-          '-=7',
-        )
-        .to(
-          '.hill-1',
-          2,
-          {
-            width: '1281px',
-            y: '150px',
-            x: '-403px',
-          },
-          '-=7',
-        )
+      
 
         .to(
           '.bubble-12',
@@ -566,6 +696,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=7',
         )
@@ -576,6 +707,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=6',
         )
@@ -586,6 +718,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=5',
         )
@@ -596,6 +729,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=4',
         )
@@ -606,6 +740,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=3',
         )
@@ -616,6 +751,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=2',
         )
@@ -626,6 +762,7 @@ export default {
           {
             top: '50%',
             y: '-50%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
           },
           '-=1',
         );

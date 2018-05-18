@@ -8,7 +8,7 @@
           <img class="city scene-img-house-3" data-src="/house_3.png" alt="">
           <img class="city scene-img-bridge" data-src="/bridge.png" alt="">
           <img class="city scene-img-lighters" data-src="/lighters.png" alt=""> 
-          <img class="scene-img-hero" data-src="/hero-2.png" alt="">                  
+          <img class="scene-img-hero" data-src="/hero-2.png" alt="">        <img class="curtain" data-src="/curtain.png" alt="">            
           <div class="quests quests-1" data-size="1">
               <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
               <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
@@ -187,16 +187,14 @@
        
         <img class="img-bubble" data-src="/bubble1b.png" alt="" >
          <img class="mountain" data-src="/fantasy/mountain.png" alt="" >
-        <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
-        <img data-src="/kid_handless.png" alt=""  class="hero-2">
+         <img class="tree" data-src="/fantasy/tree.png" alt="" >
       
-             
-          
-        
+        <img data-src="/kid_handless.png" alt=""  class="hero-2">
+
           <img class="hill-3" data-src="/fantasy/hill3.png" alt="" >
           <img class="people" data-src="/fantasy/people.png" alt="" >        
           <img class="hill-2" data-src="/fantasy/hill2.png" alt="" >        
-           <img class="tree" data-src="/fantasy/tree.png" alt="" >
+             <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
              <img class="pillows" data-src="/fantasy/pillows.png" alt="" >
            <img class="chairs" data-src="/fantasy/chairs.png" alt="" >
           <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
@@ -255,7 +253,7 @@ export default {
     for (let i = 0; i < 2; i++) {
       this.quests2.push({});
     }
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 15; i++) {
       this.quests3.push({});
     }
   },
@@ -301,29 +299,15 @@ export default {
     scaleCartoon();
     let questsBlocks = document.querySelectorAll('.quests');
 
-    for (let i = 0; i < questsBlocks.length; i++) {
-      switch (questsBlocks[i].dataset.size) {
-        case '1':
-          questsBlocks[i].style.transform = 'translateX(-50%) translateY(100%)';
-        case '2':
-          questsBlocks[i].style.transform = 'translateX(-50%) translateY(105%)';
-        case '3':
-          questsBlocks[i].style.transform = 'translateX(-50%) translateY(110%)';
-        case '4':
-          questsBlocks[i].style.transform = 'translateX(-50%) translateY(125%)';
-        case '5':
-          questsBlocks[i].style.transform = 'translateX(-50%) translateY(145%)';
-        case '6':
-      }
+    for (let i = 0; i < questsBlocks.length; i++) {      
       let quests = questsBlocks[i].querySelectorAll('img');
       for (let j = 0; j < quests.length; j++) {
         const sizes = [100, 150, 200, 250, 350, 450];
         const sizeScale = 0.6;
         const height = sizes[questsBlocks[i].dataset.size - 1];
         const width = height * sizeScale;
-        const leftDeviation = Math.floor(Math.random() * 900);
-        const topDeviation = Math.floor(Math.random() * 3500);
-
+        const leftDeviation = Math.floor(Math.random() * 800);
+        const topDeviation = Math.floor(Math.random() * 2000);
         const left =
           Math.random() < 0.5
             ? `calc(50% - ${leftDeviation + width / 2}px)`
@@ -353,7 +337,13 @@ export default {
     opacity: 0;
   }
 }
-
+.curtain {
+  opacity: 1 !important;
+  top:0;
+  width: 100%;
+  height: 200%;
+  transform: translateY(50%);
+}
 .expoint {
   width: 56px;
   top: calc(50% + 80px);
@@ -361,7 +351,7 @@ export default {
 }
 .lamp {
   width: 434px;
-  top: calc(50% + 600px);
+  top: calc(50% + 2000px);
   left: calc(50% - 482px);
 }
 .cartoon {
@@ -371,33 +361,34 @@ export default {
 }
 .hill-3 {
   width: 900px;
-  top: calc(50% + 430px);
+  top: calc(50% + 530px);
   left: calc(50% - 682px);
 }
 .hill-2 {
   width: 900px;
-  top: calc(50% + 670px);
+  top: calc(50% + 970px);
   left: calc(50% - 400px);
 }
 .people {
   width: 490px;
-  top: calc(50% + 450px);
+  top: calc(50% + 550px);
   left: calc(50% - 700px);
 }
 .tree {
   width: 1000px;
-  top: calc(50% + 400px);
-  left: calc(50% - 150px);
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
 }
 .chairs {
   width: 400px;
-  top: calc(50% + 850px);
+  top: calc(50% + 450px);
   left: calc(50% - 200px);
 }
 .pillows {
   width: 620px;
-  top: calc(50% + 550px);
-  left: calc(50% - 250px);
+  top: calc(50%);
+  left: calc(50%);
+  transform: translateY(1350px) translateX(-250px);
 }
 .mountain {
   width: 855px;
@@ -412,9 +403,10 @@ export default {
 }
 .img-bubble {
   width: 521px;
-  top: calc(50% - 250px);
-  left: calc(50% - 300px);
+  top: calc(50%);
+  left: calc(50%);
   transform-origin: center !important;
+  transform: translateY(-250px) translateX(-300px);
 }
 .heroes {
   width: 200px;
@@ -473,6 +465,9 @@ export default {
   transform: translateY(100%) translateX(-50%);
   top: 0;
   left: 50%;
+  img {
+    opacity: 1;
+  }
 }
 .bubble {
   // display: none !important;
@@ -590,7 +585,7 @@ export default {
       top: 100%;
       // top: calc(50%);
       left: calc(50% - 400px);
-      transform: translateY(500px);
+      transform: translateY(800px);
     }
     &-lighters {
       // display: none;
