@@ -155,7 +155,6 @@ export default {
             y: '-100%',
             ease: SlowMo.ease.config(0.1, 0.7, false),
           },
-          '-=0.5',
         )
         .to('.scene-img-lighters', 1, { opacity: 1 }, '-=1.5')
         .to('.scene-img-house-3', 1, { opacity: 1 }, '-=1.5')
@@ -461,26 +460,26 @@ export default {
           },
           '-=0.5',
         )
-        .to('.img-bubble', 2, {
+        .to('.img-bubble', 0.5, {
           transform: 'scale(10)',
         })
         .to(
           '.heroes',
-          2,
+          0.5,
           {
             y: '1240px',
             x: '200px',
             scale: 4
           },
-          '-=2',
+          '-=0.5',
         )        
         .to(
           '.hill-1',
-          2,
+          0.5,
           {
             transform: 'translateY(1240px) translateX(200px) scale(4)'
           },
-          '-=2',
+          '-=0.5',
         )
         .to(
           '.heroes',
@@ -505,7 +504,7 @@ export default {
              y: '540px',
             x: '200px',
             scale: 4
-          },
+          }
         )
         .to(
           '.hill-1',
