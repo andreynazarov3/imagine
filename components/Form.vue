@@ -43,7 +43,7 @@ export default {
   },
   sendEmail: function () {
     var img = new Image();
-    img.onload = () => { console.log(this);this.$emit('sendmail'); }
+    img.onload = () => { this.$emit('sendmail'); }
     img.src = "/popup.png";
     
     fetch('https://imaginemailer.herokuapp.com', {

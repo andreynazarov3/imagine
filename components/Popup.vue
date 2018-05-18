@@ -1,6 +1,6 @@
 <template>
 <transition name="modal">
-    <div class="modal-mask">
+    <div ref="modalContainer" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
              <button class="close modal-default-button" @click="$emit('close')">
@@ -37,7 +37,12 @@
   </transition>
 </template>
 <script>
-export default {};
+export default {
+  mounted: function () {
+       this.$refs.modalContainer.addEventListener('mousewheel', function (e){e.stopPropagation();}, false)
+        this.$refs.modalContainer.addEventListener('DOMMouseScroll', function (e){e.stopPropagation();}, false)
+  }
+};
 </script>
 
 <style lang="scss">

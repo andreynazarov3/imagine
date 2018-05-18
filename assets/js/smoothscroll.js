@@ -9,7 +9,7 @@ module.exports = function SmoothScroll(target, speed, smooth) {
   function scrolled(e) {
     if (!moving) {
       window.pos = window.scrollY
-    }
+    }    
     e.preventDefault(); // disable default scrolling
     var delta = e.delta || e.wheelDelta;
     if (delta === undefined) {
