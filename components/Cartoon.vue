@@ -2,8 +2,7 @@
   <section class="cartoon">    
       <div class="scene scene-1" id="scene-1">      
           <img class="city scene-img-background" data-src="/background.png" alt="">             
-          <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">
-          
+          <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">          
           <img class="city scene-img-house-2" data-src="/house_2.png" alt="">
           <img class="city scene-img-house-1" data-src="/house_1.png" alt="">
           <img class="city scene-img-house-3" data-src="/house_3.png" alt="">
@@ -281,7 +280,11 @@ export default {
       }
 
       let scenes = document.querySelectorAll('.scene');
-      const scaleCoef = windowWidth / 1533;
+      const windowRatio = windowWidth / windowHeight;
+      let scaleCoef = windowWidth / 1533;
+      if (windowRatio < 1) {
+        scaleCoef = windowHeight / 1533;
+      }
       scenes.forEach(function(scene) {
         if (scaleCoef) {
           scene.style.transform = `translateY(-50%) translateX(-50%) scale(${scaleCoef})`;
@@ -294,6 +297,7 @@ export default {
       });
     };
     window.addEventListener('resize', scaleCartoon);
+    window.addEventListener('orientationchange', scaleCartoon);
     scaleCartoon();
     let questsBlocks = document.querySelectorAll('.quests');
 
@@ -336,13 +340,12 @@ export default {
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
-.scene.scene-0 {
-  opacity: 1 !important;
-  z-index: 2;
-  // top: 0%;
-}
+
 .scene-1 {
   z-index: 1;
+  img {
+    opacity: 0;
+  }
 }
 .scene-2 {
   z-index: 3;
@@ -383,7 +386,7 @@ export default {
 }
 .tree {
   width: 1000px;
-  top: calc(50%  + 400px);
+  top: calc(50% + 400px);
   left: calc(50% - 150px);
 }
 .chairs {
@@ -410,7 +413,7 @@ export default {
 .img-bubble {
   width: 521px;
   top: calc(50% - 250px);
-  left: calc(50% - 300px);  
+  left: calc(50% - 300px);
   transform-origin: center !important;
 }
 .heroes {
@@ -478,16 +481,42 @@ export default {
   position: absolute;
   font-family: $basicFont;
   font-size: 30px;
-  background: url('~/static/bubble-white-1.png');
-  background-size: 100%;
+  background-size: 100% 100%;
   // border: 2px solid black;
   width: 600px;
   height: 300px;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   top: 100%;
   left: calc(50% - 300px);
+  &-1,
+  &-4,
+  &-7,
+  &-10,
+  &-13,
+  &-16 {
+    background-image: url('~/static/bubble-white-1.png');
+  }
+  &-2,
+  &-5,
+  &-8,
+  &-11,
+  &-14,
+  &-17 {
+    background-image: url('~/static/bubble-white-2.png');
+    padding-top: 80px;
+    padding-left: 135px;
+  }
+  &-3,
+  &-6,
+  &-9,
+  &-12,
+  &-15,
+  &-18 {
+    background-image: url('~/static/bubble-white-3.png');
+  }
 }
 .scene {
   width: 100%;
@@ -537,7 +566,7 @@ export default {
       top: 100%;
       // top: calc(50% + 100px);
       left: calc(50% - 650px);
-      transform: translateY(600px);
+      transform: translateY(1000px);
     }
     &-house-1 {
       // display: none;
@@ -545,7 +574,7 @@ export default {
       top: 100%;
       // top: calc(50% - 150px);
       left: calc(50% + 200px);
-      transform: translateY(350px);
+      transform: translateY(450px);
     }
     &-house-2 {
       // display: none;
@@ -569,7 +598,7 @@ export default {
       top: 100%;
       // top: calc(50%);
       left: calc(50% - 100px);
-      transform: translateY(600px);
+      transform: translateY(1200px);
     }
     &-moscow-city {
       // display: none;

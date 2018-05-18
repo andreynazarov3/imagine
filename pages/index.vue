@@ -87,10 +87,22 @@ export default {
             opacity: 1,
           },
           '-=1',
+        ).to(
+          '.scene-img-hero',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        ).to(
+          '.scene-img-background',
+          1,
+          {
+            opacity: 1,
+          }
         );
       const scene = new TimelineMax();
-      scene
-
+      scene        
         .to('.scene-img-background', 2, { top: '50%', transform: 'translateY(-1100px)' })
         .to('.scene-img-hero', 2, { top: '50%', transform: 'translateY(-300px) scale(1)' }, '-=2')
         .to('.scene-img-bridge', 2, { top: '50%', transform: 'translateY(-400px) scale(1)' }, '-=2')
@@ -118,37 +130,42 @@ export default {
           { top: '50%', transform: 'translateY(-400px) scale(1.15)' },
           '-=2',
         )
-        .to('.scene-img-moscow-city', 2, { top: '50%', transform: 'translateY(-950px)' }, '-=2')
+        .to('.scene-img-moscow-city', 2, { top: '50%', transform: 'translateY(-950px)',opacity: 1, }, '-=2')  
+        .to('.scene-img-house-1', 1, { opacity: 1, }, '-=1.5') 
+        .to('.scene-img-house-2', 1, { opacity: 1, }, '-=2')     
         .to(
           '.bubble-1',
           1,
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false)
           },
           '-=2',
-        )
-
+        )        
+        .to('.scene-img-bridge', 1, { opacity: 1 }, '-=1.5')        
         .to(
           '.bubble-2',
           1,
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false)
           },
-          '-=1.5',
-        )
-
+          '-=1'
+        )        
         .to(
           '.bubble-3',
           1,
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false)
           },
           '-=1',
         )
-
+        .to('.scene-img-lighters', 1, { opacity: 1, }, '-=1.5')
+        .to('.scene-img-house-3', 1, { opacity: 1, }, '-=1.5')
         .to('.city', 0.3, {
           opacity: 0.3,
         })
@@ -162,11 +179,14 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false)
           },
           '-=1',
         )
-        .to('.scene-img-hero', 1, {
+    
+        .to('.scene-img-hero', 1, {          
           transform: 'scale(0.9)',
+  
         })
         .to(
           '.quests-2',
@@ -183,6 +203,7 @@ export default {
           {
             top: '0%',
             y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false)
           },
           '-=1',
         )
@@ -193,7 +214,8 @@ export default {
           '.scene-img-hero',
           1,
           {
-            transform: 'scale(0.7)',
+            transform: 'scale(0.7)',         
+          
           },
           '-=1',
         )
@@ -207,8 +229,9 @@ export default {
           '-=1',
         )
 
-        .to('.scene-img-hero', 1, {
+        .to('.scene-img-hero', 1, {          
           transform: 'scale(0)',
+      
         })
         .to(
           '.bubble-6',
