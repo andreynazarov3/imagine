@@ -155,7 +155,7 @@ export default {
             y: '-100%',
             ease: SlowMo.ease.config(0.1, 0.7, false),
           },
-          '-=1',
+          '-=0.5',
         )
         .to('.scene-img-lighters', 1, { opacity: 1 }, '-=1.5')
         .to('.scene-img-house-3', 1, { opacity: 1 }, '-=1.5')
