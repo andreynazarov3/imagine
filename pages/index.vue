@@ -63,6 +63,56 @@ export default {
     },
   },
   mounted: function() {
+    const bottomAnimationOffset = 150;
+    const bottomAnimationTime = 1;
+    const bottomController = new ScrollMagic.Controller();
+    const formScene = new ScrollMagic.Scene({
+									triggerElement: ".form"
+								})
+								.setTween(TweenMax.fromTo('.form', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+                .addTo(bottomController);
+   const scheScene = new ScrollMagic.Scene({
+									triggerElement: ".schedule"
+								})
+								.setTween(TweenMax.fromTo('.schedule', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+                .addTo(bottomController);
+  const spekScene = new ScrollMagic.Scene({
+              triggerElement: ".speakers"
+            })
+            .setTween(TweenMax.fromTo('.speakers', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
+            
+    const spekheadScene = new ScrollMagic.Scene({
+              triggerElement: ".speakers .block-heading"
+            })
+            .setTween(TweenMax.fromTo('.speakers .block-heading', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
+    const pers1Scene = new ScrollMagic.Scene({
+              triggerElement: ".person-1"
+            })
+            .setTween(TweenMax.fromTo('.person-1', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
+    const pers2Scene = new ScrollMagic.Scene({
+              triggerElement: ".person-2"
+            })
+            .setTween(TweenMax.fromTo('.person-2', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
+    const pers3Scene = new ScrollMagic.Scene({
+              triggerElement: ".person-3"
+            })
+            .setTween(TweenMax.fromTo('.person-3', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
+     const credScene = new ScrollMagic.Scene({
+              triggerElement: ".credits"
+            })
+            .setTween(TweenMax.fromTo('.credits', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
+     const footScene = new ScrollMagic.Scene({
+              triggerElement: "footer",
+              triggerHook: 1
+            })
+            .setTween(TweenMax.fromTo('footer', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
+            .addTo(bottomController);
     let scene;
     let images = document.querySelectorAll('.cartoon img');
 
@@ -805,5 +855,8 @@ export default {
 }
 main {
   display: none;
+}
+.form, .schedule, .speakers, footer, .speakers .block-heading, .person, .credits {
+  opacity: 0;
 }
 </style>

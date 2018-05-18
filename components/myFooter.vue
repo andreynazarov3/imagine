@@ -46,6 +46,7 @@ not in the sense of peering toward </p>
       text-decoration: none;
       &:hover {
         opacity: 1;
+        text-decoration: underline;
       }
     }
     @media #{$tabletScreen} {
