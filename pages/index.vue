@@ -92,9 +92,11 @@ export default {
       });
     },
   },
-
+  beforeMount: function() {
+    this.isMobile = this.checkMobile();
+  },
   mounted: function() {
-    const bottomAnimationOffset = 150;
+    const bottomAnimationOffset = 50;
     const bottomAnimationTime = 1;
     const bottomController = new ScrollMagic.Controller();
     const formScene = new ScrollMagic.Scene({
