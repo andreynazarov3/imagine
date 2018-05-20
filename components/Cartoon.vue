@@ -284,7 +284,7 @@ export default {
           },
         });
       }
-       if (e.deltaY < 0) {
+      if (e.deltaY < 0) {
         TweenMax.to(window, 1, {
           scrollTo: {
             y: window.scrollY - windowHeight,
@@ -292,6 +292,11 @@ export default {
           },
         });
       }
+    }
+    const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
+    if (!isMacLike) {
+      cartoon.addEventListener('mousewheel', scrollcartoon);
+      cartoon.addEventListener('DOMMouseScroll', scrollcartoon);
     }
     getWindowSize();
     const scaleCartoon = function() {
@@ -312,8 +317,6 @@ export default {
         }
       });
     };
-    cartoon.addEventListener('mousewheel', scrollcartoon);
-    cartoon.addEventListener('DOMMouseScroll', scrollcartoon);
     window.addEventListener('resize', getWindowSize);
     window.addEventListener('orientationchange', getWindowSize);
     window.addEventListener('resize', scaleCartoon);

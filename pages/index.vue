@@ -926,7 +926,7 @@ export default {
               top: '50%',
               y: '-50%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
-              
+
               // onComplete: function() {             
               //   vue.scrollToForm();
               // },
@@ -949,13 +949,7 @@ export default {
               duration: '9000%',
             })
               .setTween(scene)
-              .addTo(controller2);
-
-            const cartoon = document.querySelector('.cartoon');
-            const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
-            if (!isMacLike) {
-              // window.smoothScroller = new smoothScroll(document, 200, 12);
-            }
+              .addTo(controller2);           
           })
           .addTo(controller2);
       });
