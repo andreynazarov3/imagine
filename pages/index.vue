@@ -33,8 +33,7 @@ export default {
     myFooter,
     Popup,
   },
-  asyncData({env}) {
-    
+  asyncData({ env }) {
     return axios.get(env.baseUrl + '/data.json').then(res => {
       return { header: res.data.header };
     });
@@ -85,16 +84,15 @@ export default {
         } while ((elem = elem.offsetParent));
         return getOffsetTop;
       }
-      TweenMax.to(window, 1, { scrollTo: getOffsetTop(document.querySelector('.form')) });
+      TweenMax.to(window, 1, {
+        scrollTo: {
+          y: getOffsetTop(document.querySelector('.form')),
+          autoKill: false,
+        },
+      });
     },
   },
-  beforeMount: function() {
-    // this.isMobile = this.checkMobile();
-    // axios.get(`http://localhost:3000/data.json`).then(({ data }) => {
-    //   console.log(data);
-    //   this.header = data.header;
-    // });
-  },
+
   mounted: function() {
     const bottomAnimationOffset = 150;
     const bottomAnimationTime = 1;
@@ -925,6 +923,11 @@ export default {
               top: '50%',
               y: '-50%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
+              onComplete: function() {
+                console.log('complete');
+                console.log(vue);
+                vue.scrollToForm();
+              },
             },
             '-=1',
           );
