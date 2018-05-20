@@ -210,7 +210,7 @@ export default {
         .to('.scene-img-house-3', 1, { opacity: 1 }, '-=1.5')
         .to('.city', 0.3, {
           opacity: 0.3,
-        })
+        })    
         .to('.quests-1[data-size="1"]', 3, {
           y: '-100%',
           x: '-50%',
@@ -270,7 +270,7 @@ export default {
           },
           '-=3',
         )
-
+        .to('.scene-img-hero', 3, { top: '50%', transform: 'translateY(0px) scale(0.5)' },'-=2',)
         .to(
           '.quests-2[data-size="1"]',
           3,

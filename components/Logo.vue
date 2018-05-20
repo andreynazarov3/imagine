@@ -10,7 +10,8 @@
     </div>
   </header>
   <div class="logo-wrapper">
-  <img class="ideas" src="~/static/100ideas.png" alt="" srcset="">
+  <!-- <img class="ideas" src="~/static/100ideas.png" alt="" srcset=""> -->
+  <div class="ideas-text"><span class="counter">{{progressNumber}} <span class="ideas-word">идей</span></span>для твоего проекта</div>
   <svg class="logo" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 849.79 708.227">
   <defs>
     <clipPath id="clip-path" transform="translate(53.551 210.312)">
@@ -88,12 +89,12 @@
     </g>
   </g>
 </svg>
-<div class="loading">
+<!-- <div class="loading">
   <div class="progress-number">{{progressNumber}}%</div>
   <div class="progress-bar">
     <div :style="progressStyle" class="progress"></div>
   </div>
-</div> 
+</div>  -->
 </div>
 <div class="logoscript" v-html="logoscript">
 </div>
@@ -104,13 +105,13 @@
 export default {
   props: ['progressNumber'],
   watch: {
-    progressNumber: function (newVal) {
-      this.progressStyle = {width:`${newVal}%`, height:'4px;', background: '#ff7c00'}
-    }
+    progressNumber: function(newVal) {
+      this.progressStyle = { width: `${newVal}%`, height: '4px;', background: '#ff7c00' };
+    },
   },
   data: function() {
     return {
-      progressStyle: {width:`0%`, height:'4px;', background: '#ff7c00'},
+      progressStyle: { width: `0%`, height: '4px;', background: '#ff7c00' },
       logoscript: `<script>
     var logoscene = new TimelineMax({
     paused: false,
@@ -178,6 +179,35 @@ logoscene
 }
 .logo {
   max-width: 100%;
+}
+.ideas-text {
+  @extend %p;
+  font-size: 35px;
+  position: absolute;
+  bottom: calc(50% - 176px);
+  right: -3px;
+  letter-spacing: 0.5px;
+  transform-origin: top right;
+  .counter {
+    display: block;
+    font-size: 44px;
+    line-height: 31px;
+  }
+  .ideas-word {
+    letter-spacing: 0.2px;
+    position: relative;
+    left: 5px;
+  }
+  @media #{$mediumScreen} {
+    transform: scale(0.5);
+    bottom: calc(50% - 129px);
+    right: 0;
+  }
+  @media #{$smallScreen} {
+    font-size: 8vw;
+    bottom: calc(7%);
+    right: 15px;
+  }
 }
 .ideas {
   opacity: 0;
