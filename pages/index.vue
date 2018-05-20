@@ -34,6 +34,7 @@ export default {
     Popup,
   },
   asyncData({env}) {
+    
     return axios.get(env.baseUrl + '/data.json').then(res => {
       return { header: res.data.header };
     });
