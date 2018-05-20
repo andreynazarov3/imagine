@@ -280,19 +280,21 @@ export default {
         TweenMax.to(window, 1, {
           scrollTo: {
             y: window.scrollY + windowHeight,
-            autoKill: false,
+            autoKill: true,
           },
         });
       }
+      // scroll up
       if (e.deltaY < 0) {
         TweenMax.to(window, 1, {
           scrollTo: {
             y: window.scrollY - windowHeight,
-            autoKill: false,
+            autoKill: true,
           },
         });
       }
     }
+
     const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
     if (!isMacLike) {
       cartoon.addEventListener('mousewheel', scrollcartoon);

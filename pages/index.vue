@@ -38,6 +38,11 @@ export default {
       return { header: res.data.header };
     });
   },
+  created: function () {
+    axios.get('/data.json').then(res => {
+      this.header = res.data.header;
+    });
+  },
   watch: {
     showPopup: function(val) {
       const body = document.querySelector('body');
