@@ -1,8 +1,8 @@
 <template lang="html">
 <div class="app">  
-    <Logo :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
-    <main>
-      <Cartoon />
+    <Logo :style="{position: isMobile ? 'static' : 'absolute'}" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
+    <main v-show="imagesLoaded || isMobile">
+      <Cartoon v-show="!isMobile" />
       <Form @sendmail="showPopup = true" />
       <Schedule @scrollToForm='scrollToForm' />
       <Speakers />
@@ -46,9 +46,27 @@ export default {
     return {
       progressNumber: 0,
       showPopup: false,
+      isMobile: false,
+      imagesLoaded: false
     };
   },
   methods: {
+    checkMobile: function() {
+      if (
+        /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(
+          window.navigator.userAgent,
+        ) ||
+        /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(
+          window.navigator.userAgent.substr(0, 4),
+        )
+      ) {
+        console.log('mobile');
+        return true;
+      } else {
+        console.log('not mobile');
+        return false;
+      }
+    },
     scrollToForm: function() {
       function getOffsetTop(elem) {
         let getOffsetTop = 0;
@@ -62,57 +80,127 @@ export default {
       TweenMax.to(window, 1, { scrollTo: getOffsetTop(document.querySelector('.form')) });
     },
   },
+  beforeMount: function () {
+    this.isMobile = this.checkMobile();
+  },
   mounted: function() {
+    
     const bottomAnimationOffset = 150;
     const bottomAnimationTime = 1;
     const bottomController = new ScrollMagic.Controller();
     const formScene = new ScrollMagic.Scene({
-									triggerElement: ".form"
-								})
-								.setTween(TweenMax.fromTo('.form', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-                .addTo(bottomController);
-   const scheScene = new ScrollMagic.Scene({
-									triggerElement: ".schedule"
-								})
-								.setTween(TweenMax.fromTo('.schedule', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-                .addTo(bottomController);
-  const spekScene = new ScrollMagic.Scene({
-              triggerElement: ".speakers"
-            })
-            .setTween(TweenMax.fromTo('.speakers', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
-            
+      triggerElement: '.form',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.form',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
+    const scheScene = new ScrollMagic.Scene({
+      triggerElement: '.schedule',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.schedule',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
+    const spekScene = new ScrollMagic.Scene({
+      triggerElement: '.speakers',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.speakers',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
+
     const spekheadScene = new ScrollMagic.Scene({
-              triggerElement: ".speakers .block-heading"
-            })
-            .setTween(TweenMax.fromTo('.speakers .block-heading', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
+      triggerElement: '.speakers .block-heading',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.speakers .block-heading',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
     const pers1Scene = new ScrollMagic.Scene({
-              triggerElement: ".person-1"
-            })
-            .setTween(TweenMax.fromTo('.person-1', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
+      triggerElement: '.person-1',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.person-1',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
     const pers2Scene = new ScrollMagic.Scene({
-              triggerElement: ".person-2"
-            })
-            .setTween(TweenMax.fromTo('.person-2', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
+      triggerElement: '.person-2',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.person-2',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
     const pers3Scene = new ScrollMagic.Scene({
-              triggerElement: ".person-3"
-            })
-            .setTween(TweenMax.fromTo('.person-3', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
-     const credScene = new ScrollMagic.Scene({
-              triggerElement: ".credits"
-            })
-            .setTween(TweenMax.fromTo('.credits', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
-     const footScene = new ScrollMagic.Scene({
-              triggerElement: "footer",
-              triggerHook: 1
-            })
-            .setTween(TweenMax.fromTo('footer', bottomAnimationTime, {opacity:0,y:bottomAnimationOffset},{opacity:1,y:0}))								
-            .addTo(bottomController);
+      triggerElement: '.person-3',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.person-3',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
+    const credScene = new ScrollMagic.Scene({
+      triggerElement: '.credits',
+    })
+      .setTween(
+        TweenMax.fromTo(
+          '.credits',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
+    const footScene = new ScrollMagic.Scene({
+      triggerElement: 'footer',
+      triggerHook: 1,
+    })
+      .setTween(
+        TweenMax.fromTo(
+          'footer',
+          bottomAnimationTime,
+          { opacity: 0, y: bottomAnimationOffset },
+          { opacity: 1, y: 0 },
+        ),
+      )
+      .addTo(bottomController);
+    
+    if (!this.isMobile) {
+
     let scene;
     let images = document.querySelectorAll('.cartoon img');
 
@@ -122,9 +210,10 @@ export default {
     const vue = this;
     const imgLoad = imagesLoaded('body', function() {
       console.log('images loaded');
-      const loading = document.querySelector('.loading');
-      const main = document.querySelector('main');
-      main.style.display = 'block';
+      vue.imagesLoaded = true;
+      // const loading = document.querySelector('.loading');
+      // const main = document.querySelector('main');
+      // main.style.display = 'block';
       const tbscene = new TimelineMax();
       tbscene
         .to('.loading', 1, {
@@ -197,20 +286,16 @@ export default {
           },
           '-=1',
         )
-        .to(
-          '.bubble-3',
-          1,
-          {
-            top: '0%',
-            y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false),
-          },
-        )
+        .to('.bubble-3', 1, {
+          top: '0%',
+          y: '-100%',
+          ease: SlowMo.ease.config(0.1, 0.7, false),
+        })
         .to('.scene-img-lighters', 1, { opacity: 1 }, '-=1.5')
         .to('.scene-img-house-3', 1, { opacity: 1 }, '-=1.5')
         .to('.city', 0.3, {
           opacity: 0.3,
-        })    
+        })
         .to('.quests-1[data-size="1"]', 3, {
           y: '-100%',
           x: '-50%',
@@ -270,7 +355,7 @@ export default {
           },
           '-=3',
         )
-        .to('.scene-img-hero', 3, { top: '50%', transform: 'translateY(0px) scale(0.5)' },'-=2',)
+        .to('.scene-img-hero', 3, { top: '50%', transform: 'translateY(0px) scale(0.5)' }, '-=2')
         .to(
           '.quests-2[data-size="1"]',
           3,
@@ -419,12 +504,22 @@ export default {
           },
           '-=2',
         )
-        .to('.scene-2', 0, {
-          opacity: 1,
-        },'-=1')
-        .to('.light', 1, {
-          opacity: 1,
-        },'-=1')
+        .to(
+          '.scene-2',
+          0,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
+        .to(
+          '.light',
+          1,
+          {
+            opacity: 1,
+          },
+          '-=1',
+        )
         .to(
           '.hero-think-1',
           0.5,
@@ -519,67 +614,72 @@ export default {
           {
             y: '1240px',
             x: '200px',
-            scale: 4
+            scale: 4,
           },
           '-=0.5',
-        )        
+        )
         .to(
           '.hill-1',
           0.5,
           {
-            transform: 'translateY(1240px) translateX(200px) scale(4)'
+            transform: 'translateY(1240px) translateX(200px) scale(4)',
           },
           '-=0.5',
         )
-        .to(
-          '.heroes',
-          0,
-          {
-             y: '1940px',
-            x: '200px',
-            scale: 4
-          },
-        )
-        .to(
-          '.hill-1',
-          0,
-          {
-            transform: 'translateY(1940px) translateX(200px) scale(4)'
-          }
-        )
-        .to(
-          '.heroes',
-          7,
-          {
-             y: '540px',
-            x: '200px',
-            scale: 4
-          }
-        )
+        .to('.heroes', 0, {
+          y: '1940px',
+          x: '200px',
+          scale: 4,
+        })
+        .to('.hill-1', 0, {
+          transform: 'translateY(1940px) translateX(200px) scale(4)',
+        })
+        .to('.heroes', 7, {
+          y: '540px',
+          x: '200px',
+          scale: 4,
+        })
         .to(
           '.hill-1',
           7,
           {
-            transform: 'translateY(540px) translateX(200px) scale(4)'
+            transform: 'translateY(540px) translateX(200px) scale(4)',
           },
-          '-=7',)
-        
-        .to('.img-bubble', 0, {
-          opacity: 0,
-        },
-          '-=7',)
-        .to('.light', 0, {
-          opacity: 0,
-        },
-          '-=7',)
-        .to('.hero-think-3', 0, {
-          opacity: 0,
-        },
-          '-=7',)
-        .to('.scene-2', 0, {
-          backgroundColor: 'white',
-        },
-          '-=7',)
+          '-=7',
+        )
+
+        .to(
+          '.img-bubble',
+          0,
+          {
+            opacity: 0,
+          },
+          '-=7',
+        )
+        .to(
+          '.light',
+          0,
+          {
+            opacity: 0,
+          },
+          '-=7',
+        )
+        .to(
+          '.hero-think-3',
+          0,
+          {
+            opacity: 0,
+          },
+          '-=7',
+        )
+        .to(
+          '.scene-2',
+          0,
+          {
+            backgroundColor: 'white',
+          },
+          '-=7',
+        )
         .to(
           '.mountain',
           1,
@@ -725,7 +825,7 @@ export default {
           },
           '-=7',
         )
-        
+
         .to(
           '.bubble-11',
           1,
@@ -736,8 +836,6 @@ export default {
           },
           '-=7',
         )
-
-      
 
         .to(
           '.bubble-12',
@@ -845,6 +943,7 @@ export default {
     imgLoad.on('progress', (instance, image) => {
       this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
     });
+    }
   },
 };
 </script>
@@ -853,10 +952,13 @@ export default {
 .app {
   overflow: hidden;
 }
-main {
-  display: none;
-}
-.form, .schedule, .speakers, footer, .speakers .block-heading, .person, .credits {
+.form,
+.schedule,
+.speakers,
+footer,
+.speakers .block-heading,
+.person,
+.credits {
   opacity: 0;
 }
 </style>
