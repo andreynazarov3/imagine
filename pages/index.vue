@@ -1,7 +1,6 @@
 <template lang="html">
-<div class="app">  
-    {{header}}
-    <Logo :style="{position: isMobile ? 'static' : 'absolute'}" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
+<div class="app">      
+    <Logo :data="header" :style="{position: isMobile ? 'static' : 'absolute'}" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
       <Cartoon v-show="!isMobile" />
       <Form @sendmail="showPopup = true" />
@@ -36,7 +35,7 @@ export default {
   },
   asyncData({env}) {
     return axios.get(env.baseUrl + '/data.json').then(res => {
-      return { header: res.data.header.leftText };
+      return { header: res.data.header };
     });
   },
   watch: {

@@ -3,7 +3,7 @@
    <header>     
      <div class="header-content">
     <div class="wrapper">
-        <div class="format">KNOW-WOW тренинг</div>         
+        <div class="format">{{data.leftText}}</div>         
         <a class="becomehero" href="#form"><img src="~/static/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (916) 996–63–28">+7 (916) 996–63–28</a>
     </div>
@@ -103,7 +103,7 @@
 </template>
 <script>
 export default {
-  props: ['progressNumber'],
+  props: ['progressNumber', 'data'],
   watch: {
     progressNumber: function(newVal) {
       this.progressStyle = { width: `${newVal}%`, height: '4px;', background: '#ff7c00' };
