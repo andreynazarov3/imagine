@@ -2,7 +2,7 @@
 <div class="app">      
     <Logo :data="header" :style="{position: isMobile ? 'static' : 'absolute'}" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
-      <Cartoon v-show="!isMobile" />
+      <Cartoon :isMobile="isMobile" v-show="!isMobile" />
       <Form @sendmail="showPopup = true" />
       <Schedule @scrollToForm='scrollToForm' />
       <Speakers />
@@ -84,6 +84,7 @@ export default {
         } while ((elem = elem.offsetParent));
         return getOffsetTop;
       }
+      // window.scrollTo(0, getOffsetTop(document.querySelector('.form')))
       TweenMax.to(window, 1, {
         scrollTo: {
           y: getOffsetTop(document.querySelector('.form')),
@@ -925,11 +926,10 @@ export default {
               top: '50%',
               y: '-50%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
-              onComplete: function() {
-                console.log('complete');
-                console.log(vue);
-                vue.scrollToForm();
-              },
+              
+              // onComplete: function() {             
+              //   vue.scrollToForm();
+              // },
             },
             '-=1',
           );
@@ -954,7 +954,7 @@ export default {
             const cartoon = document.querySelector('.cartoon');
             const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
             if (!isMacLike) {
-              window.smoothScroller = new smoothScroll(document, 200, 12);
+              // window.smoothScroller = new smoothScroll(document, 200, 12);
             }
           })
           .addTo(controller2);
