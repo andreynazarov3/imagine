@@ -21,7 +21,8 @@
   </section>
 </template>
 <script>
-import 'whatwg-fetch';
+import axios from 'axios';
+import qs from 'qs';
 export default {
   
   data: function() {
@@ -42,17 +43,26 @@ export default {
         } else { this.validEmail = false; }
   },
   sendEmail: function () {
+    
     var img = new Image();
     img.onload = () => { this.$emit('sendmail'); }
     img.src = "/popup.png";
     
-    fetch('https://imaginemailer.herokuapp.com', {
-          method: 'POST',
-          headers: new Headers({
-            'Content-Type': 'application/x-www-form-urlencoded',
-          }),
-          body: `name=${this.name}&phone=${this.phone}&email=${this.email}&`,
-        });
+    const data = { 
+      'name': this.name,
+      'phone': this.phone,
+      'email': this.email,
+     };
+
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: qs.stringify(data),
+      url: 'https://imaginemailer.herokuapp.com',
+    };
+
+    axios(options);
+
   }
   }
 };
