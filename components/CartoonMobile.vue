@@ -341,7 +341,7 @@ export default {
 
 .cartoon.mobile .bubble {
   // display: none !important;
-  padding: 130px 30px 80px 80px;
+  padding: 130px 60px 80px 80px;
   opacity: 1;
   position: absolute;
   font-family: $basicFont;

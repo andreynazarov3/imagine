@@ -1,6 +1,6 @@
 <template lang="html">
 <div class="app">      
-    <Logo :data="header" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
+    <Logo :data="header" :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
       <Cartoon :isMobile="isMobile" v-show="!isMobile" />
       <CartoonMobile :isMobile="isMobile" v-show="isMobile" />
@@ -930,9 +930,9 @@ export default {
               y: '-50%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
 
-              // onComplete: function() {
-              //   vue.scrollToForm();
-              // },
+              onComplete: function() {
+                vue.scrollToForm();
+              },
             },
             '-=1',
           );
@@ -1333,9 +1333,9 @@ export default {
               y: '-50%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
 
-              // onComplete: function() {
-              //   vue.scrollToForm();
-              // },
+              onComplete: function() {
+                vue.scrollToForm();
+              },
             },
           );
 
@@ -1360,7 +1360,8 @@ export default {
       });
 
       imgLoad.on('progress', (instance, image) => {
-        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
+        console.log(this.progressNumber);
+        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);      
       });
     }
   },
