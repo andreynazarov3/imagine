@@ -1344,14 +1344,14 @@ export default {
         const pinscene = new ScrollMagic.Scene({
           triggerElement: '.cartoon.mobile',
           triggerHook: 0,
-          duration: '3000%',
+          duration: '5000%',
         })
           .setPin('.cartoon.mobile', { spacerClass: 'cartoonspacer', pushFollowers: true })
           .on('add', function() {
             const scrollscene = new ScrollMagic.Scene({
               triggerElement: '.cartoonspacer',
               triggerHook: 0,
-              duration: '3000%',
+              duration: '5000%',
             })
               .setTween(scene)
               .addTo(controller2);
