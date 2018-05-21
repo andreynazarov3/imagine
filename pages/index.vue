@@ -654,7 +654,7 @@ export default {
             transform: 'translateY(1940px) translateX(200px) scale(4)',
           })
           .to('.heroes', 7, {
-            y: '540px',
+            y: '240px',
             x: '200px',
             scale: 4,
           })
@@ -662,7 +662,7 @@ export default {
             '.hill-1',
             7,
             {
-              transform: 'translateY(540px) translateX(200px) scale(4)',
+              transform: 'translateY(240px) translateX(200px) scale(4)',
             },
             '-=7',
           )
@@ -691,6 +691,14 @@ export default {
             },
             '-=7',
           )
+          .to(
+            '.curtain',
+            0,
+            {
+              visibility:"hidden"
+            },
+            '-=7',
+          )  
           .to(
             '.scene-2',
             0,
@@ -776,7 +784,7 @@ export default {
             '.mountain',
             7,
             {
-              y: '-700px',
+              y: '-1000px',
             },
             '-=7',
           )
@@ -784,7 +792,7 @@ export default {
             '.expoint',
             7,
             {
-              y: '-720px',
+              y: '-1020px',
             },
             '-=7',
           )
@@ -792,7 +800,7 @@ export default {
             '.chairs',
             7,
             {
-              y: '-1000px',
+              y: '-1300px',
             },
             '-=7',
           )
@@ -800,7 +808,7 @@ export default {
             '.pillows',
             7,
             {
-              y: '-500px',
+              y: '-800px',
             },
             '-=7',
           )
@@ -808,7 +816,7 @@ export default {
             '.tree',
             7,
             {
-              y: '-800px',
+              y: '-1100px',
             },
             '-=7',
           )
@@ -816,7 +824,7 @@ export default {
             '.people',
             7,
             {
-              y: '-800px',
+              y: '-1100px',
             },
             '-=7',
           )
@@ -824,7 +832,7 @@ export default {
             '.hill-2',
             7,
             {
-              y: '-950px',
+              y: '-1250px',
             },
             '-=7',
           )
@@ -832,7 +840,7 @@ export default {
             '.hill-3',
             7,
             {
-              y: '-800px',
+              y: '-1100px',
             },
             '-=7',
           )
@@ -840,7 +848,7 @@ export default {
             '.lamp',
             7,
             {
-              y: '-2000px',
+              y: '-2300px',
             },
             '-=7',
           )
@@ -924,10 +932,10 @@ export default {
 
           .to(
             '.bubble-18',
-            1,
+            2,
             {
-              top: '50%',
-              y: '-50%',
+              top: '0%',
+              y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
 
               onComplete: function() {
@@ -1156,26 +1164,26 @@ export default {
             },
             '-=0.5',
           )
-          .to('.img-bubble', 0.5, {
+          .to('.img-bubble', 1.5, {
             transform: 'scale(10)',
           })
           .to(
             '.heroes',
-            0.5,
+            1.5,
             {
               y: '1240px',
               x: '200px',
               scale: 4,
             },
-            '-=0.5',
+            '-=1.5',
           )
           .to(
             '.hill-1',
-            0.5,
+            1.5,
             {
               transform: 'translateY(1240px) translateX(200px) scale(4)',
             },
-            '-=0.5',
+            '-=1.5',
           )
           .to('.heroes', 0, {
             y: '1940px',
@@ -1222,7 +1230,7 @@ export default {
               opacity: 0,
             },
             '-=7',
-          )
+          )        
           .to(
             '.scene-2',
             0,
@@ -1327,10 +1335,10 @@ export default {
 
           .to(
             '.bubble-18',
-            1,
+            2,
             {
-              top: '50%',
-              y: '-50%',
+              top: '0%',
+              y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
 
               onComplete: function() {
