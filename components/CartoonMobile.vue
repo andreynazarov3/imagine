@@ -341,7 +341,7 @@ export default {
 
 .cartoon.mobile .bubble {
   // display: none !important;
-  padding: 0px 80px;
+  padding: 130px 30px 80px 80px;
   opacity: 1;
   position: absolute;
   font-family: $basicFont;
@@ -370,8 +370,7 @@ export default {
   &-11,
   &-14,
   &-17 {
-    background-image: url('~/static/bubble-white-2.png');
-    padding-top: 80px;
+    background-image: url('~/static/bubble-white-2.png');    
     padding-left: 135px;
   }
   &-3,
