@@ -140,6 +140,7 @@ logoscene
       .setPin('header .header-content')
       .setClassToggle('header', 'pinned')
       .addTo(controller);
+
   },
 };
 </script>
@@ -253,6 +254,7 @@ header {
   .header-content {
     margin-top: 40px;
     background: rgba(255, 255, 255, 0.5);
+    width: 100% !important;
   }
   .wrapper {
     display: flex;
