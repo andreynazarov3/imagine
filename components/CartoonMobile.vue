@@ -175,15 +175,15 @@ export default {
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
-.mobile-scene-1 {
+.mobile-scene-1 {    
     width: 100%;
-    left: calc(50%);
-    transform: translateX(-50%) translateY(25%);
+    left: 0;
+    transform: translateY(25%);
 }
-.mobile-scene-3 {
+.mobile-scene-3 {    
     width: 100%;
-    left: calc(50%);
-    transform: translateX(-50%) translateY(60%);
+    left: 0;
+    transform: translateY(60%);
     bottom: 0;
 }
 .mobile-curtain {
@@ -338,7 +338,8 @@ export default {
     opacity: 1;
   }
 }
-.bubble {
+
+.cartoon.mobile .bubble {
   // display: none !important;
   padding: 0px 80px;
   opacity: 1;
