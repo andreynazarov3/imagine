@@ -4,9 +4,9 @@
     <div class="block-heading">      
       <img class="schedule-img" src="~/static/schedule.png" alt="">
       <div class="line"></div>
-      <p>
+      <!-- <p>
         The eyes of the Fair are on the future — not in the sense of peering toward the unknown nor attempting to foretell the events of tomorrow and the shape of things to come
-      </p>
+      </p> -->
       </div>
     </div>
   

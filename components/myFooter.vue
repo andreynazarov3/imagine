@@ -2,19 +2,19 @@
 <footer>
   <div class="tel">
     <a href="tel:+7 (916) 996–63–28"><img src="~/static/tel.png" alt=""></a>
-    <p>The eyes of the Fair are on the future
-not in the sense of peering toward </p>
+    <!-- <p>The eyes of the Fair are on the future
+not in the sense of peering toward </p> -->
   </div>
   <div class="realfooter">
       <div class="wrapper">
         <img src="~/static/white-logo.png" alt="">
-        <div class="social">
+        <!-- <div class="social">
           <a href="">Facebook</a>
           <a href="">Instagram</a>
           <a href="">Medium</a>
-        </div>
+        </div> -->
         <div class="madein">
-          <p><span>Cделано в </span><a href="">Gstudio</a></p>
+          <p><span>Cделано в </span><a href="http://www.gstudio.com/" target="_blank">Gstudio</a></p>
         </div>
       </div>
   </div>

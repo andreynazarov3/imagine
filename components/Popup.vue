@@ -26,7 +26,7 @@
           <div class="modal-footer">
              
 
-             <div style="padding:75% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/268666200" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+             <div style="padding:75% 0 0 0;position:relative;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen src="https://www.youtube.com/embed/huw00EvmVYA" allow="autoplay; encrypted-media"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
           </div>
            
             
@@ -117,7 +117,7 @@ export default {
   width: 100%;
   max-width: 756px;
   margin: 0px auto;
-  padding: 150px 21px 0 129px;
+  padding: 150px 21px 100px 128px;
   background: url(/popup.png) no-repeat;
   background-size: 100% 100%;
   transition: all 0.3s ease;
@@ -137,7 +137,13 @@ export default {
   color: #42b983;
 }
 .modal-footer {
-  
+    padding-bottom: 33px;
+    @media #{$bigTabletScreen} {
+        padding-bottom: 5px;
+  }
+   @media #{$tabletScreen} {
+    padding-bottom: 0px;
+  }
 }
 .modal-body {
   text-align: left;

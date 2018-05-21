@@ -28,7 +28,7 @@
       </div>
       <div class="credits-row">
           <p>Digital агенство</p>    
-          <p><a href="">Gstudio</a></p>
+          <p><a href="http://www.gstudio.com/" target="_blank">Gstudio</a></p>
       </div>
      
 
