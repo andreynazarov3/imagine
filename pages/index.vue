@@ -1,8 +1,9 @@
 <template lang="html">
 <div class="app">      
-    <Logo :data="header" :style="{position: isMobile ? 'static' : 'absolute'}" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
+    <Logo :data="header" :progressNumber='isMobile ? 100 : progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
       <Cartoon :isMobile="isMobile" v-show="!isMobile" />
+      <CartoonMobile :isMobile="isMobile" v-show="isMobile" />
       <Form @sendmail="showPopup = true" />
       <Schedule @scrollToForm='scrollToForm' />
       <Speakers />
@@ -16,6 +17,7 @@
 const imagesLoaded = require('imagesloaded');
 const smoothScroll = require('~/assets/js/smoothscroll.js');
 import Cartoon from '~/components/Cartoon';
+import CartoonMobile from '~/components/CartoonMobile';
 import Logo from '~/components/Logo';
 import Form from '~/components/Form';
 import Speakers from '~/components/Speakers';
@@ -26,6 +28,7 @@ import axios from 'axios';
 export default {
   components: {
     Cartoon,
+    CartoonMobile,
     Logo,
     Form,
     Speakers,
@@ -36,11 +39,6 @@ export default {
   asyncData({ env }) {
     return axios.get(env.baseUrl + '/data.json').then(res => {
       return { header: res.data.header };
-    });
-  },
-  created: function () {
-    axios.get('/data.json').then(res => {
-      this.header = res.data.header;
     });
   },
   watch: {
@@ -99,7 +97,7 @@ export default {
     },
   },
   beforeMount: function() {
-    // this.isMobile = this.checkMobile();
+    this.isMobile = this.checkMobile();
   },
   mounted: function() {
     const bottomAnimationOffset = 50;
@@ -218,7 +216,7 @@ export default {
 
     if (!this.isMobile) {
       let scene;
-      let images = document.querySelectorAll('.cartoon img');
+      let images = document.querySelectorAll('.cartoon.desktop img');
 
       images.forEach(el => {
         el.src = el.dataset.src;
@@ -932,7 +930,7 @@ export default {
               y: '-50%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
 
-              // onComplete: function() {             
+              // onComplete: function() {
               //   vue.scrollToForm();
               // },
             },
@@ -942,11 +940,11 @@ export default {
         const controller2 = new ScrollMagic.Controller();
         // build scene
         const pinscene = new ScrollMagic.Scene({
-          triggerElement: '.cartoon',
+          triggerElement: '.cartoon.desktop',
           triggerHook: 0,
           duration: '9000%',
         })
-          .setPin('.cartoon', { spacerClass: 'cartoonspacer', pushFollowers: true })
+          .setPin('.cartoon.desktop', { spacerClass: 'cartoonspacer', pushFollowers: true })
           .on('add', function() {
             const scrollscene = new ScrollMagic.Scene({
               triggerElement: '.cartoonspacer',
@@ -954,7 +952,409 @@ export default {
               duration: '9000%',
             })
               .setTween(scene)
-              .addTo(controller2);           
+              .addTo(controller2);
+          })
+          .addTo(controller2);
+      });
+
+      imgLoad.on('progress', (instance, image) => {
+        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
+      });
+    } else {
+      let scene;
+      let images = document.querySelectorAll('.cartoon.mobile img');
+
+      images.forEach(el => {
+        el.src = el.dataset.src;
+      });
+      const vue = this;
+      const imgLoad = imagesLoaded('body', function() {
+        console.log('images loaded');
+        vue.imagesLoaded = true;
+        const tbscene = new TimelineMax();
+        tbscene.to('.mobile-scene-1', 1, {
+          opacity: 1,
+        });
+        const scene = new TimelineMax();
+        scene          
+          .to(
+            '.mobile-scene-1',
+            3,
+            {
+              y: '-50%',
+              x: '-50%'          
+            }
+          )     
+          .to(
+            '.bubble-1',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=3',
+          )       
+          .to(
+            '.bubble-2',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=2',
+          )
+          .to('.bubble-3', 1, {
+            top: '0%',
+            y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
+          },'-=1',)          
+          .to(
+            '.mobile-curtain',
+            4,
+            {
+              y: '-50%',
+            },
+          )
+          .to(
+            '.bubble-4',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=4',
+          )                    
+          .to(
+            '.bubble-5',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            }, '-=3',
+          )
+          .to(
+            '.bubble-6',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            }, '-=2',
+          )                    
+          .to(
+            '.bubble-7',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=1',
+          )
+          .to(
+            '.scene-2',
+            0,
+            {
+              opacity: 1,
+            },
+            '-=1',
+          )
+          .to(
+            '.light',
+            1,
+            {
+              opacity: 1,
+            },
+            '-=1',
+          )
+          .to(
+            '.hero-think-1',
+            0.5,
+            {
+              opacity: 1,
+            },
+            '-=1',
+          )
+          .to('.hero-think-1', 0.5, {
+            opacity: 0,
+          })
+          .to(
+            '.hero-think-2',
+            0.5,
+            {
+              opacity: 1,
+            },
+            '-=0.25',
+          )
+          .to('.hero-think-2', 0.5, {
+            opacity: 0,
+          })
+          .to(
+            '.hero-think-3',
+            0.5,
+            {
+              opacity: 1,
+            },
+            '-=0.25',
+          )
+          .to(
+            '.bubble-8',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=0.5',
+          )
+          .to('.img-bubble', 0.5, {
+            opacity: 1,
+          })
+          .to('.hero-2', 0.5, {
+            opacity: 1,
+          })
+          .to(
+            '.hero-2',
+            0.5,
+            {
+              opacity: 0,
+            },
+            '+=1',
+          )
+          .to(
+            '.heroes',
+            0.5,
+            {
+              opacity: 1,
+            },
+            '-=1',
+          )
+          .to(
+            '.bubble-9',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=0.5',
+          )
+          .to('.hill-1', 1, {
+            opacity: 1,
+          })
+          .to(
+            '.bubble-10',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=0.5',
+          )
+          .to('.img-bubble', 0.5, {
+            transform: 'scale(10)',
+          })
+          .to(
+            '.heroes',
+            0.5,
+            {
+              y: '1240px',
+              x: '200px',
+              scale: 4,
+            },
+            '-=0.5',
+          )
+          .to(
+            '.hill-1',
+            0.5,
+            {
+              transform: 'translateY(1240px) translateX(200px) scale(4)',
+            },
+            '-=0.5',
+          )
+          .to('.heroes', 0, {
+            y: '1940px',
+            x: '200px',
+            scale: 4,
+          })
+          .to('.hill-1', 0, {
+            transform: 'translateY(1940px) translateX(200px) scale(4)',
+          })
+          .to('.heroes', 7, {
+            y: '540px',
+            x: '200px',
+            scale: 4,
+          })
+          .to(
+            '.hill-1',
+            7,
+            {
+              transform: 'translateY(540px) translateX(200px) scale(4)',
+            },
+            '-=7',
+          )
+
+          .to(
+            '.img-bubble',
+            0,
+            {
+              opacity: 0,
+            },
+            '-=7',
+          )
+          .to(
+            '.light',
+            0,
+            {
+              opacity: 0,
+            },
+            '-=7',
+          )
+          .to(
+            '.hero-think-3',
+            0,
+            {
+              opacity: 0,
+            },
+            '-=7',
+          )
+          .to(
+            '.scene-2',
+            0,
+            {
+              backgroundColor: 'white',
+            },
+            '-=7',
+          )       
+          .to(
+            '.mobile-scene-3',
+            1,
+            {
+              opacity: 1,
+            },
+            '-=7',
+          )   
+          .to(
+            '.mobile-scene-3',
+            8,
+            {
+              y: '0%',
+              x: '-50%'
+            },
+            '-=7',
+          )
+          .to(
+            '.bubble-11',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=7',
+          )
+
+          .to(
+            '.bubble-12',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=6',
+          )
+
+          .to(
+            '.bubble-13',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=5',
+          )
+
+          .to(
+            '.bubble-14',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=4',
+          )
+
+          .to(
+            '.bubble-15',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=3',
+          )
+
+          .to(
+            '.bubble-16',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=2',
+          )
+
+          .to(
+            '.bubble-17',
+            1,
+            {
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+            },
+            '-=1',
+          )
+
+          .to(
+            '.bubble-18',
+            1,
+            {
+              top: '50%',
+              y: '-50%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
+
+              // onComplete: function() {
+              //   vue.scrollToForm();
+              // },
+            },
+          );
+
+        const controller2 = new ScrollMagic.Controller();
+        // build scene
+        const pinscene = new ScrollMagic.Scene({
+          triggerElement: '.cartoon.mobile',
+          triggerHook: 0,
+          duration: '3000%',
+        })
+          .setPin('.cartoon.mobile', { spacerClass: 'cartoonspacer', pushFollowers: true })
+          .on('add', function() {
+            const scrollscene = new ScrollMagic.Scene({
+              triggerElement: '.cartoonspacer',
+              triggerHook: 0,
+              duration: '3000%',
+            })
+              .setTween(scene)
+              .addTo(controller2);
           })
           .addTo(controller2);
       });

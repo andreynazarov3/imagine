@@ -1,5 +1,5 @@
 <template>
-  <section class="cartoon">    
+  <section class="cartoon desktop">    
       <div class="scene scene-1" id="scene-1">      
           <img class="city scene-img-background" data-src="/background.png" alt="">             
           <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">          
@@ -271,7 +271,7 @@ export default {
         windowWidth = window.innerWidth;
       }
     }
-    const cartoon = document.querySelector('.cartoon');
+    const cartoon = document.querySelector('.cartoon.desktop');
 
     function scrollcartoon(e) {
       // scroll down
@@ -302,7 +302,7 @@ export default {
     }
     getWindowSize();
     const scaleCartoon = function() {
-      let scenes = document.querySelectorAll('.scene');
+      let scenes = document.querySelectorAll('.cartoon.desktop .scene');
       const windowRatio = windowWidth / windowHeight;
       let scaleCoef = windowWidth / 1533;
       if (windowRatio < 1) {
