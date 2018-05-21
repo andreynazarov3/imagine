@@ -99,7 +99,7 @@ export default {
     },
   },
   beforeMount: function() {
-    this.isMobile = this.checkMobile();
+    // this.isMobile = this.checkMobile();
   },
   mounted: function() {
     const bottomAnimationOffset = 50;
