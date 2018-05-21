@@ -140,7 +140,6 @@ logoscene
       .setPin('header .header-content')
       .setClassToggle('header', 'pinned')
       .addTo(controller);
-
   },
 };
 </script>
@@ -246,6 +245,8 @@ header {
   width: 100%;
   text-align: right;
   z-index: 9998;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
   &.pinned {
     .wrapper {
       right: 0 !important;
