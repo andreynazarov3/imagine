@@ -1395,6 +1395,7 @@ footer,
 .speakers .block-heading,
 .person,
 .credits {
+  z-index: 3;
   opacity: 0;
 }
 </style>
