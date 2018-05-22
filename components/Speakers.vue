@@ -2,7 +2,7 @@
 <section class="speakers">
   <img class="blue" src="~/static/blue.png" srcset="~/static/blue-mobile.png 211w,~/static/blue.png 1010w" sizes="(max-width: 480px) 211px, 1010px" alt="">
   <img class="red" src="~/static/red-2.png" alt="">
-  <img class="red-2" src="~/static/red.png" srcset="~/static/red-mobile.png 197w,~/static/red.png 1010w" sizes="(max-width: 480px) 197px, 1010px"  alt="">
+  <!-- <img class="red-2" src="~/static/red.png" srcset="~/static/red-mobile.png 197w,~/static/red.png 1010w" sizes="(max-width: 480px) 197px, 1010px"  alt=""> -->
   <div class="wrapper">
     <div class="block-heading">
       <img class="speakers-img" src="~/static/creators.png" alt="">
@@ -12,7 +12,7 @@
       </p>
     </div>
   </div>
-  <div class="persons">
+  <!-- <div class="persons">
     <div class="person person-1">
       <div class="person-pic">
       </div>      
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <Credits />
 </section>
 </template>

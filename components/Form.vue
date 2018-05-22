@@ -17,6 +17,17 @@
       <div class="box"></div>
       <img src="~/static/become.png" alt="">
     </button>
+    <p>
+     !MAGINE&nbsp;&mdash; это креативный тренинг в&nbsp;формате know-wow, сочетающий обучение и&nbsp;развлечение. за&nbsp;1 день каждый участник легко осваивает 11&nbsp;методов
+
+генерации идей и&nbsp;придумывает
+
+100 новых решений для своего проекта.
+ </p>
+<p>
+<a href="//100imagine.com/" target="_blank">Узнать подробнее</a>
+
+    </p>
     </div>
   </section>
 </template>
@@ -74,6 +85,7 @@ export default {
 
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
+
 .blue-form {
   position: absolute;
   top: 0;
@@ -138,6 +150,13 @@ export default {
   background-position: top left;
   @media #{$tabletScreen} {
     padding-top: 100px;
+  }
+   a {
+    // font-size: 20px;
+    color: black;
+    &:hover {
+      color: #ff9c2f;
+    }
   }
   .wrapper {
     z-index: 1;

@@ -2,33 +2,45 @@
 
   <div class="credits">
     <div class="credits-block">
+       <div class="credits-row">
+          <p>Режиссер</p>
+          <p>Петр Иванов</p>
+      </div>
+       <div class="credits-row">
+          <p>Креатор</p>
+          <p>Валерия Попова</p>
+      </div>
+       <div class="credits-row">
+          <p>Продюсер</p>
+          <p>Олеся Чиботарь</p>
+      </div>
       <div class="credits-row">
           <p>Художник</p>
-          <p><a href="">Ульяна Громова</a></p>
+          <p>Ульяна Громова</p>
       </div>
       <div class="credits-row">
           <p>Сценарист</p>
-          <p><a href="">Александра Лебедева</a></p>
+          <p>Александра Лебедева</p>
       </div>
       <div class="credits-row">
           <p>Психолог</p>
-          <p><a href="">Константин Червонько</a></p>
+          <p>Константин Червонько</p>
       </div>
       <div class="credits-row">
           <p>Коуч</p>
-          <p><a href="">Ульяна Громова</a></p>
+          <p>Ульяна Громова</p>
       </div>
       <div class="credits-row">
            <p>Хореограф</p>
-          <p><a href="">Илья Давыдов</a></p>
+          <p>Илья Давыдов</p>
       </div>
       <div class="credits-row">
           <p>Звукорежиссер</p>
-          <p><a href="">Евгений Коваленко</a></p>
+          <p>Евгений Коваленко</p>
       </div>
       <div class="credits-row">
           <p>Digital агенство</p>    
-          <p><a href="http://www.gstudio.com/" target="_blank">Gstudio</a></p>
+          <p>Gstudio</p>
       </div>
      
 
@@ -86,6 +98,11 @@
       @media #{$tabletScreen} {
         width: auto;
       }
+    }
+    &:last-child {
+      font-size: 20px;
+      color: black;
+      text-decoration: underline;
     }
   }
 }

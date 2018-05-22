@@ -21,14 +21,23 @@ module.exports = {
         content: 'Nuxt.js project'
       }
     ],
+
     link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }, {
-      href: "https://fonts.googleapis.com/css?family=Alegreya:400,500&amp;subset=cyrillic",
-      rel: "stylesheet"
-    }],
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon16.png',
+        sizes: '16x16'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon72.png',
+        sizes: '72x72'
+      }, {
+        href: "https://fonts.googleapis.com/css?family=Alegreya:400,500&amp;subset=cyrillic",
+        rel: "stylesheet"
+      }
+    ],
     script: [{
         src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js'
       }, {
