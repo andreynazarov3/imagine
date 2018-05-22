@@ -122,8 +122,8 @@ export default {
 
     const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
     if (!isMacLike) {
-      cartoon.addEventListener('mousewheel', scrollcartoon);
-      cartoon.addEventListener('DOMMouseScroll', scrollcartoon);
+      // cartoon.addEventListener('mousewheel', scrollcartoon);
+      // cartoon.addEventListener('DOMMouseScroll', scrollcartoon);
     }
     getWindowSize();
     const scaleCartoon = function() {
