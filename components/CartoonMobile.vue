@@ -2,7 +2,7 @@
   <section class="cartoon mobile">    
       <div class="scale scene scene-1" id="scene-1">      
        
-          <img class="mobile-scene-1" data-src="/mobile/scene1.png" alt="">   
+          <img class="mobile-scene-1" data-src="/mobile/scene1.jpg" alt="">   
           <img class="mobile-curtain" data-src="/mobile/curtain.png" alt="">            
           
           <div class="bubble bubble-1">
@@ -41,7 +41,7 @@
         <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
         <img data-src="/kid_handless.png" alt=""  class="hero-2">     
         <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
-        <img class="mobile-scene-3" data-src="/mobile/scene3.png" alt="" >
+        <img class="mobile-scene-3" data-src="/mobile/scene3.jpg" alt="" >
 
        
         <div class="bubble bubble-8">
