@@ -256,6 +256,7 @@ header {
     margin-top: 40px;
     background: rgba(255, 255, 255, 0.5);
     width: 100% !important;
+    transform: translate3d(0,0,0);
   }
   .wrapper {
     display: flex;
