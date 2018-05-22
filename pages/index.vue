@@ -100,7 +100,10 @@ export default {
     this.isMobile = this.checkMobile();
   },
   mounted: function() {
-    const bottomAnimationOffset = 50;
+    
+
+    if (!this.isMobile) {
+      const bottomAnimationOffset = 50;
     const bottomAnimationTime = 1;
     const bottomController = new ScrollMagic.Controller();
     const formScene = new ScrollMagic.Scene({
@@ -213,8 +216,6 @@ export default {
         ),
       )
       .addTo(bottomController);
-
-    if (!this.isMobile) {
       let scene;
       let images = document.querySelectorAll('.cartoon.desktop img');
 
