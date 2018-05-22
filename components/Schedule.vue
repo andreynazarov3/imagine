@@ -3,7 +3,7 @@
     <div class="wrapper">
     <div class="block-heading">      
       <img class="schedule-img" src="~/static/schedule.png" alt="">
-      <div class="line"></div>
+      <!-- <div class="line"></div> -->
       <!-- <p>
         The eyes of the Fair are on the future — not in the sense of peering toward the unknown nor attempting to foretell the events of tomorrow and the shape of things to come
       </p> -->
@@ -14,8 +14,8 @@
       <div ref="scroller"  class="scroller schedule-items">
         <div class="schedule-item" v-for="item in items" :key="item.id">
           <div class="schedule-item-date">{{item.date}}</div>
-          <div class="schedule-item-time">{{item.time}}</div>
-          <div class="schedule-item-name">{{item.name}}</div>
+          <!-- <div class="schedule-item-time">{{item.time}}</div>
+          <div class="schedule-item-name">{{item.name}}</div> -->
           <button class="schedule-item-button">Записаться</button>
           <!-- <div class="schedule-item-line"></div>           -->
         </div>
