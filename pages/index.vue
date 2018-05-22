@@ -91,7 +91,7 @@ export default {
       TweenMax.to(window, 1, {
         scrollTo: {
           y: getOffsetTop(document.querySelector('.form')),
-          autoKill: false,
+          // autoKill: false,
         },
       });
     },
