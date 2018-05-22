@@ -6,8 +6,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    __dangerouslyDisableSanitizers: ['script'],
-    title: 'imagine-landing',
+    title: '!magine',
     meta: [{
         charset: 'utf-8'
       },
