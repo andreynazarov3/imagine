@@ -17,14 +17,14 @@
       <div class="box"></div>
       <img src="~/static/become.png" alt="">
     </button>
-    <p>
+    <p class="shortdesc">
      !MAGINE&nbsp;&mdash; это креативный тренинг в&nbsp;формате know-wow, сочетающий обучение и&nbsp;развлечение. за&nbsp;1 день каждый участник легко осваивает 11&nbsp;методов
 
 генерации идей и&nbsp;придумывает
 
 100 новых решений для своего проекта.
  </p>
-<p>
+<p class="learn">
 <a href="//100imagine.com/" target="_blank">Узнать подробнее</a>
 
     </p>
@@ -94,6 +94,7 @@ export default {
     width: 224px;
   }
 }
+
 .become {
   opacity: 0.6;
   margin-top: 55px;
@@ -108,6 +109,7 @@ export default {
     margin-top: 48px;
     width: 179px;
   }
+
   &.active {
     opacity: 1;
     .box {
@@ -228,5 +230,12 @@ export default {
       font-size: 24px;
     }
   }
+}
+p.shortdesc {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+p.learn {
+  margin-top: 0;
 }
 </style>

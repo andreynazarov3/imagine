@@ -204,7 +204,7 @@ export default {
 .speakers {
   overflow: hidden;
   position: relative;
-  padding-top: 580px;
+  padding-top: 80px;
   .block-heading {
     @media #{$smallScreen} {
       margin-bottom: 30px;

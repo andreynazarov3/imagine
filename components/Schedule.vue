@@ -158,7 +158,7 @@ export default {
   }
 }
 .schedule {
-  padding-top: 260px;
+  padding-top: 60px;
    @media #{$tabletScreen} {
     padding-top: 80px;
     .block-heading {
