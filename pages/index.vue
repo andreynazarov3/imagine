@@ -1350,7 +1350,7 @@ export default {
               ease: SlowMo.ease.config(0.1, 0.7, false),
 
               onComplete: function() {
-                vue.scrollToForm();
+                // vue.scrollToForm();
               },
             },
           );
