@@ -1,6 +1,6 @@
 <template>
   <section class="cartoon mobile">    
-      <div class="scene scene-1" id="scene-1">      
+      <div class="scale scene scene-1" id="scene-1">      
        
           <img class="mobile-scene-1" data-src="/mobile/scene1.png" alt="">   
           <img class="mobile-curtain" data-src="/mobile/curtain.png" alt="">            
@@ -27,7 +27,7 @@
             А вопрос засел в голове, как навязчивая попсовая песня, и не покидал его ни днем не ночью. 
           </div>
       </div>
-      <div class="scene scene-2" id="scene-2">
+      <div class="scale scene scene-2" id="scene-2">
          
         <img class="light light-1"  data-src="/light/light1.png" alt="" >
         <img class="light light-2" data-src="/light/light2.png" alt="" >
@@ -175,310 +175,312 @@ export default {
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
-.mobile-scene-1 {    
+.cartoon.mobile {
+  .mobile-scene-1 {
     width: 100%;
     left: 0;
     transform: translateY(25%);
-}
-.mobile-scene-3 {    
+  }
+  .mobile-scene-3 {
     width: 100%;
     left: 0;
     transform: translateY(60%);
     bottom: 0;
-}
-.mobile-curtain {
-  opacity: 1 !important;
-  top: 0;
-  width: 100%;
-  height: auto;
-  transform: translateY(50%);
-}
+  }
+  .mobile-curtain {
+    opacity: 1 !important;
+    top: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(50%);
+  }
 
-.scene-1 {
-  z-index: 1;
-  img {
-    opacity: 0;
+  .scene-1 {
+    z-index: 1;
+    img {
+      opacity: 0;
+    }
   }
-}
-.scene-2 {
-  z-index: 3;
-  img {
-    opacity: 0;
+  .scene-2 {
+    z-index: 3;
+    img {
+      opacity: 0;
+    }
   }
-}
-.curtain {
-  opacity: 1 !important;
-  top: 0;
-  width: 100%;
-  height: 200%;
-  transform: translateY(50%);
-}
-.expoint {
-  width: 56px;
-  top: calc(50% + 80px);
-  left: calc(50% - 452px);
-}
-.lamp {
-  width: 434px;
-  top: calc(50% + 2000px);
-  left: calc(50% - 482px);
-}
-.cartoon {
-  height: 100vh;
-  // overflow: hidden;
-  position: relative;
-}
-.hill-3 {
-  width: 900px;
-  top: calc(50% + 530px);
-  left: calc(50% - 682px);
-}
-.hill-2 {
-  width: 900px;
-  top: calc(50% + 970px);
-  left: calc(50% - 400px);
-}
-.people {
-  width: 490px;
-  top: calc(50% + 550px);
-  left: calc(50% - 700px);
-}
-.tree {
-  width: 1000px;
-  top: calc(50% - 200px);
-  left: calc(50% - 200px);
-}
-.chairs {
-  width: 400px;
-  top: calc(50% + 450px);
-  left: calc(50% - 200px);
-}
-.pillows {
-  width: 620px;
-  top: calc(50%);
-  left: calc(50%);
-  transform: translateY(1350px) translateX(-250px);
-}
-.mountain {
-  width: 855px;
-  top: calc(50% + 100px);
-  left: calc(50% - 800px);
-}
-.hill-1 {
-  width: 281px;
-  top: calc(50%);
-  left: calc(50%);
-  transform: translateY(-120px) translateX(-153px);
-}
-.img-bubble {
-  width: 521px;
-  top: calc(50%);
-  left: calc(50%);
-  transform-origin: center !important;
-  transform: translateY(-250px) translateX(-300px);
-}
-.heroes {
-  width: 200px;
-  top: calc(50%);
-  left: calc(50%);
-  transform: translateY(-232px) translateX(-107px);
-}
-.hero-2 {
-  width: 40px;
-  top: calc(50% - 90px);
-  left: calc(50% - 65px);
-}
-.hero-think-1 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.hero-think-2 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.hero-think-3 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.light-1 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.light-2 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.light-3 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.light-4 {
-  width: 320px;
-  top: calc(50% - 100px);
-  left: calc(50% - 400px);
-}
-.quest {
-  position: absolute;
-  opacity: 1;
-}
-.quests {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  transform: translateY(100%) translateX(-50%);
-  top: 0;
-  left: 50%;
-  img {
-    opacity: 1;
+  .curtain {
+    opacity: 1 !important;
+    top: 0;
+    width: 100%;
+    height: 200%;
+    transform: translateY(50%);
   }
-}
-
-.cartoon.mobile .bubble {
-  // display: none !important;
-  padding: 130px 60px 80px 80px;
-  opacity: 1;
-  position: absolute;
-  font-family: $basicFont;
-  font-size: 40px;
-  background-size: 100% 100%;
-  // border: 2px solid black;
-  width: 600px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  top: 100%;
-  left: calc(50% - 400px);
-  &-1,
-  &-4,
-  &-7,
-  &-10,
-  &-13,
-  &-16 {
-    background-image: url('~/static/bubble-white-1.png');
+  .expoint {
+    width: 56px;
+    top: calc(50% + 80px);
+    left: calc(50% - 452px);
   }
-  &-2,
-  &-5,
-  &-8,
-  &-11,
-  &-14,
-  &-17 {
-    background-image: url('~/static/bubble-white-2.png');    
-    padding-left: 135px;
+  .lamp {
+    width: 434px;
+    top: calc(50% + 2000px);
+    left: calc(50% - 482px);
   }
-  &-3,
-  &-6,
-  &-9,
-  &-12,
-  &-15,
-  &-18 {
-    background-image: url('~/static/bubble-white-3.png');
+  .cartoon {
+    height: 100vh;
+    // overflow: hidden;
+    position: relative;
   }
-}
-.scene {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  opacity: 0;
-  &-1 {
-    opacity: 1;
+  .hill-3 {
+    width: 900px;
+    top: calc(50% + 530px);
+    left: calc(50% - 682px);
   }
-  &.scene-2 {
-    background: black;
+  .hill-2 {
+    width: 900px;
+    top: calc(50% + 970px);
+    left: calc(50% - 400px);
   }
-  img {
-    transform-origin: bottom;
+  .people {
+    width: 490px;
+    top: calc(50% + 550px);
+    left: calc(50% - 700px);
+  }
+  .tree {
+    width: 1000px;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+  }
+  .chairs {
+    width: 400px;
+    top: calc(50% + 450px);
+    left: calc(50% - 200px);
+  }
+  .pillows {
+    width: 620px;
+    top: calc(50%);
+    left: calc(50%);
+    transform: translateY(1350px) translateX(-250px);
+  }
+  .mountain {
+    width: 855px;
+    top: calc(50% + 100px);
+    left: calc(50% - 800px);
+  }
+  .hill-1 {
+    width: 281px;
+    top: calc(50%);
+    left: calc(50%);
+    transform: translateY(-120px) translateX(-153px);
+  }
+  .img-bubble {
+    width: 521px;
+    top: calc(50%);
+    left: calc(50%);
+    transform-origin: center !important;
+    transform: translateY(-250px) translateX(-300px);
+  }
+  .heroes {
+    width: 200px;
+    top: calc(50%);
+    left: calc(50%);
+    transform: translateY(-232px) translateX(-107px);
+  }
+  .hero-2 {
+    width: 40px;
+    top: calc(50% - 90px);
+    left: calc(50% - 65px);
+  }
+  .hero-think-1 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .hero-think-2 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .hero-think-3 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .light-1 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .light-2 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .light-3 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .light-4 {
+    width: 320px;
+    top: calc(50% - 100px);
+    left: calc(50% - 400px);
+  }
+  .quest {
     position: absolute;
-    // opacity: 0;
+    opacity: 1;
   }
-  &-img {
-    &-logo {
-      width: 800px;
-      top: calc(50% - 250px);
-      left: calc(50% - 400px);
-    }
-    &-background {
-      width: 1194px;
-      top: 50%;
-      // top: calc(50% - 800px);
-      left: calc(50% - 400px);
-      position: absolute;
-      transform: translateY(200px);
-    }
-    &-hero {
-      position: absolute;
-      width: 300px;
-      top: 50%;
-      // top: calc(50% - 200px);
-      left: calc(50% - 400px);
-      transform: scale(1.9) translateY(100px);
-      transform-origin: top !important;
-    }
-    &-bridge {
-      width: 1100px;
-      top: 100%;
-      // top: calc(50% + 100px);
-      left: calc(50% - 650px);
-      transform: translateY(1000px);
-    }
-    &-house-1 {
-      // display: none;
-      width: 500px;
-      top: 100%;
-      // top: calc(50% - 150px);
-      left: calc(50% + 200px);
-      transform: translateY(450px);
-    }
-    &-house-2 {
-      // display: none;
-      width: 450px;
-      top: 100%;
-      // top: calc(50% - 400px);
-      left: calc(50% - 50px);
-      transform: translateY(100px);
-    }
-    &-house-3 {
-      // display: none;
-      width: 550px;
-      top: 100%;
-      // top: calc(50%);
-      left: calc(50% - 400px);
-      transform: translateY(800px);
-    }
-    &-lighters {
-      // display: none;
-      width: 850px;
-      top: 100%;
-      // top: calc(50%);
-      left: calc(50% - 100px);
-      transform: translateY(1200px);
-    }
-    &-moscow-city {
-      // display: none;
-      width: 650px;
-      top: 100%;
-      // top: calc(50% - 600px);
-      left: calc(50% - 650px);
-      transform: translateY(100px);
+  .quests {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateY(100%) translateX(-50%);
+    top: 0;
+    left: 50%;
+    img {
+      opacity: 1;
     }
   }
-}
-.scrollbar-measure {
-  width: 100px;
-  height: 100px;
-  overflow: scroll;
-  position: absolute;
-  top: -9999px;
+
+  .cartoon.mobile .bubble {
+    // display: none !important;
+    padding: 130px 60px 80px 80px;
+    opacity: 1;
+    position: absolute;
+    font-family: $basicFont;
+    font-size: 40px;
+    background-size: 100% 100%;
+    // border: 2px solid black;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 100%;
+    left: calc(50% - 400px);
+    &-1,
+    &-4,
+    &-7,
+    &-10,
+    &-13,
+    &-16 {
+      background-image: url('~/static/bubble-white-1.png');
+    }
+    &-2,
+    &-5,
+    &-8,
+    &-11,
+    &-14,
+    &-17 {
+      background-image: url('~/static/bubble-white-2.png');
+      padding-left: 135px;
+    }
+    &-3,
+    &-6,
+    &-9,
+    &-12,
+    &-15,
+    &-18 {
+      background-image: url('~/static/bubble-white-3.png');
+    }
+  }
+  .scene {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: 0;
+    &-1 {
+      opacity: 1;
+    }
+    &.scene-2 {
+      background: black;
+    }
+    img {
+      transform-origin: bottom;
+      position: absolute;
+      // opacity: 0;
+    }
+    &-img {
+      &-logo {
+        width: 800px;
+        top: calc(50% - 250px);
+        left: calc(50% - 400px);
+      }
+      &-background {
+        width: 1194px;
+        top: 50%;
+        // top: calc(50% - 800px);
+        left: calc(50% - 400px);
+        position: absolute;
+        transform: translateY(200px);
+      }
+      &-hero {
+        position: absolute;
+        width: 300px;
+        top: 50%;
+        // top: calc(50% - 200px);
+        left: calc(50% - 400px);
+        transform: scale(1.9) translateY(100px);
+        transform-origin: top !important;
+      }
+      &-bridge {
+        width: 1100px;
+        top: 100%;
+        // top: calc(50% + 100px);
+        left: calc(50% - 650px);
+        transform: translateY(1000px);
+      }
+      &-house-1 {
+        // display: none;
+        width: 500px;
+        top: 100%;
+        // top: calc(50% - 150px);
+        left: calc(50% + 200px);
+        transform: translateY(450px);
+      }
+      &-house-2 {
+        // display: none;
+        width: 450px;
+        top: 100%;
+        // top: calc(50% - 400px);
+        left: calc(50% - 50px);
+        transform: translateY(100px);
+      }
+      &-house-3 {
+        // display: none;
+        width: 550px;
+        top: 100%;
+        // top: calc(50%);
+        left: calc(50% - 400px);
+        transform: translateY(800px);
+      }
+      &-lighters {
+        // display: none;
+        width: 850px;
+        top: 100%;
+        // top: calc(50%);
+        left: calc(50% - 100px);
+        transform: translateY(1200px);
+      }
+      &-moscow-city {
+        // display: none;
+        width: 650px;
+        top: 100%;
+        // top: calc(50% - 600px);
+        left: calc(50% - 650px);
+        transform: translateY(100px);
+      }
+    }
+  }
+  .scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+  }
 }
 </style>

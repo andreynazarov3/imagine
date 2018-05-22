@@ -532,6 +532,14 @@ export default {
             '-=1',
           )
           .to(
+            '.quests',
+            0,
+            {
+              visibility: "hidden",
+            },
+            '-=1',
+          )
+          .to(
             '.light',
             1,
             {
@@ -646,15 +654,15 @@ export default {
             '-=0.5',
           )
           .to('.heroes', 0, {
-            y: '1940px',
+            y: '1640px',
             x: '200px',
             scale: 4,
           })
           .to('.hill-1', 0, {
-            transform: 'translateY(1940px) translateX(200px) scale(4)',
+            transform: 'translateY(1640px) translateX(200px) scale(4)',
           })
           .to('.heroes', 7, {
-            y: '240px',
+            y: '200px',
             x: '200px',
             scale: 4,
           })
@@ -662,7 +670,7 @@ export default {
             '.hill-1',
             7,
             {
-              transform: 'translateY(240px) translateX(200px) scale(4)',
+              transform: 'translateY(300px) translateX(200px) scale(4)',
             },
             '-=7',
           )
@@ -1352,14 +1360,14 @@ export default {
         const pinscene = new ScrollMagic.Scene({
           triggerElement: '.cartoon.mobile',
           triggerHook: 0,
-          duration: '5000%',
+          duration: '8000%',
         })
           .setPin('.cartoon.mobile', { spacerClass: 'cartoonspacer', pushFollowers: true })
           .on('add', function() {
             const scrollscene = new ScrollMagic.Scene({
               triggerElement: '.cartoonspacer',
               triggerHook: 0,
-              duration: '5000%',
+              duration: '8000%',
             })
               .setTween(scene)
               .addTo(controller2);

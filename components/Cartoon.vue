@@ -1,6 +1,6 @@
 <template>
   <section class="cartoon desktop">    
-      <div class="scene scene-1" id="scene-1">      
+      <div class="scale scene scene-1" id="scene-1">      
           <img class="city scene-img-background" data-src="/background.png" alt="">             
           <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">          
           <img class="city scene-img-house-2" data-src="/house_2.png" alt="">
@@ -174,8 +174,8 @@
           <div class="bubble bubble-7">
             А вопрос засел в голове, как навязчивая попсовая песня, и не покидал его ни днем не ночью. 
           </div>
-      </div>
-      <div class="scene scene-2" id="scene-2">
+      </div>      
+      <div class="scale scene scene-2" id="scene-2">
          
         <img class="light light-1"  data-src="/light/light1.png" alt="" >
         <img class="light light-2" data-src="/light/light2.png" alt="" >
@@ -194,10 +194,11 @@
           <img class="hill-3" data-src="/fantasy/hill3.png" alt="" >
           <img class="people" data-src="/fantasy/people.png" alt="" >        
           <img class="hill-2" data-src="/fantasy/hill2.png" alt="" >        
-             <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
+              <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
+        <img class="heroes" data-src="/fantasy/heroes.png" alt="" >   
              <img class="pillows" data-src="/fantasy/pillows.png" alt="" >
            <img class="chairs" data-src="/fantasy/chairs.png" alt="" >
-          <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
+          
           <img class="lamp" data-src="/fantasy/lamp.png" alt="" >
           <img class="expoint" data-src="/expoint.png" alt="" >
        
@@ -230,11 +231,14 @@
           </div>
            <div class="bubble bubble-17">
 Все здесь было чудно и знакомо. И казалось человеку, что он вернулся в место, где никогда не был. 
-          </div>
-           <div class="bubble bubble-18">
-“Здесь ты найдешь ответы” – сказал Некто и подтолкнул Человека в спину (ведь иногда человека нужно чуть-чуть подтолкнуть). И ступил человек в неизвестную страну и отправился искать ответы. 
-          </div>
       </div>
+        <div class="bubble bubble-18">
+“Здесь ты найдешь ответы” – сказал Некто и подтолкнул Человека в спину (ведь иногда человека нужно чуть-чуть подтолкнуть). И ступил человек в неизвестную страну и отправился искать ответы. 
+      </div>
+    </div>
+    <div class="scale heroes-hill">
+           
+    </div>
   </section>
 </template>
 <script>
@@ -302,7 +306,7 @@ export default {
     }
     getWindowSize();
     const scaleCartoon = function() {
-      let scenes = document.querySelectorAll('.cartoon.desktop .scene');
+      let scenes = document.querySelectorAll('.cartoon.desktop .scale');
       const windowRatio = windowWidth / windowHeight;
       let scaleCoef = windowWidth / 1533;
       if (windowRatio < 1) {
@@ -351,18 +355,120 @@ export default {
 </script>
 <style lang="scss">
 @import '~/assets/scss/_vars.scss';
-
+.scene {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  opacity: 0;
+  &-1 {
+    opacity: 1;
+  }
+  &.scene-2 {
+    background: black;
+  }
+  img {
+    transform-origin: bottom;
+    position: absolute;
+    // opacity: 0;
+  }
+  &-img {
+    &-logo {
+      width: 800px;
+      top: calc(50% - 250px);
+      left: calc(50% - 400px);
+    }
+    &-background {
+      width: 1194px;
+      top: 50%;
+      // top: calc(50% - 800px);
+      left: calc(50% - 400px);
+      position: absolute;
+      transform: translateY(200px);
+    }
+    &-hero {
+      position: absolute;
+      width: 300px;
+      top: 50%;
+      // top: calc(50% - 200px);
+      left: calc(50% - 400px);
+      transform: scale(1.9) translateY(100px);
+      transform-origin: top !important;
+    }
+    &-bridge {
+      width: 1100px;
+      top: 100%;
+      // top: calc(50% + 100px);
+      left: calc(50% - 650px);
+      transform: translateY(1000px);
+    }
+    &-house-1 {
+      // display: none;
+      width: 500px;
+      top: 100%;
+      // top: calc(50% - 150px);
+      left: calc(50% + 200px);
+      transform: translateY(450px);
+    }
+    &-house-2 {
+      // display: none;
+      width: 450px;
+      top: 100%;
+      // top: calc(50% - 400px);
+      left: calc(50% - 50px);
+      transform: translateY(100px);
+    }
+    &-house-3 {
+      // display: none;
+      width: 550px;
+      top: 100%;
+      // top: calc(50%);
+      left: calc(50% - 400px);
+      transform: translateY(800px);
+    }
+    &-lighters {
+      // display: none;
+      width: 850px;
+      top: 100%;
+      // top: calc(50%);
+      left: calc(50% - 100px);
+      transform: translateY(1200px);
+    }
+    &-moscow-city {
+      // display: none;
+      width: 650px;
+      top: 100%;
+      // top: calc(50% - 600px);
+      left: calc(50% - 650px);
+      transform: translateY(100px);
+    }
+  }
+}
 .scene-1 {
+  overflow: hidden;
   z-index: 1;
   img {
     opacity: 0;
   }
 }
 .scene-2 {
+  overflow: visible;
   z-index: 3;
   img {
     opacity: 0;
   }
+}
+.heroes-hill {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  opacity: 0;
 }
 .curtain {
   opacity: 1 !important;
@@ -423,6 +529,8 @@ export default {
   left: calc(50% - 800px);
 }
 .hill-1 {
+  opacity: 0;
+  position: absolute;
   width: 281px;
   top: calc(50%);
   left: calc(50%);
@@ -436,6 +544,8 @@ export default {
   transform: translateY(-250px) translateX(-300px);
 }
 .heroes {
+  position: absolute;
+  opacity: 0;
   width: 200px;
   top: calc(50%);
   left: calc(50%);
@@ -540,98 +650,7 @@ export default {
     background-image: url('~/static/bubble-white-3.png');
   }
 }
-.scene {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  opacity: 0;
-  &-1 {
-    opacity: 1;
-  }
-  &.scene-2 {
-    background: black;
-  }
-  img {
-    transform-origin: bottom;
-    position: absolute;
-    // opacity: 0;
-  }
-  &-img {
-    &-logo {
-      width: 800px;
-      top: calc(50% - 250px);
-      left: calc(50% - 400px);
-    }
-    &-background {
-      width: 1194px;
-      top: 50%;
-      // top: calc(50% - 800px);
-      left: calc(50% - 400px);
-      position: absolute;
-      transform: translateY(200px);
-    }
-    &-hero {
-      position: absolute;
-      width: 300px;
-      top: 50%;
-      // top: calc(50% - 200px);
-      left: calc(50% - 400px);
-      transform: scale(1.9) translateY(100px);
-      transform-origin: top !important;
-    }
-    &-bridge {
-      width: 1100px;
-      top: 100%;
-      // top: calc(50% + 100px);
-      left: calc(50% - 650px);
-      transform: translateY(1000px);
-    }
-    &-house-1 {
-      // display: none;
-      width: 500px;
-      top: 100%;
-      // top: calc(50% - 150px);
-      left: calc(50% + 200px);
-      transform: translateY(450px);
-    }
-    &-house-2 {
-      // display: none;
-      width: 450px;
-      top: 100%;
-      // top: calc(50% - 400px);
-      left: calc(50% - 50px);
-      transform: translateY(100px);
-    }
-    &-house-3 {
-      // display: none;
-      width: 550px;
-      top: 100%;
-      // top: calc(50%);
-      left: calc(50% - 400px);
-      transform: translateY(800px);
-    }
-    &-lighters {
-      // display: none;
-      width: 850px;
-      top: 100%;
-      // top: calc(50%);
-      left: calc(50% - 100px);
-      transform: translateY(1200px);
-    }
-    &-moscow-city {
-      // display: none;
-      width: 650px;
-      top: 100%;
-      // top: calc(50% - 600px);
-      left: calc(50% - 650px);
-      transform: translateY(100px);
-    }
-  }
-}
+
 .scrollbar-measure {
   width: 100px;
   height: 100px;
