@@ -1362,10 +1362,10 @@ export default {
           triggerHook: 0,
           duration: '8000%',
         })
-          .setPin('.cartoon.mobile', { spacerClass: 'cartoonspacer', pushFollowers: true })
+          .setPin('.cartoon.mobile', { spacerClass: 'cartoonspacermobile', pushFollowers: true })
           .on('add', function() {
             const scrollscene = new ScrollMagic.Scene({
-              triggerElement: '.cartoonspacer',
+              triggerElement: '.cartoonspacermobile',
               triggerHook: 0,
               duration: '8000%',
             })
