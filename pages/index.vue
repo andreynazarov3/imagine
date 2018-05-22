@@ -1,5 +1,5 @@
 <template lang="html">
-<div class="app">      
+<div class="app" :class="{mobile: isMobile}">      
     <Logo :data="header" :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
       <Cartoon :isMobile="isMobile" v-show="!isMobile" />
@@ -1399,5 +1399,16 @@ footer,
   position: relative;
   z-index: 3;
   opacity: 0;
+}
+.mobile {
+  .form,
+.schedule,
+.speakers,
+footer,
+.speakers .block-heading,
+.person,
+.credits {
+  opacity: 1;
+}
 }
 </style>
