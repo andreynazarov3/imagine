@@ -662,7 +662,7 @@ export default {
             transform: 'translateY(1640px) translateX(200px) scale(4)',
           })
           .to('.heroes', 7, {
-            y: '200px',
+            y: '150px',
             x: '200px',
             scale: 4,
           })
@@ -670,7 +670,7 @@ export default {
             '.hill-1',
             7,
             {
-              transform: 'translateY(300px) translateX(200px) scale(4)',
+              transform: 'translateY(250px) translateX(200px) scale(4)',
             },
             '-=7',
           )
