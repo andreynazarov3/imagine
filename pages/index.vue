@@ -1,5 +1,5 @@
 <template lang="html">
-<div class="app" :class="{mobile: isMobile}">      
+<div ref="app" class="app" id="app" :class="{mobile: isMobile}">      
     <Logo :data="header" :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
       <Cartoon :isMobile="isMobile" v-show="!isMobile" />
@@ -100,122 +100,120 @@ export default {
     this.isMobile = this.checkMobile();
   },
   mounted: function() {
-    
-
     if (!this.isMobile) {
       const bottomAnimationOffset = 50;
-    const bottomAnimationTime = 1;
-    const bottomController = new ScrollMagic.Controller();
-    const formScene = new ScrollMagic.Scene({
-      triggerElement: '.form',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.form',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const scheScene = new ScrollMagic.Scene({
-      triggerElement: '.schedule',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.schedule',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const spekScene = new ScrollMagic.Scene({
-      triggerElement: '.speakers',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.speakers',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
+      const bottomAnimationTime = 1;
+      const bottomController = new ScrollMagic.Controller();
+      const formScene = new ScrollMagic.Scene({
+        triggerElement: '.form',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.form',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const scheScene = new ScrollMagic.Scene({
+        triggerElement: '.schedule',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.schedule',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const spekScene = new ScrollMagic.Scene({
+        triggerElement: '.speakers',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.speakers',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
 
-    const spekheadScene = new ScrollMagic.Scene({
-      triggerElement: '.speakers .block-heading',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.speakers .block-heading',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const pers1Scene = new ScrollMagic.Scene({
-      triggerElement: '.person-1',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.person-1',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const pers2Scene = new ScrollMagic.Scene({
-      triggerElement: '.person-2',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.person-2',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const pers3Scene = new ScrollMagic.Scene({
-      triggerElement: '.person-3',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.person-3',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const credScene = new ScrollMagic.Scene({
-      triggerElement: '.credits',
-    })
-      .setTween(
-        TweenMax.fromTo(
-          '.credits',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
-    const footScene = new ScrollMagic.Scene({
-      triggerElement: 'footer',
-      triggerHook: 1,
-    })
-      .setTween(
-        TweenMax.fromTo(
-          'footer',
-          bottomAnimationTime,
-          { opacity: 0, y: bottomAnimationOffset },
-          { opacity: 1, y: 0 },
-        ),
-      )
-      .addTo(bottomController);
+      const spekheadScene = new ScrollMagic.Scene({
+        triggerElement: '.speakers .block-heading',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.speakers .block-heading',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const pers1Scene = new ScrollMagic.Scene({
+        triggerElement: '.person-1',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.person-1',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const pers2Scene = new ScrollMagic.Scene({
+        triggerElement: '.person-2',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.person-2',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const pers3Scene = new ScrollMagic.Scene({
+        triggerElement: '.person-3',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.person-3',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const credScene = new ScrollMagic.Scene({
+        triggerElement: '.credits',
+      })
+        .setTween(
+          TweenMax.fromTo(
+            '.credits',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
+      const footScene = new ScrollMagic.Scene({
+        triggerElement: 'footer',
+        triggerHook: 1,
+      })
+        .setTween(
+          TweenMax.fromTo(
+            'footer',
+            bottomAnimationTime,
+            { opacity: 0, y: bottomAnimationOffset },
+            { opacity: 1, y: 0 },
+          ),
+        )
+        .addTo(bottomController);
       let scene;
       let images = document.querySelectorAll('.cartoon.desktop img');
 
@@ -536,7 +534,7 @@ export default {
             '.quests',
             0,
             {
-              visibility: "hidden",
+              visibility: 'hidden',
             },
             '-=1',
           )
@@ -704,10 +702,10 @@ export default {
             '.curtain',
             0,
             {
-              visibility:"hidden"
+              visibility: 'hidden',
             },
             '-=7',
-          )  
+          )
           .to(
             '.scene-2',
             0,
@@ -993,15 +991,10 @@ export default {
           opacity: 1,
         });
         const scene = new TimelineMax();
-        scene          
-          .to(
-            '.mobile-scene-1',
-            3,
-            {
-              y: '-50%',
-                    
-            }
-          )     
+        scene
+          .to('.mobile-scene-1', 3, {
+            y: '-50%',
+          })
           .to(
             '.bubble-1',
             1,
@@ -1011,7 +1004,7 @@ export default {
               ease: SlowMo.ease.config(0.1, 0.7, false),
             },
             '-=3',
-          )       
+          )
           .to(
             '.bubble-2',
             1,
@@ -1022,18 +1015,19 @@ export default {
             },
             '-=2',
           )
-          .to('.bubble-3', 1, {
-            top: '0%',
-            y: '-100%',
-            ease: SlowMo.ease.config(0.1, 0.7, false),
-          },'-=1',)          
           .to(
-            '.mobile-curtain',
-            4,
+            '.bubble-3',
+            1,
             {
-              y: '-50%',
+              top: '0%',
+              y: '-100%',
+              ease: SlowMo.ease.config(0.1, 0.7, false),
             },
+            '-=1',
           )
+          .to('.mobile-curtain', 4, {
+            y: '-50%',
+          })
           .to(
             '.bubble-4',
             1,
@@ -1043,7 +1037,7 @@ export default {
               ease: SlowMo.ease.config(0.1, 0.7, false),
             },
             '-=4',
-          )                    
+          )
           .to(
             '.bubble-5',
             1,
@@ -1051,7 +1045,8 @@ export default {
               top: '0%',
               y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
-            }, '-=3',
+            },
+            '-=3',
           )
           .to(
             '.bubble-6',
@@ -1060,8 +1055,9 @@ export default {
               top: '0%',
               y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
-            }, '-=2',
-          )                    
+            },
+            '-=2',
+          )
           .to(
             '.bubble-7',
             1,
@@ -1239,7 +1235,7 @@ export default {
               opacity: 0,
             },
             '-=7',
-          )        
+          )
           .to(
             '.scene-2',
             0,
@@ -1247,7 +1243,7 @@ export default {
               backgroundColor: 'white',
             },
             '-=7',
-          )       
+          )
           .to(
             '.mobile-scene-3',
             1,
@@ -1255,13 +1251,12 @@ export default {
               opacity: 1,
             },
             '-=7',
-          )   
+          )
           .to(
             '.mobile-scene-3',
             8,
             {
               y: '0%',
-          
             },
             '-=7',
           )
@@ -1342,21 +1337,17 @@ export default {
             '-=1',
           )
 
-          .to(
-            '.bubble-18',
-            2,
-            {
-              top: '0%',
-              y: '-100%',
-              ease: SlowMo.ease.config(0.1, 0.7, false),
+          .to('.bubble-18', 2, {
+            top: '0%',
+            y: '-100%',
+            ease: SlowMo.ease.config(0.1, 0.7, false),
 
-              onComplete: function() {
-                // vue.scrollToForm();
-              },
+            onComplete: function() {
+              // vue.scrollToForm();
             },
-          );
-
-        const controller2 = new ScrollMagic.Controller();
+          });
+//  const mobilecontroller = new ScrollMagic.Controller({ container: '.cartoon.mobile' });
+        const mobilecontroller = new ScrollMagic.Controller();
         // build scene
         const pinscene = new ScrollMagic.Scene({
           triggerElement: '.cartoon.mobile',
@@ -1371,14 +1362,42 @@ export default {
               duration: '8000%',
             })
               .setTween(scene)
-              .addTo(controller2);
+              .addTo(mobilecontroller);
+
+            // const myScroll = new IScroll('.cartoon.mobile', {
+            //   // don't scroll horizontal
+            //   scrollX: false,
+            //   // but do scroll vertical
+            //   scrollY: true,
+            //   // show scrollbars
+            //   scrollbars: true,
+            //   // deactivating -webkit-transform because pin wouldn't work because of a webkit bug: https://code.google.com/p/chromium/issues/detail?id=20574
+            //   // if you dont use pinning, keep "useTransform" set to true, as it is far better in terms of performance.
+            //   useTransform: false,
+            //   // deativate css-transition to force requestAnimationFrame (implicit with probeType 3)
+            //   useTransition: false,
+            //   // set to highest probing level to get scroll events even during momentum and bounce
+            //   // requires inclusion of iscroll-probe.js
+            //   probeType: 3,
+            //   // pass through clicks inside scroll container
+            //   click: true,
+            // });
+
+            // // overwrite scroll position calculation to use child's offset instead of container's scrollTop();
+            // mobilecontroller.scrollPos(function() {
+            //   return -myScroll.y;
+            // });
+            // // thanks to iScroll 5 we now have a real onScroll event (with some performance drawbacks)
+            // myScroll.on('scroll', function() {
+            //   mobilecontroller.update();
+            // });
           })
-          .addTo(controller2);
+          .addTo(mobilecontroller);
       });
 
       imgLoad.on('progress', (instance, image) => {
         console.log(this.progressNumber);
-        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);      
+        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
       });
     }
   },
@@ -1388,6 +1407,12 @@ export default {
 <style lang="scss">
 .app {
   overflow: hidden;
+  // &.mobile {
+  //   height: 100%;
+  //   overflow-y: scroll;
+  //   overflow-x: hidden;
+  //   width: 100%;
+  // }
 }
 .form,
 .schedule,
@@ -1402,13 +1427,13 @@ footer,
 }
 .mobile {
   .form,
-.schedule,
-.speakers,
-footer,
-.speakers .block-heading,
-.person,
-.credits {
-  opacity: 1;
-}
+  .schedule,
+  .speakers,
+  footer,
+  .speakers .block-heading,
+  .person,
+  .credits {
+    opacity: 1;
+  }
 }
 </style>

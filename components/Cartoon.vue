@@ -1,5 +1,7 @@
 <template>
   <section class="cartoon desktop">    
+    <img style="display:none !important;" data-src="/logo_black.png" alt="">
+    <img style="display:none !important;" data-src="/popup.png" alt="">
       <div class="scale scene scene-1" id="scene-1">      
           <img class="city scene-img-background" data-src="/background.png" alt="">             
           <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">          

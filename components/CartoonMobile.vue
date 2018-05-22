@@ -1,5 +1,7 @@
 <template>
   <section class="cartoon mobile">    
+    <img style="display:none !important;" data-src="/logo_black.png" alt="">
+    <img style="display:none !important;" data-src="/popup.png" alt="">
       <div class="scale scene scene-1" id="scene-1">      
        
           <img class="mobile-scene-1" data-src="/mobile/scene1.jpg" alt="">   

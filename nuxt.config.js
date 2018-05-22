@@ -58,8 +58,9 @@ module.exports = {
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js'
       },
-      
-
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-probe.js'
+      }
     ]
   },
   /*

@@ -63,6 +63,10 @@ export default {
 
     axios(options);
 
+    this.name = null;
+    this.phone = null;
+    this.email = null;
+
   }
   }
 };
