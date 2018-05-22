@@ -38,6 +38,7 @@
         <img class="hero-think-3" data-src="/light/hero3.png" alt="" >
        
         <img class="img-bubble" data-src="/bubble1b.png" alt="" >    
+        <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
         <img data-src="/kid_handless.png" alt=""  class="hero-2">     
         <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
         <img class="mobile-scene-3" data-src="/mobile/scene3.png" alt="" >
@@ -340,7 +341,7 @@ export default {
     }
   }
 
-  .cartoon.mobile .bubble {
+   .bubble {
     // display: none !important;
     padding: 130px 60px 80px 80px;
     opacity: 1;
