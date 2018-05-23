@@ -25,7 +25,7 @@
 100 новых решений для своего проекта.
  </p>
 <p class="learn">
-<a href="//100imagine.com/" target="_blank">Узнать подробнее</a>
+<a href="http://100imagine.com/" target="_blank">Узнать подробнее</a>
 
     </p>
     </div>
