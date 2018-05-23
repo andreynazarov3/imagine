@@ -1,7 +1,7 @@
 <template>
 <footer>
   <div class="tel">
-    <a href="tel:+7 (968) 544-71-10"><img src="~/static/tel.png" alt=""></a>
+    <a href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     <!-- <p>The eyes of the Fair are on the future
 not in the sense of peering toward </p> -->
   </div>
@@ -98,13 +98,16 @@ not in the sense of peering toward </p> -->
     width: 383px;
     max-width: 100%;
   }
-  p {
+  a {
     @extend %p;
-    font-size: 16px;
-    opacity: 0.6;
-    text-align: center;
-    max-width: 300px;
-    margin: 20px auto;
+    color: black;
+    font-size: 60px;
+    font-style: italic;
+    text-decoration: none;
+    @media #{$smallScreen} {
+    font-size: 10vw;
+  }
+    
   }
 }
 footer {
