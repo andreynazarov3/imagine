@@ -28,7 +28,7 @@
       </div>
       <div class="credits-row">
           <p>Коуч</p>
-          <p>Ульяна Громова</p>
+          <p>Михаил Касаткин</p>
       </div>
       <div class="credits-row">
            <p>Хореограф</p>
@@ -102,7 +102,7 @@
     &:last-child {
       font-size: 20px;
       color: black;
-      text-decoration: underline;
+      // text-decoration: underline;
     }
   }
 }

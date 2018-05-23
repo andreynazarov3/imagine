@@ -5,7 +5,7 @@
     <div class="wrapper">
         <div class="format">креативный тренинг</div>         
         <a class="becomehero" href="#form"><img src="~/static/become.png" alt="Стать героем"></a>
-        <a class="phone" href="tel:+7 (916) 996–63–28">+7 (916) 996–63–28</a>
+        <a class="phone" href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     </div>
     </div>
   </header>

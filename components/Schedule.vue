@@ -14,8 +14,8 @@
       <div ref="scroller"  class="scroller schedule-items">
         <div class="schedule-item" v-for="item in items" :key="item.id">
           <div class="schedule-item-date">{{item.date}}</div>
-          <!-- <div class="schedule-item-time">{{item.time}}</div>
-          <div class="schedule-item-name">{{item.name}}</div> -->
+          <div class="schedule-item-time">{{item.time}}</div>
+          <div class="schedule-item-name">{{item.name}}</div>
           <button class="schedule-item-button">Записаться</button>
           <!-- <div class="schedule-item-line"></div>           -->
         </div>
@@ -48,8 +48,10 @@ export default {
         {
           id: 1,
           date: '27 мая',
-          time: '19:00',
-          name: 'Проекция мечты',
+          time: '14:00 - 20:00',
+          name: `
+          Москва, Третьяковская галерея. 
+          Малый Толмачевский переулок 6, стр.1`,
         },
         // {
         //   id: 2,
@@ -82,6 +84,7 @@ export default {
   opacity: 0.6;
   position: relative;
   padding-right: 292px;
+  max-width: 272px;
   @media #{$tabletScreen} {
     padding-right: 40px;
   }
