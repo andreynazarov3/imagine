@@ -4,7 +4,7 @@
      <div class="header-content">
     <div class="wrapper">
         <div class="format">креативный тренинг</div>         
-        <a class="becomehero" href="#form"><img src="~/static/become.png" alt="Стать героем"></a>
+        <a @click="$emit('scrollToForm')" class="becomehero"><img src="~/static/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     </div>
     </div>
@@ -131,15 +131,8 @@ logoscene
     };
   },
   mounted: function() {
-    const controller = new ScrollMagic.Controller();
+    // window.addEventListener('scroll');
 
-    const headerscene = new ScrollMagic.Scene({
-      triggerElement: 'header .header-content',
-      triggerHook: 0,
-    })
-      .setPin('header .header-content')
-      .setClassToggle('header', 'pinned')
-      .addTo(controller);
   },
 };
 </script>
@@ -158,11 +151,11 @@ logoscene
   z-index: 8000;
 }
 .top {
-  position: absolute;
-  overflow: hidden;
-  height: 100vh;
+  // position: absolute;
+  // overflow: hidden;
+  // height: 100vh;
   width: 100%;
-  z-index: 4;
+  z-index: 1;
 }
 .logo-wrapper {
   max-width: 100%;
@@ -271,6 +264,7 @@ header {
       @extend %p;
     }
     .becomehero {
+      cursor:pointer;
       font-size: 0;
       img {
         width: 187px;

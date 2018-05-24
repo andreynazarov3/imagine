@@ -17,7 +17,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js project'
+        content: '100 идей для твоего проекта'
       }
     ],
 
