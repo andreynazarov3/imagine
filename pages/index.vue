@@ -2,8 +2,8 @@
 <div ref="app" class="app" id="app" :class="{mobile: isMobile}">      
     <Logo :data="header" :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
-      <Cartoon :isMobile="isMobile" v-show="!isMobile" />
-      <CartoonMobile :isMobile="isMobile" v-show="isMobile" />
+      <Cartoon :isMobile="isMobile" v-if="!isMobile" />
+      <CartoonMobile :isMobile="isMobile" v-if="isMobile" />
       <div ref="normalContent" class="normal-content">
         <Form @sendmail="showPopup = true" />
         <Schedule @scrollToForm='scrollToForm' />
@@ -83,25 +83,20 @@ export default {
     scrollToForm: function() {
       console.log('scroll');
       let windowHeight;
-      let spacerHeight;
+
       if (this.isMobile) {
         windowHeight = window.screen.height;
-        spacerHeight = document.querySelector('.cartoonspacermobile').offsetHeight;
       } else {
         windowHeight = window.innerHeight;
-        spacerHeight = document.querySelector('.cartoonspacer').offsetHeight;
       }
 
       let normalContentHeight = this.$refs.normalContent.offsetHeight;
+      let spacerHeight = document.querySelector('.cartoonspacer').offsetHeight;
 
       console.log(windowHeight);
       console.log(normalContentHeight);
       console.log(spacerHeight);
-      if (this.isMobile) {
-      this.controller.scrollTo(spacerHeight - windowHeight * 6 - normalContentHeight);
-      } else {
-      this.controller.scrollTo(spacerHeight - windowHeight * 2  - windowHeight * 0.5 - normalContentHeight);
-      }
+      this.controller.scrollTo(spacerHeight - windowHeight * 2 - normalContentHeight - 400);
     },
   },
   beforeMount: function() {
@@ -259,7 +254,6 @@ export default {
           .to('.scene-img-background', 1, {
             opacity: 1,
           });
-
         vue.scene = new TimelineMax();
         vue.scene
           .to('header', 2, { y: '-40px' })
@@ -1013,11 +1007,9 @@ export default {
         });
         vue.scene = new TimelineMax();
         vue.scene
-          .to('header', 2, { y: '-40px' })
-          .to('.logo-wrapper', 2, { top: '-100%', left: '50%' }, '-=2')
           .to('.mobile-scene-1', 3, {
             y: '-50%',
-          }, '-=2')
+          })
           .to(
             '.bubble-1',
             1,
@@ -1364,40 +1356,58 @@ export default {
             top: '0%',
             y: '-100%',
             ease: SlowMo.ease.config(0.1, 0.7, false),
-          })
-          .to('.cartoon', 1, {
-            top: '0%',
-            y: '-100%',
-          })
-          .add('form')
-          .to(
-            '.normal-content',
-            4,
-            {
-              bottom: '0',
-              y: '0',
+
+            onComplete: function() {
+              // vue.scrollToForm();
             },
-            '-=1',
-          );
+          });
         //  const mobilecontroller = new ScrollMagic.Controller({ container: '.cartoon.mobile' });
-        vue.controller = new ScrollMagic.Controller();
+        const mobilecontroller = new ScrollMagic.Controller();
         // build scene
         const pinscene = new ScrollMagic.Scene({
-          triggerElement: '#app',
+          triggerElement: '.cartoon.mobile',
           triggerHook: 0,
           duration: '8000%',
         })
-          .setPin('#app', { spacerClass: 'cartoonspacermobile', pushFollowers: true })
+          .setPin('.cartoon.mobile', { spacerClass: 'cartoonspacermobile', pushFollowers: true })
           .on('add', function() {
             const scrollscene = new ScrollMagic.Scene({
-              triggerElement: '#app',
+              triggerElement: '.cartoonspacermobile',
               triggerHook: 0,
               duration: '8000%',
             })
               .setTween(vue.scene)
-              .addTo(vue.controller);
+              .addTo(mobilecontroller);
+
+            // const myScroll = new IScroll('.cartoon.mobile', {
+            //   // don't scroll horizontal
+            //   scrollX: false,
+            //   // but do scroll vertical
+            //   scrollY: true,
+            //   // show scrollbars
+            //   scrollbars: true,
+            //   // deactivating -webkit-transform because pin wouldn't work because of a webkit bug: https://code.google.com/p/chromium/issues/detail?id=20574
+            //   // if you dont use pinning, keep "useTransform" set to true, as it is far better in terms of performance.
+            //   useTransform: false,
+            //   // deativate css-transition to force requestAnimationFrame (implicit with probeType 3)
+            //   useTransition: false,
+            //   // set to highest probing level to get scroll events even during momentum and bounce
+            //   // requires inclusion of iscroll-probe.js
+            //   probeType: 3,
+            //   // pass through clicks inside scroll container
+            //   click: true,
+            // });
+
+            // // overwrite scroll position calculation to use child's offset instead of container's scrollTop();
+            // mobilecontroller.scrollPos(function() {
+            //   return -myScroll.y;
+            // });
+            // // thanks to iScroll 5 we now have a real onScroll event (with some performance drawbacks)
+            // myScroll.on('scroll', function() {
+            //   mobilecontroller.update();
+            // });
           })
-          .addTo(vue.controller);
+          .addTo(mobilecontroller);
       });
 
       imgLoad.on('progress', (instance, image) => {

@@ -158,7 +158,6 @@ logoscene
   z-index: 1;
 }
 .logo-wrapper {
-  z-index: 2;
   max-width: 100%;
   width: 852px;
   margin: 0 auto;
