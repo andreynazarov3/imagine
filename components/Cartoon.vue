@@ -174,7 +174,7 @@
            «Я не смогу, я не успею, я не справлюсь, я не креативный». Мир готовых решений отучил Человека фантазировать.  
           </div>
           <div class="bubble bubble-7">
-            А вопрос засел в голове, как навязчивая попсовая песня, и не покидал его ни днем ни ночью. 
+            А вопрос засел в голове, как навязчивая попсовая песня, и не покидал его ни днем не ночью. 
           </div>
       </div>      
       <div class="scale scene scene-2" id="scene-2">
@@ -277,7 +277,7 @@ export default {
         windowWidth = window.innerWidth;
       }
     }
-    const cartoon = document.querySelector('#app');
+    const cartoon = document.querySelector('.cartoon.desktop');
 
     function scrollcartoon(e) {
       // scroll down
@@ -303,8 +303,8 @@ export default {
 
     const isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i) ? true : false;
     if (!isMacLike) {
-      // cartoon.addEventListener('mousewheel', scrollcartoon);
-      // cartoon.addEventListener('DOMMouseScroll', scrollcartoon);
+      cartoon.addEventListener('mousewheel', scrollcartoon);
+      cartoon.addEventListener('DOMMouseScroll', scrollcartoon);
     }
     getWindowSize();
     const scaleCartoon = function() {

@@ -2,13 +2,12 @@
 <div ref="app" class="app" id="app" :class="{mobile: isMobile}">      
     <Logo :data="header" :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
     <main v-show="imagesLoaded || isMobile">
-      <Cartoon :isMobile="isMobile" v-if="!isMobile" />
-      <CartoonMobile :isMobile="isMobile" v-if="isMobile" />
-      <div class="normal-content">
-        <Form @sendmail="showPopup = true" />
-        <Schedule @scrollToForm='scrollToForm' />
-        <Speakers />      
-      </div>
+      <Cartoon :isMobile="isMobile" v-show="!isMobile" />
+      <CartoonMobile :isMobile="isMobile" v-show="isMobile" />
+      <Form @sendmail="showPopup = true" />
+      <Schedule @scrollToForm='scrollToForm' />
+      <Speakers />
+      <myFooter />
     </main>
 <Popup v-if="showPopup" @close="showPopup = false" />
 </div>
@@ -23,7 +22,7 @@ import Logo from '~/components/Logo';
 import Form from '~/components/Form';
 import Speakers from '~/components/Speakers';
 import Schedule from '~/components/Schedule';
-// import myFooter from '~/components/myFooter';
+import myFooter from '~/components/myFooter';
 import Popup from '~/components/Popup';
 import axios from 'axios';
 export default {
@@ -34,14 +33,14 @@ export default {
     Form,
     Speakers,
     Schedule,
-    // myFooter,
+    myFooter,
     Popup,
   },
-  // asyncData({ env }) {
-  //   return axios.get(env.baseUrl + '/data.json').then(res => {
-  //     return { header: res.data.header };
-  //   });
-  // },
+  asyncData({ env }) {
+    return axios.get(env.baseUrl + '/data.json').then(res => {
+      return { header: res.data.header };
+    });
+  },
   watch: {
     showPopup: function(val) {
       const body = document.querySelector('body');
@@ -59,8 +58,6 @@ export default {
       isMobile: false,
       imagesLoaded: false,
       header: '{}',
-      scene: null,
-      controller: null,
     };
   },
   methods: {
@@ -81,10 +78,22 @@ export default {
       }
     },
     scrollToForm: function() {
-      console.log('emit scroll');
-      // this.scene.tweenTo('form');
-      console.log(this.controller);
-      TweenMax.to(window, 1, { scrollTo: '.normal-content' });
+      function getOffsetTop(elem) {
+        let getOffsetTop = 0;
+        do {
+          if (!isNaN(elem.offsetTop)) {
+            getOffsetTop += elem.offsetTop;
+          }
+        } while ((elem = elem.offsetParent));
+        return getOffsetTop;
+      }
+      // window.scrollTo(0, getOffsetTop(document.querySelector('.form')))
+      TweenMax.to(window, 1, {
+        scrollTo: {
+          y: getOffsetTop(document.querySelector('.form')),
+          // autoKill: false,
+        },
+      });
     },
   },
   beforeMount: function() {
@@ -242,11 +251,9 @@ export default {
           .to('.scene-img-background', 1, {
             opacity: 1,
           });
-        vue.scene = new TimelineMax();
-        vue.scene
-          .to('header', 2, { y: '-40px' })
-          .to('.logo-wrapper', 2, { top: '-100%', left: '50%' }, '-=2')
-          .to('.scene-img-background', 2, { top: '50%', transform: 'translateY(-1100px)' }, '-=2')
+        const scene = new TimelineMax();
+        scene
+          .to('.scene-img-background', 2, { top: '50%', transform: 'translateY(-1100px)' })
           .to('.scene-img-hero', 2, { top: '50%', transform: 'translateY(-300px) scale(1)' }, '-=2')
           .to(
             '.scene-img-bridge',
@@ -932,47 +939,37 @@ export default {
 
           .to(
             '.bubble-18',
-            1,
+            2,
             {
               top: '0%',
               y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
-            },
-            '-=1',
-          )
-          .to('.cartoon', 1, {
-            top: '0%',
-            y: '-100%',
-          })
-          .add('form')
-          .to(
-            '.normal-content',
-            4,
-            {
-              bottom: '0',
-              y: '0%',
+
+              onComplete: function() {
+                vue.scrollToForm();
+              },
             },
             '-=1',
           );
 
-        vue.controller = new ScrollMagic.Controller();
+        const controller2 = new ScrollMagic.Controller();
         // build scene
         const pinscene = new ScrollMagic.Scene({
-          triggerElement: '#app',
+          triggerElement: '.cartoon.desktop',
           triggerHook: 0,
-          duration: '5000%',
+          duration: '9000%',
         })
-          .setPin('#app', { spacerClass: 'cartoonspacer', pushFollowers: true })
+          .setPin('.cartoon.desktop', { spacerClass: 'cartoonspacer', pushFollowers: true })
           .on('add', function() {
             const scrollscene = new ScrollMagic.Scene({
-              triggerElement: '#app',
+              triggerElement: '.cartoonspacer',
               triggerHook: 0,
-              duration: '5000%',
+              duration: '9000%',
             })
-              .setTween(vue.scene)
-              .addTo(vue.controller);
+              .setTween(scene)
+              .addTo(controller2);
           })
-          .addTo(vue.controller);
+          .addTo(controller2);
       });
 
       imgLoad.on('progress', (instance, image) => {
@@ -993,8 +990,8 @@ export default {
         tbscene.to('.mobile-scene-1', 1, {
           opacity: 1,
         });
-        vue.scene = new TimelineMax();
-        vue.scene
+        const scene = new TimelineMax();
+        scene
           .to('.mobile-scene-1', 3, {
             y: '-50%',
           })
@@ -1349,7 +1346,7 @@ export default {
               // vue.scrollToForm();
             },
           });
-        //  const mobilecontroller = new ScrollMagic.Controller({ container: '.cartoon.mobile' });
+//  const mobilecontroller = new ScrollMagic.Controller({ container: '.cartoon.mobile' });
         const mobilecontroller = new ScrollMagic.Controller();
         // build scene
         const pinscene = new ScrollMagic.Scene({
@@ -1364,7 +1361,7 @@ export default {
               triggerHook: 0,
               duration: '8000%',
             })
-              .setTween(vue.scene)
+              .setTween(scene)
               .addTo(mobilecontroller);
 
             // const myScroll = new IScroll('.cartoon.mobile', {
@@ -1408,22 +1405,8 @@ export default {
 </script>
 
 <style lang="scss">
-.normal-content {
-  position: absolute;
-  bottom: 0;
-  transform: translateY(100%);
-  width: 100%;
-}
-main {
-  position: absolute;
-  top: 0;
-  // transform: translateY(100%);
-  left: 0;
-  width: 100%;
-}
 .app {
   overflow: hidden;
-  height: 100% !important;
   // &.mobile {
   //   height: 100%;
   //   overflow-y: scroll;

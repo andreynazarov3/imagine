@@ -1,7 +1,7 @@
 <template>
 <footer>
   <div class="tel">
-    <a href="tel:+7 (968) 544-71-10"><img src="tel2.png" alt=""></a>
+    <a href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     <!-- <p>The eyes of the Fair are on the future
 not in the sense of peering toward </p> -->
   </div>
