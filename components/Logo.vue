@@ -4,7 +4,7 @@
      <div class="header-content">
     <div class="wrapper">
         <div class="format">креативный тренинг</div>         
-        <a class="becomehero" href="#form"><img src="~/static/become.png" alt="Стать героем"></a>
+        <a class="becomehero" @click="$emit('scrollToForm')"><img src="~/static/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     </div>
     </div>
@@ -272,6 +272,7 @@ header {
     }
     .becomehero {
       font-size: 0;
+      cursor:pointer;
       img {
         width: 187px;
       }

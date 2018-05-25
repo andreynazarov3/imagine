@@ -51,13 +51,16 @@
     </div>
   </div> -->
   <Credits />
+  <myFooter />
 </section>
 </template>
 <script>
 import Credits from '~/components/Credits';
+import myFooter from '~/components/myFooter';
 export default {
   components: {
     Credits,
+    myFooter
   },
 };
 </script>

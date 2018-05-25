@@ -7,7 +7,20 @@ module.exports = {
    */
   head: {
     title: '!magine',
-    meta: [{
+    meta: [
+      {
+        property: 'og:image',
+        content: 'http://imagine100.com/smm.png'
+      },
+      {
+        property: 'og:description',
+        content: '100 идей для твоего проекта'
+      },
+      {
+        property: 'og:title',
+        content: '!magine'
+      },
+      {
         charset: 'utf-8'
       },
       {
@@ -17,7 +30,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js project'
+        content: '100 идей для твоего проекта'
       }
     ],
 

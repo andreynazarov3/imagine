@@ -17,7 +17,7 @@
           <div class="schedule-item-time">{{item.time}}</div>
           <div class="schedule-item-name">{{item.name}}</div>
           <button class="schedule-item-button">Записаться</button>
-          <!-- <div class="schedule-item-line"></div>           -->
+          <div class="schedule-item-line"></div>          
         </div>
       </div>
    </div>
@@ -53,6 +53,12 @@ export default {
           Москва, Третьяковская галерея. 
           Малый Толмачевский переулок 6, стр.1`,
         },
+        {
+          id: 2,
+          date: '30 мая',
+          time: null,
+          name: `Немного терпения`,
+        },
         // {
         //   id: 2,
         //   date: '1 июля',
@@ -84,7 +90,10 @@ export default {
   opacity: 0.6;
   position: relative;
   padding-right: 292px;
-  max-width: 272px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 200px;
   @media #{$tabletScreen} {
     padding-right: 40px;
   }
@@ -120,6 +129,7 @@ export default {
   &-name {
     @extend %p;
     font-size: 16px;
+    flex: 1;
   }
   &-button {
     @extend %p;
@@ -150,7 +160,7 @@ export default {
     padding-left: 16px;  
   }
   @media #{$tabletScreen} {
-    padding-left: 16px;
+      padding-left: 170px;
   }
   &::-webkit-scrollbar {
     display: none;

@@ -3,7 +3,7 @@
   <div class="credits">
     <div class="credits-block">
        <div class="credits-row">
-          <p>Режиссер</p>
+          <p>Спикер</p>
           <p>Петр Иванов</p>
       </div>
        <div class="credits-row">
@@ -27,7 +27,7 @@
           <p>Константин Червонько</p>
       </div>
       <div class="credits-row">
-          <p>Коуч</p>
+          <p>Консультант</p>
           <p>Михаил Касаткин</p>
       </div>
       <div class="credits-row">

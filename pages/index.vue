@@ -7,7 +7,6 @@
       <Form @sendmail="showPopup = true" />
       <Schedule @scrollToForm='scrollToForm' />
       <Speakers />
-      <myFooter />
     </main>
 <Popup v-if="showPopup" @close="showPopup = false" />
 </div>
@@ -22,7 +21,6 @@ import Logo from '~/components/Logo';
 import Form from '~/components/Form';
 import Speakers from '~/components/Speakers';
 import Schedule from '~/components/Schedule';
-import myFooter from '~/components/myFooter';
 import Popup from '~/components/Popup';
 import axios from 'axios';
 export default {
@@ -33,7 +31,6 @@ export default {
     Form,
     Speakers,
     Schedule,
-    myFooter,
     Popup,
   },
   asyncData({ env }) {
