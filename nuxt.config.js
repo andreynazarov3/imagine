@@ -1,4 +1,5 @@
 // const preloadScript = require('./assets/js/preload.js')
+const config = require('./.contentful.json')
 
 module.exports = {
 
@@ -94,7 +95,10 @@ module.exports = {
 
   ],
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_SCHEDULE_TYPE_ID: config.CTF_SCHEDULE_TYPE_ID
   },
   /*
    ** Build configuration

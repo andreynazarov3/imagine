@@ -5,7 +5,7 @@
       <Cartoon :isMobile="isMobile" v-show="!isMobile" />
       <CartoonMobile :isMobile="isMobile" v-show="isMobile" />
       <Form @sendmail="showPopup = true" />
-      <Schedule @scrollToForm='scrollToForm' />
+      <Schedule :data="schedule" @scrollToForm='scrollToForm' />
       <Speakers />
     </main>
 <Popup v-if="showPopup" @close="showPopup = false" />
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { createClient } from '~/plugins/contentful.js';
+const client = createClient();
 const imagesLoaded = require('imagesloaded');
 const smoothScroll = require('~/assets/js/smoothscroll.js');
 import Cartoon from '~/components/Cartoon';
@@ -34,9 +36,18 @@ export default {
     Popup,
   },
   asyncData({ env }) {
-    return axios.get(env.baseUrl + '/data.json').then(res => {
-      return { header: res.data.header };
-    });
+    return Promise.all([      
+      client.getEntries({
+        content_type: env.CTF_SCHEDULE_TYPE_ID,
+        order: 'sys.createdAt',
+      }),
+    ])
+      .then(([{items}]) => {       
+        return {
+          schedule: items
+        };
+      })
+      .catch(console.error);
   },
   watch: {
     showPopup: function(val) {
@@ -55,6 +66,7 @@ export default {
       isMobile: false,
       imagesLoaded: false,
       header: '{}',
+      schedule: null
     };
   },
   methods: {
@@ -1343,7 +1355,7 @@ export default {
               // vue.scrollToForm();
             },
           });
-//  const mobilecontroller = new ScrollMagic.Controller({ container: '.cartoon.mobile' });
+        //  const mobilecontroller = new ScrollMagic.Controller({ container: '.cartoon.mobile' });
         const mobilecontroller = new ScrollMagic.Controller();
         // build scene
         const pinscene = new ScrollMagic.Scene({
