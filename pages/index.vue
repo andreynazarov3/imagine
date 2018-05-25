@@ -4,7 +4,7 @@
     <main v-show="imagesLoaded || isMobile">
       <Cartoon :isMobile="isMobile" v-if="!isMobile" />
       <CartoonMobile :isMobile="isMobile" v-if="isMobile" />
-      <div ref="normalContent" class="normal-content">
+      <div class="normal-content">
         <Form @sendmail="showPopup = true" />
         <Schedule @scrollToForm='scrollToForm' />
         <Speakers />      
@@ -81,22 +81,10 @@ export default {
       }
     },
     scrollToForm: function() {
-      console.log('scroll');
-      let windowHeight;
-
-      if (this.isMobile) {
-        windowHeight = window.screen.height;
-      } else {
-        windowHeight = window.innerHeight;
-      }
-
-      let normalContentHeight = this.$refs.normalContent.offsetHeight;
-      let spacerHeight = document.querySelector('.cartoonspacer').offsetHeight;
-
-      console.log(windowHeight);
-      console.log(normalContentHeight);
-      console.log(spacerHeight);
-      this.controller.scrollTo(spacerHeight - windowHeight * 2 - normalContentHeight - 400);
+      console.log('emit scroll');
+      // this.scene.tweenTo('form');
+      console.log(this.controller);
+      TweenMax.to(window, 1, { scrollTo: '.normal-content' });
     },
   },
   beforeMount: function() {
@@ -962,7 +950,7 @@ export default {
             4,
             {
               bottom: '0',
-              y: '0',
+              y: '0%',
             },
             '-=1',
           );
