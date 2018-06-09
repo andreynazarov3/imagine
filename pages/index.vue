@@ -25,6 +25,7 @@ import Speakers from '~/components/Speakers';
 import Schedule from '~/components/Schedule';
 import Popup from '~/components/Popup';
 import axios from 'axios';
+import { Howl, Howler } from 'howler';
 export default {
   components: {
     Cartoon,
@@ -79,6 +80,15 @@ export default {
       imagesLoaded: false,
       header: '{}',
       schedule: null,
+      currentSound: null,
+      sounds: {
+        gorod: null,
+        voprosi: null,
+        nagnetenie: null,
+        lampa: null,
+        tishina: null,
+        luna: null,
+      },
     };
   },
   methods: {
@@ -122,6 +132,61 @@ export default {
   },
   mounted: function() {
     if (!this.isMobile) {
+      // Setup the new Howl.
+      this.sounds.gorod = new Howl({
+        src: ['/sounds/gorod.mp3'],
+        loop: true,
+        preload: true,
+        muted: true,
+        onload: () => {
+          console.log('loaded', 'sound_gorod');
+        },
+      });
+      this.sounds.voprosi = new Howl({
+        src: ['/sounds/voprosi.mp3'],
+        loop: true,
+        preload: true,
+        muted: true,
+        onload: () => {
+          console.log('loaded', 'sound_voprosi');
+        },
+      });
+      this.sounds.nagnetenie = new Howl({
+        src: ['/sounds/nagnetenie.mp3'],
+        loop: true,
+        preload: true,
+        muted: true,
+        onload: () => {
+          console.log('loaded', 'sound_nagnetenie');
+        },
+      });
+      this.sounds.lampa = new Howl({
+        src: ['/sounds/lampa.mp3'],
+        loop: true,
+        preload: true,
+        muted: true,
+        onload: () => {
+          console.log('loaded', 'sound_lampa');
+        },
+      });
+      this.sounds.tishina = new Howl({
+        src: ['/sounds/tishina.mp3'],
+        loop: true,
+        preload: true,
+        muted: true,
+        onload: () => {
+          console.log('loaded', 'sound_tishina');
+        },
+      });
+      this.sounds.luna = new Howl({
+        src: ['/sounds/luna.mp3'],
+        loop: true,
+        preload: true,
+        muted: true,
+        onload: () => {
+          console.log('loaded', 'sound_Luna');
+        },
+      });
       const bottomAnimationOffset = 50;
       const bottomAnimationTime = 1;
       const bottomController = new ScrollMagic.Controller();
@@ -244,10 +309,11 @@ export default {
       const vue = this;
       const imgLoad = imagesLoaded('body', function() {
         console.log('images loaded');
+
         vue.imagesLoaded = true;
-        // const loading = document.querySelector('.loading');
-        // const main = document.querySelector('main');
-        // main.style.display = 'block';
+        vue.currentSound = vue.sounds.gorod.play();
+        vue.sounds.gorod.fade(0.0, 1.0, 5000);
+
         const tbscene = new TimelineMax();
         tbscene
           .to('.loading', 1, {
@@ -334,6 +400,22 @@ export default {
           .to('.scene-img-house-3', 1, { opacity: 1 }, '-=1.5')
           .to('.city', 0.3, {
             opacity: 0.3,
+            onComplete: function() {
+              vue.sounds.gorod.fade(1.0, 0.0, 1000);
+              vue.sounds.gorod.once('fade', () => {
+                vue.sounds.gorod.stop();
+                vue.sounds.voprosi.play();
+                vue.sounds.voprosi.fade(0.0, 1.0, 1000);
+              });
+            },
+            onReverseComplete: function() {
+              vue.sounds.voprosi.fade(1.0, 0.0, 1000);
+              vue.sounds.voprosi.once('fade', () => {
+                vue.sounds.voprosi.stop();
+                vue.sounds.gorod.play();
+                vue.sounds.gorod.fade(0.0, 1.0, 1000);
+              });
+            },
           })
           .to('.quests-1[data-size="1"]', 3, {
             y: '-100%',
@@ -354,6 +436,22 @@ export default {
             {
               y: '-150%',
               x: '-50%',
+              onComplete: function() {
+                vue.sounds.voprosi.fade(1.0, 0.0, 1000);
+                vue.sounds.voprosi.once('fade', () => {
+                  vue.sounds.voprosi.stop();
+                  vue.sounds.nagnetenie.play();
+                  vue.sounds.nagnetenie.fade(0.0, 1.0, 1000);
+                });
+              },
+              onReverseComplete: function() {
+                vue.sounds.nagnetenie.fade(1.0, 0.0, 1000);
+                vue.sounds.nagnetenie.once('fade', () => {
+                  vue.sounds.nagnetenie.stop();
+                  vue.sounds.voprosi.play();
+                  vue.sounds.voprosi.fade(0.0, 1.0, 1000);
+                });
+              },
             },
             '-=3',
           )
@@ -394,13 +492,37 @@ export default {
             },
             '-=3',
           )
-          .to('.scene-img-hero', 3, { top: '50%', transform: 'translateY(0px) scale(0.5)' }, '-=2')
+          .to(
+            '.scene-img-hero',
+            3,
+            {
+              top: '50%',
+              transform: 'translateY(0px) scale(0.5)',
+            },
+            '-=2',
+          )
           .to(
             '.quests-2[data-size="1"]',
             3,
             {
               y: '-100%',
               x: '-50%',
+              onComplete: function() {
+                vue.sounds.nagnetenie.fade(1.0, 0.0, 1000);
+                vue.sounds.nagnetenie.once('fade', () => {
+                  vue.sounds.nagnetenie.stop();
+                  vue.sounds.lampa.play();
+                  vue.sounds.lampa.fade(0.0, 1.0, 1000);
+                });
+              },
+              onReverseComplete: function() {
+                vue.sounds.lampa.fade(1.0, 0.0, 1000);
+                vue.sounds.lampa.once('fade', () => {
+                  vue.sounds.lampa.stop();
+                  vue.sounds.nagnetenie.play();
+                  vue.sounds.nagnetenie.fade(0.0, 1.0, 1000);
+                });
+              },
             },
             '-=2',
           )
@@ -604,6 +726,22 @@ export default {
               top: '0%',
               y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
+              onComplete: function() {
+                vue.sounds.lampa.fade(1.0, 0.0, 1000);
+                vue.sounds.lampa.once('fade', () => {
+                  vue.sounds.lampa.stop();
+                  vue.sounds.tishina.play();
+                  vue.sounds.tishina.fade(0.0, 1.0, 1000);
+                });
+              },
+              onReverseComplete: function() {
+                vue.sounds.tishina.fade(1.0, 0.0, 1000);
+                vue.sounds.tishina.once('fade', () => {
+                  vue.sounds.tishina.stop();
+                  vue.sounds.lampa.play();
+                  vue.sounds.lampa.fade(0.0, 1.0, 1000);
+                });
+              },
             },
             '-=0.5',
           )
@@ -649,6 +787,22 @@ export default {
               top: '0%',
               y: '-100%',
               ease: SlowMo.ease.config(0.1, 0.7, false),
+              onComplete: function() {
+                vue.sounds.tishina.fade(1.0, 0.0, 1000);
+                vue.sounds.tishina.once('fade', () => {
+                  vue.sounds.tishina.stop();
+                  vue.sounds.luna.play();
+                  vue.sounds.luna.fade(0.0, 1.0, 500);
+                });
+              },
+              onReverseComplete: function() {
+                vue.sounds.luna.fade(1.0, 0.0, 1000);
+                vue.sounds.luna.once('fade', () => {
+                  vue.sounds.luna.stop();
+                  vue.sounds.tishina.play();
+                  vue.sounds.tishina.fade(0.0, 1.0, 1000);
+                });
+              },
             },
             '-=0.5',
           )
