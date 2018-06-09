@@ -1613,7 +1613,7 @@ export default {
   img {
     width: 100%;
   }
-  @at-root .app .mute {
+  @at-root .app.mobile .mute {
     display: none;
   }
 }
