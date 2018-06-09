@@ -1,6 +1,6 @@
 <template>
   <section class="form" id="form">    
-    <img src="~/static/form-back.png" srcset="~/static/blue-mobile-2.png 211w,~/static/form-back.png 1010w" sizes="(max-width: 768px) 211px, 1010px" class="blue-form">
+    <img src="~/static/images/form-back.png" srcset="~/static/images/blue-mobile-2.png 211w,~/static/images/form-back.png 1010w" sizes="(max-width: 768px) 211px, 1010px" class="blue-form">
     <div class="wrapper">
     <h1>
       Ну что, пошли?
@@ -15,7 +15,7 @@
     </div>
     <button @click="sendEmail" class="become" :class="{ active: name && phone && email && validEmail}" :disabled="!name || !phone || !email || !validEmail">
       <div class="box"></div>
-      <img src="~/static/become.png" alt="">
+      <img src="~/static/images/become.png" alt="">
     </button>
     <p class="shortdesc">
      !MAGINE&nbsp;&mdash; это креативный тренинг в&nbsp;формате know-wow, сочетающий обучение и&nbsp;развлечение. За&nbsp;1 день каждый участник легко осваивает 11&nbsp;методов

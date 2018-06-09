@@ -1,13 +1,13 @@
 <template>
 <footer>
   <div class="tel">
-    <a href="tel:+7 (968) 544-71-10"><img src="tel2.png" alt=""></a>
+    <a href="tel:+7 (968) 544-71-10"><img src="~/static/images/tel2.png" alt=""></a>
     <!-- <p>The eyes of the Fair are on the future
 not in the sense of peering toward </p> -->
   </div>
   <div class="realfooter">
       <div class="wrapper">
-        <img src="~/static/white-logo.png" alt="">
+        <img src="~/static/images/white-logo.png" alt="">
         <!-- <div class="social">
           <a href="">Facebook</a>
           <a href="">Instagram</a>

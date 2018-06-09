@@ -4,7 +4,7 @@
      <div class="header-content">
     <div class="wrapper">
         <div class="format">креативный тренинг</div>         
-        <a class="becomehero" @click="$emit('scrollToForm')"><img src="~/static/become.png" alt="Стать героем"></a>
+        <a class="becomehero" @click="$emit('scrollToForm')"><img src="~/static/images/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     </div>
     </div>
@@ -231,7 +231,7 @@ logoscene
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('~/static/logo-backjpg.jpg') no-repeat;
+  background: url('~/static/images/logo-backjpg.jpg') no-repeat;
   background-size: cover;
   background-position: top;
   opacity: 0.4;

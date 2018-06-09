@@ -1,11 +1,11 @@
 <template>
 <section class="speakers">
-  <img class="blue" src="~/static/blue.png" srcset="~/static/blue-mobile.png 211w,~/static/blue.png 1010w" sizes="(max-width: 480px) 211px, 1010px" alt="">
-  <img class="red" src="~/static/red-2.png" alt="">
+  <img class="blue" src="~/static/images/blue.png" srcset="~/static/images/blue-mobile.png 211w,~/static/images/blue.png 1010w" sizes="(max-width: 480px) 211px, 1010px" alt="">
+  <img class="red" src="~/static/images/red-2.png" alt="">
   <!-- <img class="red-2" src="~/static/red.png" srcset="~/static/red-mobile.png 197w,~/static/red.png 1010w" sizes="(max-width: 480px) 197px, 1010px"  alt=""> -->
   <div class="wrapper">
     <div class="block-heading">
-      <img class="speakers-img" src="~/static/creators.png" alt="">
+      <img class="speakers-img" src="~/static/images/creators.png" alt="">
       <div class="line"></div>
       <p>
         Мы живем в этом классном месте
@@ -147,11 +147,11 @@ export default {
       opacity: 1;
     }
     .person-pic {
-      background: url(~/static/petya.png) no-repeat;
+      background: url(~/static/images/petya.png) no-repeat;
       width: 233px;
       height: 330px;
       @media #{$smallScreen} {
-        background: url(~/static/petya-small.png) no-repeat;
+        background: url(~/static/images/petya-small.png) no-repeat;
         width: 320px;
         height: 200px;
       }
@@ -163,11 +163,11 @@ export default {
       align-self: initial;
     }
     .person-pic {
-      background: url(~/static/lera.png) no-repeat;
+      background: url(~/static/images/lera.png) no-repeat;
       width: 228px;
       height: 377px;
       @media #{$smallScreen} {
-        background: url(~/static/lera-mobile.png) no-repeat;
+        background: url(~/static/images/lera-mobile.png) no-repeat;
         width: 320px;
         height: 200px;
         order: -1;
@@ -184,12 +184,12 @@ export default {
       margin-left: 0px;    
     }
     .person-pic {
-      background: url(~/static/olesya2.png) no-repeat;
+      background: url(~/static/images/olesya2.png) no-repeat;
       width: 315px;
       height: 490px;
 
       @media #{$smallScreen} {
-        background: url(~/static/olesya-mobile.png) no-repeat;
+        background: url(~/static/images/olesya-mobile.png) no-repeat;
         width: 320px;
         height: 254px;
         order: -1;

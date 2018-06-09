@@ -8,7 +8,7 @@
               </button>
 
           <div class="modal-body">
-              <img class="black_logo" src="/logo_black.png" alt="">
+              <img class="black_logo" src="~/static/images/logo_black.png" alt="">
               <p>
                 это know-wow формат обучения. Вы осваиваете авторские механики генерации идей и находите 100 новых решений для своего проекта. 
               </p>
@@ -26,7 +26,7 @@
           <div class="modal-footer">
              
 
-             <div style="padding:75% 0 0 0;position:relative;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen src="https://www.youtube.com/embed/p5ILk4WQ9Ek" allow="autoplay; encrypted-media"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+             <div style="padding:75% 0 0 0;position:relative;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen src="https://www.youtube.com/embed/p5ILk4WQ9Ek" allow="autoplay; encrypted-media"></iframe></div>
           </div>
            
             
@@ -118,7 +118,7 @@ export default {
   max-width: 756px;
   margin: 0px auto;
   padding: 150px 21px 100px 128px;
-  background: url(/popup.png) no-repeat;
+  background: url(~/static/images/popup.png) no-repeat;
   background-size: 100% 100%;
   transition: all 0.3s ease;
   font-family: Helvetica, Arial, sans-serif;

@@ -1,11 +1,11 @@
 <template>
   <section class="cartoon mobile">    
-    <img style="display:none !important;" data-src="/logo_black.png" alt="">
-    <img style="display:none !important;" data-src="/popup.png" alt="">
+    <img style="display:none !important;" data-src="/images/logo_black.png" alt="">
+    <img style="display:none !important;" data-src="/images/popup.png" alt="">
       <div class="scale scene scene-1" id="scene-1">      
        
-          <img class="mobile-scene-1" data-src="/mobile/scene1.jpg" alt="">   
-          <img class="mobile-curtain" data-src="/mobile/curtain.png" alt="">            
+          <img class="mobile-scene-1" data-src="/images/mobile/scene1.jpg" alt="">   
+          <img class="mobile-curtain" data-src="/images/mobile/curtain.png" alt="">            
           
           <div class="bubble bubble-1">
             В одном большом и всем знакомом городе жил Человек. 
@@ -31,19 +31,19 @@
       </div>
       <div class="scale scene scene-2" id="scene-2">
          
-        <img class="light light-1"  data-src="/light/light1.png" alt="" >
-        <img class="light light-2" data-src="/light/light2.png" alt="" >
-        <img class="light light-3" data-src="/light/light3.png" alt="" >
-        <img class="light light-4" data-src="/light/light4.png" alt="" >
-         <img class="hero-think-1" data-src="/light/hero1.png" alt="" >
-        <img class="hero-think-2" data-src="/light/hero2.png" alt="" >
-        <img class="hero-think-3" data-src="/light/hero3.png" alt="" >
+        <img class="light light-1"  data-src="/images/light/light1.png" alt="" >
+        <img class="light light-2" data-src="/images/light/light2.png" alt="" >
+        <img class="light light-3" data-src="/images/light/light3.png" alt="" >
+        <img class="light light-4" data-src="/images/light/light4.png" alt="" >
+         <img class="hero-think-1" data-src="/images/light/hero1.png" alt="" >
+        <img class="hero-think-2" data-src="/images/light/hero2.png" alt="" >
+        <img class="hero-think-3" data-src="/images/light/hero3.png" alt="" >
        
-        <img class="img-bubble" data-src="/bubble1b.png" alt="" >    
-        <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
-        <img data-src="/kid_handless.png" alt=""  class="hero-2">     
-        <img class="heroes" data-src="/fantasy/heroes.png" alt="" >
-        <img class="mobile-scene-3" data-src="/mobile/scene3.jpg" alt="" >
+        <img class="img-bubble" data-src="/images/bubble1b.png" alt="" >    
+        <img class="hill-1" data-src="/images/fantasy/hill1.png" alt="" >
+        <img data-src="/images/kid_handless.png" alt=""  class="hero-2">     
+        <img class="heroes" data-src="/images/fantasy/heroes.png" alt="" >
+        <img class="mobile-scene-3" data-src="/images/mobile/scene3.jpg" alt="" >
 
        
         <div class="bubble bubble-8">
@@ -366,7 +366,7 @@ export default {
     &-10,
     &-13,
     &-16 {
-      background-image: url('~/static/bubble-white-1.png');
+      background-image: url('~/static/images/bubble-white-1.png');
     }
     &-2,
     &-5,
@@ -374,7 +374,7 @@ export default {
     &-11,
     &-14,
     &-17 {
-      background-image: url('~/static/bubble-white-2.png');
+      background-image: url('~/static/images/bubble-white-2.png');
       padding-left: 135px;
     }
     &-3,
@@ -383,7 +383,7 @@ export default {
     &-12,
     &-15,
     &-18 {
-      background-image: url('~/static/bubble-white-3.png');
+      background-image: url('~/static/images/bubble-white-3.png');
     }
   }
   .scene {

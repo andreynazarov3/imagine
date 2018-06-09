@@ -35,17 +35,29 @@ export default {
     Schedule,
     Popup,
   },
-  asyncData({ env }) {
-    return Promise.all([      
+  // asyncData({ env }) {
+  //   return Promise.all([
+  //     client.getEntries({
+  //       content_type: env.CTF_SCHEDULE_TYPE_ID,
+  //       order: 'sys.createdAt',
+  //     }),
+  //   ])
+  //     .then(([{items}]) => {
+  //       return {
+  //         schedule: items
+  //       };
+  //     })
+  //     .catch(console.error);
+  // },
+  created: function() {
+    return Promise.all([
       client.getEntries({
-        content_type: env.CTF_SCHEDULE_TYPE_ID,
+        content_type: 'schedule',
         order: 'sys.createdAt',
       }),
     ])
-      .then(([{items}]) => {       
-        return {
-          schedule: items
-        };
+      .then(([{ items }]) => {
+        return (this.schedule = items);
       })
       .catch(console.error);
   },
@@ -66,7 +78,7 @@ export default {
       isMobile: false,
       imagesLoaded: false,
       header: '{}',
-      schedule: null
+      schedule: null,
     };
   },
   methods: {

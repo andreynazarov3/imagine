@@ -38,13 +38,13 @@ module.exports = {
     link: [{
         rel: 'icon',
         type: 'image/png',
-        href: '/favicon16.png',
+        href: '/images/favicon16.png',
         sizes: '16x16'
       },
       {
         rel: 'icon',
         type: 'image/png',
-        href: '/favicon72.png',
+        href: '/images/favicon72.png',
         sizes: '72x72'
       }, {
         href: "https://fonts.googleapis.com/css?family=Alegreya:400,500&amp;subset=cyrillic",
@@ -75,7 +75,7 @@ module.exports = {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'
       },
       {
-        src: '/ThrowPropsPlugin.min.js'
+        src: '/js/ThrowPropsPlugin.min.js'
       },
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js'
@@ -93,6 +93,22 @@ module.exports = {
   },
   plugins: [
 
+  ],
+  modules: [
+    [
+      '@nuxtjs/yandex-metrika',
+      {
+        id: '48972590',
+        webvisor: true,
+        clickmap:true,
+        // useCDN:false,
+        trackLinks:true,
+        accurateTrackBounce:true,
+      }
+    ],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-119665188-1'
+    }]
   ],
   env: {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',

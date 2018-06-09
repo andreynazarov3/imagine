@@ -1,159 +1,159 @@
 <template>
   <section class="cartoon desktop">    
-    <img style="display:none !important;" data-src="/logo_black.png" alt="">
-    <img style="display:none !important;" data-src="/popup.png" alt="">
+    <img style="display:none !important;" data-src="/images/logo_black.png" alt="">
+    <img style="display:none !important;" data-src="/images/popup.png" alt="">
       <div class="scale scene scene-1" id="scene-1">      
-          <img class="city scene-img-background" data-src="/background.png" alt="">             
-          <img class="city scene-img-moscow-city" data-src="/moscow-city.png" alt="">          
-          <img class="city scene-img-house-2" data-src="/house_2.png" alt="">
-          <img class="city scene-img-house-1" data-src="/house_1.png" alt="">
-          <img class="city scene-img-house-3" data-src="/house_3.png" alt="">
-          <img class="city scene-img-bridge" data-src="/bridge.png" alt="">
-          <img class="city scene-img-lighters" data-src="/lighters.png" alt=""> 
-          <img class="scene-img-hero" data-src="/hero-2.png" alt="">        <img class="curtain" data-src="/curtain.png" alt="">            
+          <img class="city scene-img-background" data-src="/images/background.png" alt="">             
+          <img class="city scene-img-moscow-city" data-src="/images/moscow-city.png" alt="">          
+          <img class="city scene-img-house-2" data-src="/images/house_2.png" alt="">
+          <img class="city scene-img-house-1" data-src="/images/house_1.png" alt="">
+          <img class="city scene-img-house-3" data-src="/images/house_3.png" alt="">
+          <img class="city scene-img-bridge" data-src="/images/bridge.png" alt="">
+          <img class="city scene-img-lighters" data-src="/images/lighters.png" alt=""> 
+          <img class="scene-img-hero" data-src="/images/hero-2.png" alt="">        <img class="curtain" data-src="/images/curtain.png" alt="">            
           <div class="quests quests-1" data-size="1">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-1" data-size="2">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-1" data-size="3">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-1" data-size="4">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-1" data-size="5">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-1" data-size="6">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests1" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-2" data-size="1">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-2" data-size="2">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-2" data-size="3">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-2" data-size="4">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-2" data-size="5">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-2" data-size="6">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests2" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-3" data-size="1">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-3" data-size="2">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-3" data-size="3">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-3" data-size="4">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-3" data-size="5">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="quests quests-3" data-size="6">
-              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques1.png">
-              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques2.png">
-              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques3.png">
-               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques4.png">
-               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques5.png">
-               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/ques6.png">
+              <img :key="`q1-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques1.png">
+              <img :key="`q2-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques2.png">
+              <img :key="`q3-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques3.png">
+               <img :key="`q4-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques4.png">
+               <img :key="`q5-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques5.png">
+               <img :key="`q6-${index}`" v-for="(quest, index) in quests3" class="quest" alt=""  data-src="/images/ques6.png">
           </div>
           <div class="bubble bubble-1">
             В одном большом и всем знакомом городе жил Человек. 
@@ -179,30 +179,30 @@
       </div>      
       <div class="scale scene scene-2" id="scene-2">
          
-        <img class="light light-1"  data-src="/light/light1.png" alt="" >
-        <img class="light light-2" data-src="/light/light2.png" alt="" >
-        <img class="light light-3" data-src="/light/light3.png" alt="" >
-        <img class="light light-4" data-src="/light/light4.png" alt="" >
-         <img class="hero-think-1" data-src="/light/hero1.png" alt="" >
-        <img class="hero-think-2" data-src="/light/hero2.png" alt="" >
-        <img class="hero-think-3" data-src="/light/hero3.png" alt="" >
+        <img class="light light-1"  data-src="/images/light/light1.png" alt="" >
+        <img class="light light-2" data-src="/images/light/light2.png" alt="" >
+        <img class="light light-3" data-src="/images/light/light3.png" alt="" >
+        <img class="light light-4" data-src="/images/light/light4.png" alt="" >
+         <img class="hero-think-1" data-src="/images/light/hero1.png" alt="" >
+        <img class="hero-think-2" data-src="/images/light/hero2.png" alt="" >
+        <img class="hero-think-3" data-src="/images/light/hero3.png" alt="" >
        
-        <img class="img-bubble" data-src="/bubble1b.png" alt="" >
-         <img class="mountain" data-src="/fantasy/mountain.png" alt="" >
-         <img class="tree" data-src="/fantasy/tree.png" alt="" >
+        <img class="img-bubble" data-src="/images/bubble1b.png" alt="" >
+         <img class="mountain" data-src="/images/fantasy/mountain.png" alt="" >
+         <img class="tree" data-src="/images/fantasy/tree.png" alt="" >
       
-        <img data-src="/kid_handless.png" alt=""  class="hero-2">
+        <img data-src="/images/kid_handless.png" alt=""  class="hero-2">
 
-          <img class="hill-3" data-src="/fantasy/hill3.png" alt="" >
-          <img class="people" data-src="/fantasy/people.png" alt="" >        
-          <img class="hill-2" data-src="/fantasy/hill2.png" alt="" >        
-              <img class="hill-1" data-src="/fantasy/hill1.png" alt="" >
-        <img class="heroes" data-src="/fantasy/heroes.png" alt="" >   
-             <img class="pillows" data-src="/fantasy/pillows.png" alt="" >
-           <img class="chairs" data-src="/fantasy/chairs.png" alt="" >
+          <img class="hill-3" data-src="/images/fantasy/hill3.png" alt="" >
+          <img class="people" data-src="/images/fantasy/people.png" alt="" >        
+          <img class="hill-2" data-src="/images/fantasy/hill2.png" alt="" >        
+              <img class="hill-1" data-src="/images/fantasy/hill1.png" alt="" >
+        <img class="heroes" data-src="/images/fantasy/heroes.png" alt="" >   
+             <img class="pillows" data-src="/images/fantasy/pillows.png" alt="" >
+           <img class="chairs" data-src="/images/fantasy/chairs.png" alt="" >
           
-          <img class="lamp" data-src="/fantasy/lamp.png" alt="" >
-          <img class="expoint" data-src="/expoint.png" alt="" >
+          <img class="lamp" data-src="/images/fantasy/lamp.png" alt="" >
+          <img class="expoint" data-src="/images/expoint.png" alt="" >
        
         <div class="bubble bubble-8">
            Совсем обессилев, забылся Человек тревожным сном.  
@@ -631,7 +631,7 @@ export default {
   &-10,
   &-13,
   &-16 {
-    background-image: url('~/static/bubble-white-1.png');
+    background-image: url('~/static/images/bubble-white-1.png');
   }
   &-2,
   &-5,
@@ -639,7 +639,7 @@ export default {
   &-11,
   &-14,
   &-17 {
-    background-image: url('~/static/bubble-white-2.png');
+    background-image: url('~/static/images/bubble-white-2.png');
     padding-top: 80px;
     padding-left: 135px;
   }
@@ -649,7 +649,7 @@ export default {
   &-12,
   &-15,
   &-18 {
-    background-image: url('~/static/bubble-white-3.png');
+    background-image: url('~/static/images/bubble-white-3.png');
   }
 }
 

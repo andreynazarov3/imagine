@@ -2,7 +2,7 @@
   <section class="schedule">    
     <div class="wrapper">
     <div class="block-heading">      
-      <img class="schedule-img" src="~/static/schedule.png" alt="">
+      <img class="schedule-img" src="~/static/images/schedule.png" alt="">
       <!-- <div class="line"></div> -->
       <!-- <p>
         The eyes of the Fair are on the future — not in the sense of peering toward the unknown nor attempting to foretell the events of tomorrow and the shape of things to come
@@ -16,7 +16,7 @@
           <div class="schedule-item-date">{{item.fields.date}}</div>
           <div class="schedule-item-time">{{item.fields.time}}</div>
           <div class="schedule-item-name">{{item.fields.desc}}</div>
-          <button class="schedule-item-button">Записаться</button>
+          <button @click="$emit('scrollToForm')" class="schedule-item-button">Записаться</button>
           <div class="schedule-item-line"></div>          
         </div>
       </div>
@@ -26,20 +26,20 @@
 </template>
 <script>
 export default {
-  mounted: function() {
+  updated: function() {
     Draggable.create(this.$refs.scroller, {
       type: 'scrollLeft',
       edgeResistance: 0.75,
       throwProps: true,
     });
-    const buttons = document.querySelectorAll('.schedule-item-button');
-    const self = this;
-    buttons.forEach(function (element) {
-      element.addEventListener('click', function () {        
-          self.$emit('scrollToForm');
-          console.log('emit');
-      });
-    });
+    // const buttons = document.querySelectorAll('.schedule-item-button');
+    // const self = this;
+    // buttons.forEach(function (element) {
+    //   element.addEventListener('click', function () {        
+    //       self.$emit('scrollToForm');
+    //       console.log('emit');
+    //   });
+    // });
   },
   components: {},
   props:['data'],
