@@ -1137,6 +1137,11 @@ export default {
 
               onComplete: function() {
                 vue.scrollToForm();
+                vue.sounds.gorod.stop();
+                vue.sounds.voprosi.stop();
+                vue.sounds.nagnetenie.stop();
+                vue.sounds.lampa.stop();
+                vue.sounds.tishina.stop();
               },
             },
             '-=1',
@@ -1600,7 +1605,8 @@ export default {
   bottom: 20px;
   left: 20px;
   border-radius: 50%;
-  // background: black;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
   width: 60px;
   height: 60px;
   cursor: pointer;
