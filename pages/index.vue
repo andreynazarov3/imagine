@@ -1,7 +1,7 @@
 <template lang="html">
 <div ref="app" class="app" id="app" :class="{mobile: isMobile}">      
     <Logo :data="header" :progressNumber='progressNumber'  @scrollToForm='scrollToForm' />
-    <main v-show="imagesLoaded || isMobile">
+    <main v-show="(progressNumber === 100) || isMobile">
       <Cartoon :isMobile="isMobile" v-show="!isMobile" />
       <CartoonMobile :isMobile="isMobile" v-show="isMobile" />
       <Form @sendmail="showPopup = true" />
@@ -79,7 +79,8 @@ export default {
   data: function() {
     return {
       muted: false,
-      progressNumber: 0,
+      imagesProgressNumber: 0,
+      soundsProgressNumber: 0,
       showPopup: false,
       isMobile: false,
       imagesLoaded: false,
@@ -95,6 +96,15 @@ export default {
         luna: null,
       },
     };
+  },
+  computed: {
+    progressNumber() {
+      if (!this.isMobile) {
+        return this.imagesProgressNumber + this.soundsProgressNumber;
+      } else {
+        return this.imagesProgressNumber;
+      }
+    },
   },
   methods: {
     toggleMute: function() {
@@ -145,7 +155,8 @@ export default {
   beforeMount: function() {
     this.isMobile = this.checkMobile();
   },
-  mounted: function() {
+  mounted: function() {    
+    const vue = this;
     if (!this.isMobile) {
       // Setup the new Howl.
       this.sounds.gorod = new Howl({
@@ -153,8 +164,8 @@ export default {
         loop: true,
         preload: true,
         muted: true,
-        onload: () => {
-          console.log('loaded', 'sound_gorod');
+        onload: function() {
+          vue.soundsProgressNumber += 1;
         },
       });
       this.sounds.voprosi = new Howl({
@@ -162,8 +173,8 @@ export default {
         loop: true,
         preload: true,
         muted: true,
-        onload: () => {
-          console.log('loaded', 'sound_voprosi');
+        onload: function() {
+          vue.soundsProgressNumber += 1;
         },
       });
       this.sounds.nagnetenie = new Howl({
@@ -171,8 +182,8 @@ export default {
         loop: true,
         preload: true,
         muted: true,
-        onload: () => {
-          console.log('loaded', 'sound_nagnetenie');
+        onload: function() {
+          vue.soundsProgressNumber += 1;
         },
       });
       this.sounds.lampa = new Howl({
@@ -180,8 +191,8 @@ export default {
         loop: true,
         preload: true,
         muted: true,
-        onload: () => {
-          console.log('loaded', 'sound_lampa');
+        onload: function() {
+          vue.soundsProgressNumber += 1;
         },
       });
       this.sounds.tishina = new Howl({
@@ -189,8 +200,8 @@ export default {
         loop: true,
         preload: true,
         muted: true,
-        onload: () => {
-          console.log('loaded', 'sound_tishina');
+        onload: function() {
+          vue.soundsProgressNumber += 1;
         },
       });
       this.sounds.luna = new Howl({
@@ -198,8 +209,8 @@ export default {
         loop: true,
         preload: true,
         muted: true,
-        onload: () => {
-          console.log('loaded', 'sound_Luna');
+        onload: function() {
+          vue.soundsProgressNumber += 1;
         },
       });
       const bottomAnimationOffset = 50;
@@ -321,7 +332,7 @@ export default {
       images.forEach(el => {
         el.src = el.dataset.src;
       });
-      const vue = this;
+      
       const imgLoad = imagesLoaded('body', function() {
         console.log('images loaded');
 
@@ -1168,7 +1179,7 @@ export default {
       });
 
       imgLoad.on('progress', (instance, image) => {
-        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
+        this.imagesProgressNumber = Math.floor(94 * instance.progressedCount / instance.images.length);
       });
     } else {
       let scene;
@@ -1590,8 +1601,8 @@ export default {
           .addTo(mobilecontroller);
       });
 
-      imgLoad.on('progress', (instance, image) => {        
-        this.progressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
+      imgLoad.on('progress', (instance, image) => {
+        this.imagesProgressNumber = Math.floor(100 * instance.progressedCount / instance.images.length);
       });
     }
   },
