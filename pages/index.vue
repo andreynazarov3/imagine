@@ -77,7 +77,7 @@ export default {
   },
   data: function() {
     return {
-      muted: true,
+      muted: false,
       imagesProgressNumber: 0,
       soundsProgressNumber: 0,
       showPopup: false,
@@ -159,8 +159,7 @@ export default {
     const vue = this;
 
     if (!this.isMobile) {
-      // Setup the new Howl.
-      Howler.mute(true);
+      // Setup the new Howl.     
       
       this.sounds.gorod = new Howl({
         src: ['/sounds/gorod.mp3'],
@@ -191,7 +190,7 @@ export default {
       });
       this.sounds.lampa = new Howl({
         src: ['/sounds/lampa.mp3'],
-        loop: true,
+        loop: false,
         preload: true,
         muted: true,
         onload: function() {
@@ -1143,7 +1142,7 @@ export default {
 
           .to(
             '.bubble-18',
-            2,
+            1,
             {
               top: '0%',
               y: '-100%',
