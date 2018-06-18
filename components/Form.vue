@@ -57,7 +57,7 @@ export default {
     
     var img = new Image();
     img.onload = () => { this.$emit('sendmail'); }
-    img.src = "/popup.png";
+    img.src = "/images/popup.png";
     
     const data = { 
       'name': this.name,
