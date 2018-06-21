@@ -3,7 +3,7 @@
    <header>     
      <div class="header-content">
     <div class="wrapper">
-        <div class="format">креативный тренинг</div>         
+        <div class="format">know-wow семинар</div>         
         <a class="becomehero" @click="$emit('scrollToForm')"><img src="~/static/images/become.png" alt="Стать героем"></a>
         <a class="phone" href="tel:+7 (968) 544-71-10">+7 (968) 544-71-10</a>
     </div>
