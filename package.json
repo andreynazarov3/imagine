@@ -22,7 +22,7 @@
     "gsap": "^1.20.4",
     "howler": "^2.0.12",
     "imagesloaded": "^4.1.4",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.1",
     "nuxt": "^1.0.0",
     "perfect-scrollbar": "0.8.1",
     "qs": "^6.5.2",

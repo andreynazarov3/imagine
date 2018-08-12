@@ -13,7 +13,7 @@ not in the sense of peering toward </p> -->
           <a href="">Instagram</a>
           <a href="">Medium</a>
         </div> -->
-        <div class="madein">
+        <div class="madein" v-if="false">
           <p><span>Cделано в </span><a href="http://www.gstudio.com/" target="_blank">Gstudio</a></p>
         </div>
       </div>
